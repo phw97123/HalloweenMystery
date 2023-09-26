@@ -120,7 +120,6 @@ namespace Components.Stats
             currentRangedAttacks.arc = operation(currentRangedAttacks.arc, rangedAttacksModifier.arc);
             currentRangedAttacks.attackCount = operation(currentRangedAttacks.attackCount, rangedAttacksModifier.attackCount);
             currentRangedAttacks.targets = Mathf.CeilToInt(operation(currentRangedAttacks.targets,rangedAttacksModifier.targets));
-            currentRangedAttacks.anglePerAttack = operation(currentRangedAttacks.anglePerAttack, rangedAttacksModifier.anglePerAttack);
         }
 
         private void ApplyRangeStats(Func<float, float, float> operation, CharacterStats newModifier)
