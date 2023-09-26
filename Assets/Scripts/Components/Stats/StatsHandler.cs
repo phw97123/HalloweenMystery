@@ -120,7 +120,6 @@ namespace Components.Stats
             currentRangedAttacks.arc = operation(currentRangedAttacks.arc, rangedAttacksModifier.arc);
             currentRangedAttacks.attackCount = operation(currentRangedAttacks.attackCount, rangedAttacksModifier.attackCount);
             currentRangedAttacks.targets = Mathf.CeilToInt(operation(currentRangedAttacks.targets,rangedAttacksModifier.targets));
-            currentRangedAttacks.anglePerAttack = operation(currentRangedAttacks.anglePerAttack, rangedAttacksModifier.anglePerAttack);
         }
 
         private void ApplyRangeStats(Func<float, float, float> operation, CharacterStats newModifier)
@@ -133,8 +132,7 @@ namespace Components.Stats
             }
 
             RangeAttackDataSO rangedAttacksModifier = (RangeAttackDataSO)newModifier.attackData;
-
-            currentRangedAttacks.rangeOfAttack = operation(currentRangedAttacks.rangeOfAttack, rangedAttacksModifier.rangeOfAttack);
+            
             currentRangedAttacks.projectilesPerAttack = operation(currentRangedAttacks.projectilesPerAttack, rangedAttacksModifier.projectilesPerAttack);
             currentRangedAttacks.anglePerShot = operation(currentRangedAttacks.anglePerShot, rangedAttacksModifier.anglePerShot);
             currentRangedAttacks.piercingCount = operation(currentRangedAttacks.piercingCount, rangedAttacksModifier.piercingCount);

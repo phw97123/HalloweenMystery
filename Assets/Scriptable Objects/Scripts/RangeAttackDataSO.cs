@@ -6,7 +6,6 @@ using UnityEngine;
 public class RangeAttackDataSO : AttackDataSO
 {
     [Header("Range Attack Info")] public string bulletTag;
-    public float rangeOfAttack;
     public float projectilesPerAttack;
     public float anglePerShot;
     public float piercingCount;
