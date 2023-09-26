@@ -89,6 +89,7 @@ namespace Components.Action
                 }
                 else if ((_currentAttackCount & 1) == 1)
                 {
+                    //reversed direction swing
                     float rad = meleeAttack.arc * Mathf.Deg2Rad;
                     float x = Mathf.Cos(rad);
                     float y = Mathf.Sin(rad);

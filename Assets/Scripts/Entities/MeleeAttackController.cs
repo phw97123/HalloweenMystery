@@ -12,6 +12,7 @@ namespace Entities
         private Vector2 _direction;
         private bool _isReady = false;
         private Rigidbody2D _rigidbody;
+        private TrailRenderer _trailRenderer;
 
         private float _distance;
 
@@ -29,6 +30,7 @@ namespace Entities
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _trailRenderer = GetComponent<TrailRenderer>();
         }
 
         private void Update()
@@ -109,7 +111,7 @@ namespace Entities
             _movedDegree = 0f;
             _isLunge = isLunge;
             _isReversed = isReversed;
-
+            
             if (meleeAttack.arc > 0 && !isLunge)
             {
                 float degree = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -125,6 +127,7 @@ namespace Entities
             _isReady = false;
             OnDestroyEvent?.Invoke(gameObject);
             gameObject.SetActive(false);
+            _trailRenderer.Clear();
         }
     }
 }
