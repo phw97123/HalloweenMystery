@@ -29,9 +29,12 @@ namespace Entities
             CallLook(dir.normalized);
         }
 
-        public void OnAttack(InputValue value)
+        public void OnFire(InputValue value)
         {
-            //todo 
+            if (value.isPressed)
+            {
+                CallAttack();
+            }
         }
     }
 }

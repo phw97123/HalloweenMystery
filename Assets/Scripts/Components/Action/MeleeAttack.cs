@@ -1,5 +1,6 @@
 using Components.Stats;
 using Entites;
+using Entities;
 using System;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ namespace Components.Action
 
         private void Update()
         {
+            _timeSinceLastAttack += Time.deltaTime;
+            
             if (_timeSinceLastAttack <= _stats.CurrentStats.attackData.delay)
             {
                 _isAttacking = false;
@@ -42,6 +45,9 @@ namespace Components.Action
 
             if (_isAttacking)
             {
+                _timeSinceLastAttack = 0f;
+                _isAttacking = false;
+
                 MeleeAttackDataSO meleeAttack = _stats.CurrentStats.attackData as MeleeAttackDataSO;
                 if (meleeAttack == null)
                 {
@@ -62,7 +68,9 @@ namespace Components.Action
         private void HandleAttack(MeleeAttackDataSO meleeAttack, Vector2 spawnPosition, Vector2 direction)
         {
             //todo apply meleeAttack, direction
-            Instantiate(testPrefab, spawnPosition, Quaternion.identity);
+            GameObject go = Instantiate(testPrefab, spawnPosition, Quaternion.identity);
+            MeleeAttackController controller = go.GetComponent<MeleeAttackController>();
+            controller.Initialize(meleeAttack, direction);
         }
     }
 }
