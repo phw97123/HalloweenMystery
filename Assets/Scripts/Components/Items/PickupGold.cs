@@ -6,12 +6,14 @@ using UnityEngine;
 public class PickupGold : PickupItem
 {
     [SerializeField] int goldAmount = 10;
-    private float goldPercentage;
+    private float _goldPercentage;
 
     protected override void OnPickedUp(GameObject receiver)
     {
         StatsHandler statsHandler = receiver.GetComponent<StatsHandler>();
-        goldPercentage = statsHandler.CurrentStats.goldPercentage;
-        // 골드 추가하는 코드 넣기
+        GoldSystem goldSystem = receiver.GetComponent<GoldSystem>();
+        _goldPercentage = statsHandler.CurrentStats.goldPercentage;
+
+        goldSystem.ChangeOwnedGold(Mathf.CeilToInt(goldAmount * (1 + _goldPercentage)));
     }
 }
