@@ -23,12 +23,10 @@ namespace Entities
         public void OnLook(InputValue input)
         {
             Vector2 screenPoint = input.Get<Vector2>();
-            Debug.Log($"screenPosition is {screenPoint}");
-            Vector3 worldPoint = _camera.ScreenToWorldPoint(screenPoint).normalized;
-            Debug.Log($"worldPoint is {worldPoint}");
-            Vector2 dir = worldPoint - transform.position;
+            Vector3 worldPoint = _camera.ScreenToWorldPoint(screenPoint);
+            Vector2 dir = worldPoint - transform.position.normalized;
             Debug.Log($"dir is {dir}");
-            CallLook(dir);
+            CallLook(dir.normalized);
         }
 
         public void OnAttack(InputValue value)

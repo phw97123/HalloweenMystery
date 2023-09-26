@@ -10,8 +10,6 @@ namespace Components.Action
 
         private Rigidbody2D _rigidbody;
 
-        //todo stats handler
-        private float _speed = 5f;
         private StatsHandler _stats;
 
         private void Awake()
@@ -28,7 +26,7 @@ namespace Components.Action
 
         private void Move(Vector2 dir)
         {
-            _rigidbody.velocity = dir * _speed;
+            _rigidbody.velocity = dir * _stats.CurrentStats.speed;
         }
     }
 }

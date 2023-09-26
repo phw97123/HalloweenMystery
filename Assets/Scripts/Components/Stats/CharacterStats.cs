@@ -21,7 +21,7 @@ namespace Components
         [Range(0, 50f)] public float itemDropPercentage;
         [Range(0, 5f)] public float buffDurationIncrease;
 
-
+        
         public AttackDataSO attackData;
     }
 }

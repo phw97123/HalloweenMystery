@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eb517441346f4d269c657bc570b01bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 25743120902629055}
   - component: {fileID: 8808232096091452320}
   - component: {fileID: 4380118732844188205}
+  - component: {fileID: 3194606967408891454}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -205,7 +206,7 @@ Transform:
   m_Children:
   - {fileID: 2285119856317916872}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2766114860112414956
 MonoBehaviour:
@@ -348,6 +349,27 @@ MonoBehaviour:
   armPivot: {fileID: 4278686806485857066}
   characterRenderer: {fileID: 2879941095173076128}
   weaponRenderer: {fileID: 3921127039119676023}
+--- !u!114 &3194606967408891454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771022144477631135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37c057036944c1d8d291da7b96aa86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    changeType: 0
+    maxHealth: 10
+    speed: 2
+    criticalPercentage: 0
+    goldPercentage: 0
+    itemDropPercentage: 0
+    buffDurationIncrease: 0
+    attackData: {fileID: 11400000, guid: 79ce734cec47645c5b06361636398eaa, type: 2}
 --- !u!1 &6510918689314661524
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,8 +394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510918689314661524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 1}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1829169808839247632}
