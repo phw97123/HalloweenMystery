@@ -11,7 +11,7 @@ namespace Components
     }
 
     [Serializable]
-    public struct CharacterStats
+    public class CharacterStats
     {
         public StatsChangeType changeType;
         [Range(0, 20_000f)] public float maxHealth;
