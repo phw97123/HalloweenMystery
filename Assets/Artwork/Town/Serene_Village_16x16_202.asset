@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: spr_campfire_starting_24
+  m_Name: Serene_Village_16x16_202
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1363738209, guid: 085e80df0419b044a81ef67f6645f828, type: 3}
+  m_Sprite: {fileID: -503718757, guid: 577704cb40c5da342a84a40db7070cfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
