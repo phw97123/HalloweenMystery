@@ -9,6 +9,7 @@ namespace Components.Action
         [SerializeField] private Transform armPivot;
         [SerializeField] private SpriteRenderer characterRenderer;
         [SerializeField] private SpriteRenderer weaponRenderer;
+        [SerializeField] private bool weaponFlipY = true;
 
 
         private void Awake()
@@ -28,8 +29,12 @@ namespace Components.Action
         private void Look(Vector2 dir)
         {
             float degree = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            weaponRenderer.flipY = Mathf.Abs(degree) > 90f;
-            characterRenderer.flipX = weaponRenderer.flipY;
+            if (weaponFlipY)
+            {
+                weaponRenderer.flipY = Mathf.Abs(degree) > 90f;
+            }
+
+            characterRenderer.flipX = Mathf.Abs(degree) > 90f;
             armPivot.rotation = Quaternion.Euler(0, 0, degree);
         }
     }

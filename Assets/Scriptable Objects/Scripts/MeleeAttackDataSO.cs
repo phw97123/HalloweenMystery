@@ -9,5 +9,4 @@ public class MeleeAttackDataSO : AttackDataSO
     public float arc;
     public float attackCount;
     public int targets;
-    public float anglePerAttack;
 }
