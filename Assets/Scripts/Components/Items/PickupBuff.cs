@@ -6,23 +6,28 @@ using UnityEngine;
 
 public class PickupBuff : PickupItem
 {
-    [SerializeField] private List<CharacterStats> statsModifier;
-    [SerializeField] private int buffDuration = 1; //나중에 그냥 인스펙터창에서 넣을 수 있도록 수정하기
+    [SerializeField] private BuffDataSO buffDataSO;
     private StatsHandler _statsHandler;
 
     protected override void OnPickedUp(GameObject receiver)
     {
         _statsHandler = receiver.GetComponent<StatsHandler>();
-        foreach (CharacterStats stat in statsModifier)
+        foreach (CharacterStats stat in buffDataSO.Stats)
         {
             _statsHandler.AddStatModifier(stat);
-            DelayRemoveStatModifier(stat);
         }
+        gameObject.SetActive(false);
+        StartCoroutine(DelayRemoveStatModifier());
     }
 
-    IEnumerator DelayRemoveStatModifier(CharacterStats stat)
+    IEnumerator DelayRemoveStatModifier()
     {
-        yield return buffDuration;
-        _statsHandler.RemoveStatModifier(stat);
+        yield return buffDataSO.BuffDuration;
+        foreach (CharacterStats stat in buffDataSO.Stats)
+        {
+            _statsHandler.RemoveStatModifier(stat);
+        }
+
+        Destroy(gameObject);
     }
 }
