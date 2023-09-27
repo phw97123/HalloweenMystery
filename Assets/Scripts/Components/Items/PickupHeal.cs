@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PickupHeal : PickupItem
 {
-    [SerializeField] int healValue = 10;
+    [SerializeField] private HealDataSO healDataSO;
     private HealthSystem _healthSystem;
 
     protected override void OnPickedUp(GameObject receiver)
     {
         _healthSystem = receiver.GetComponent<HealthSystem>();
-        _healthSystem.ChangeHealth(healValue);
+        _healthSystem.ChangeHealth(healDataSO.Heal);
+
+        Destroy(gameObject);
     }
 }
 
