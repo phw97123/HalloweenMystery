@@ -566,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 4987322751038777043, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
       propertyPath: baseStats.attackData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 3b3e5ab264ecd8a42a17064080485cba, type: 2}
     - target: {fileID: 7234414035955937528, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
       propertyPath: m_RootOrder
       value: 1
