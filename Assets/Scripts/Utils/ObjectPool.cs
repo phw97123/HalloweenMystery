@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utils
 {
+    [Serializable]
     public struct Poolable
     {
         public GameObject Prefab;
@@ -15,18 +17,20 @@ namespace Utils
         private readonly Dictionary<string, Queue<GameObject>> _pool = new Dictionary<string, Queue<GameObject>>();
         private readonly Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
 
-        public ObjectPool(List<Poolable> prefabs)
+        public void Initialize(List<Poolable> prefabs)
         {
             foreach (Poolable poolable in prefabs)
             {
                 Queue<GameObject> queue = new Queue<GameObject>();
                 for (int i = 0; i < poolable.Size; i++)
                 {
-                    queue.Enqueue(Instantiate(gameObject));
+                    GameObject go = Instantiate(poolable.Prefab);
+                    go.SetActive(false);
+                    queue.Enqueue(go);
                 }
 
-                _pool[poolable.Tag] = queue;
-                _prefabs[poolable.Tag] = poolable.Prefab;
+                _pool.Add(poolable.Tag, queue);
+                _prefabs.Add(poolable.Tag, poolable.Prefab);
             }
         }
 
@@ -39,6 +43,7 @@ namespace Utils
         {
             GameObject go;
             go = _pool[prefabTag].Count > 0 ? _pool[prefabTag].Dequeue() : Instantiate(_prefabs[prefabTag]);
+            go.SetActive(true);
             return go;
         }
     }
