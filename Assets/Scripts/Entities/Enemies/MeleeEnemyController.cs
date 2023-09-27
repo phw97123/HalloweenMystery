@@ -30,11 +30,6 @@ public class MeleeEnemyController : EnemyController
     {
         base.FixedUpdate();
 
-        if (_isCollidingWithTarget)
-        {
-            ApplyHealthChange();
-        }
-
         Vector2 direction = Vector2.zero;
         if (DistanceToTarget() < followRange)
         {
@@ -76,11 +71,5 @@ public class MeleeEnemyController : EnemyController
             return;
         }
         _isCollidingWithTarget = false;
-    }
-
-    private void ApplyHealthChange()
-    {
-        AttackDataSO attackSo = Stats.CurrentStats.attackData;
-        bool hasBeenChanged = _collidingTargetHealthSystem.ChangeHealth(-attackSo.damage);
     }
 }

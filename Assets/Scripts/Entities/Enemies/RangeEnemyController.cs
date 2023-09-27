@@ -1,9 +1,21 @@
+using Components.Action;
+using Components.Stats;
 using UnityEngine;
 
-public class RangeEnemycontroller : EnemyController
+public class RangeEnemyController : EnemyController
 {
     [SerializeField] private float followRange = 15f;
     [SerializeField] private float shootRange = 10f;
+
+    private RangeAttack rangeAttack;
+    private StatsHandler Stats;
+
+    protected override void Start()
+    {
+        base.Start();
+        rangeAttack = GetComponent<RangeAttack>();
+        Stats = GetComponent<StatsHandler>();
+    }
 
     protected override void FixedUpdate()
     {
@@ -12,7 +24,6 @@ public class RangeEnemycontroller : EnemyController
         float distance = DistanceToTarget();
         Vector2 direction = DirectionToTarget();
 
-        IsAttacking = false;
         if (distance <= followRange)
         {
             if (distance <= shootRange)
@@ -20,11 +31,12 @@ public class RangeEnemycontroller : EnemyController
                 int layerMaskTarget = Stats.CurrentStats.attackData.target;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 11f, (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
 
-                if (hit.collider != null && layerMaskTarget == (layerMaskTarget | (1 << hit.collider.gameObject.layer)))
+                if (hit.collider != null && (layerMaskTarget & (1 << hit.collider.gameObject.layer)) != 0)
                 {
                     CallLook(direction);
                     CallMove(Vector2.zero);
-                    IsAttacking = true;
+                    rangeAttack.enabled = true; // RangeAttack 스크립트 활성화
+                    CallAttack(); // 공격 호출
                 }
             }
             else
