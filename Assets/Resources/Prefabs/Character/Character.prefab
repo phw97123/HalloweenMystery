@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: af585ffc4c1b74b0fb3ef48ea7ada65d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &452750963237909566
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2285119856317916872}
   - component: {fileID: 2879941095173076128}
+  - component: {fileID: 5884641917163078619}
   m_Layer: 0
   m_Name: MainSprite
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452750963237909566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.14, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -157,8 +158,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 978012912, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,6 +170,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5884641917163078619
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452750963237909566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47f675659cd77814ca07b73fa20738c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1771022144477631135
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +206,7 @@ GameObject:
   - component: {fileID: 25743120902629055}
   - component: {fileID: 8808232096091452320}
   - component: {fileID: 4380118732844188205}
-  - component: {fileID: 3194606967408891454}
-  - component: {fileID: 2850583208139000858}
+  - component: {fileID: 4987322751038777043}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -221,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 7513ac6228fa141788dfb382f1b6b03d, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: c394471750f09084da662ba13b0ac08c, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -332,7 +353,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771022144477631135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b953137f179f94b5e900a4882f22c685, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f3102704696644984fbc636ae665c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4380118732844188205
@@ -344,14 +365,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771022144477631135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab6b481a18e4526b7a3100f39548e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 92f36c9ae7a9ff8478e89b95b66925d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   armPivot: {fileID: 4278686806485857066}
   characterRenderer: {fileID: 2879941095173076128}
   weaponRenderer: {fileID: 3921127039119676023}
   weaponFlipY: 1
---- !u!114 &3194606967408891454
+--- !u!114 &4987322751038777043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,31 +381,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771022144477631135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37c057036944c1d8d291da7b96aa86e, type: 3}
+  m_Script: {fileID: 11500000, guid: e14e7618df3e6dd4aa500f9131b40e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseStats:
     changeType: 0
-    maxHealth: 10
-    speed: 2
+    maxHealth: 0
+    speed: 0
     criticalPercentage: 0
     goldPercentage: 0
     itemDropPercentage: 0
     buffDurationIncrease: 0
-    attackData: {fileID: 11400000, guid: d857feb16e2a5429b9a829b045999fab, type: 2}
---- !u!114 &2850583208139000858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771022144477631135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aafc141104be400c8835d614e007454c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 4278686806485857066}
+    attackData: {fileID: 0}
 --- !u!1 &6510918689314661524
 GameObject:
   m_ObjectHideFlags: 0
