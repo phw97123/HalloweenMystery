@@ -9,7 +9,6 @@ public abstract class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnPickedUp(other.gameObject);
-            gameObject.SetActive(false);
         }
     }
 

@@ -71,6 +71,10 @@ namespace Components.Stats
         {
             CurrentStats.maxHealth = Mathf.CeilToInt(operation(CurrentStats.maxHealth, newModifier.maxHealth));
             CurrentStats.speed = operation(CurrentStats.speed, newModifier.speed);
+            CurrentStats.criticalPercentage = operation(CurrentStats.criticalPercentage, newModifier.criticalPercentage);
+            CurrentStats.goldPercentage = operation(CurrentStats.goldPercentage, newModifier.goldPercentage);
+            CurrentStats.itemDropPercentage = operation(CurrentStats.itemDropPercentage, newModifier.itemDropPercentage);
+            CurrentStats.buffDurationIncrease = operation(CurrentStats.buffDurationIncrease, newModifier.buffDurationIncrease);
 
             if (CurrentStats.attackData == null || newModifier.attackData == null)
                 return;

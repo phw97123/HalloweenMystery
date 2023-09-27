@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PickupGold : PickupItem
 {
-    [SerializeField] int goldAmount = 10;
+    [SerializeField] private GoldDataSO goldDataSO;
     private float _goldPercentage;
 
     protected override void OnPickedUp(GameObject receiver)
@@ -14,6 +14,8 @@ public class PickupGold : PickupItem
         GoldSystem goldSystem = receiver.GetComponent<GoldSystem>();
         _goldPercentage = statsHandler.CurrentStats.goldPercentage;
 
-        goldSystem.ChangeOwnedGold(Mathf.CeilToInt(goldAmount * (1 + _goldPercentage)));
+        goldSystem.ChangeOwnedGold(Mathf.CeilToInt(goldDataSO.Gold * (1 + _goldPercentage)));
+
+        Destroy(gameObject);
     }
 }
