@@ -2,28 +2,35 @@ using Components;
 using Components.Stats;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponParts : MonoBehaviour
 {
     [SerializeField] private CharacterStats stats;
-    [SerializeField] private string InteractTag = "Player";
-    [SerializeField] private string PartsName;
-    [SerializeField] private string PartsDescription;
+    [SerializeField] private string interactTag = "Player";
+    [SerializeField] private string partsName;
+    [SerializeField] private string partsDescription;
+    [SerializeField] private float price;
     [SerializeField] private bool isEquiped = false;
+
+    [SerializeField] private TextMeshProUGUI descriptionText;
     private GameObject _notifyCanvas;
     private GameObject _curCollider;
+
     private StatsHandler _statsHandler;
 
     private void Start()
     {
         _notifyCanvas = transform.GetChild(0).gameObject;
+        descriptionText.text = $"이름 : {partsName}\n설명 : {partsDescription}\n가격 : {price}";
         _notifyCanvas.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(InteractTag) && !isEquiped)
+        if (other.CompareTag(interactTag) && !isEquiped)
         {
             _statsHandler = other.gameObject.GetComponent<StatsHandler>();
             if (stats.attackData.GetType() == _statsHandler.CurrentStats.attackData.GetType())
