@@ -1,6 +1,7 @@
 using Components.Stats;
 using Entites;
 using Entities;
+using Managers;
 using System;
 using UnityEngine;
 
@@ -12,14 +13,16 @@ namespace Components.Action
         private EntityController _controller;
 
         [SerializeField] private Transform spawnPosition;
-        [SerializeField] private GameObject testPrefab;
         private Vector2 _direction = Vector2.zero;
         private float _timeSinceLastAttack = float.MaxValue;
         private bool _isAttacking;
 
+        private AttackManager _attackManager;
+
         //todo animation 
         private void Awake()
         {
+            _attackManager = AttackManager.Instance;
             _stats = GetComponentInParent<StatsHandler>();
             _controller = GetComponentInParent<EntityController>();
 
@@ -74,26 +77,7 @@ namespace Components.Action
 
         private void CreateProjectile(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
         {
-            float startDegree = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            startDegree -= (rangeAttackData.projectilesPerAttack * rangeAttackData.anglePerShot * 0.5f);
-
-            for (int i = 0; i < rangeAttackData.projectilesPerAttack; i++)
-            {
-                float currentDegree = startDegree + i * rangeAttackData.anglePerShot;
-                float currentRad = currentDegree * Mathf.Deg2Rad;
-
-                Vector2 currentDirection = new Vector2(
-                    x: direction.x + Mathf.Cos(currentRad),
-                    y: direction.y + Mathf.Sin(currentRad)).normalized;
-
-                GameObject go = Instantiate(
-                    testPrefab,
-                    startPosition,
-                    Quaternion.Euler(0, 0, currentDegree));
-
-                ProjectileController controller = go.GetComponent<ProjectileController>();
-                controller.Initialize(startPosition, currentDirection, rangeAttackData);
-            }
+            AttackManager.Instance.CreateProjectile(startPosition, direction, rangeAttackData);
         }
     }
 }
