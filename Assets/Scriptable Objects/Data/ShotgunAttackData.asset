@@ -17,12 +17,12 @@ MonoBehaviour:
     m_Bits: 0
   damage: 0
   delay: 0.5
-  speed: 10
-  range: 2
+  speed: 8
+  range: 4
   isKnockBackOn: 0
   knockBackDuration: 0
   knockBackPower: 0
-  bulletTag: 
+  bulletTag: ShotgunBullet
   projectilesPerAttack: 10
   anglePerShot: 6
   piercingCount: 0

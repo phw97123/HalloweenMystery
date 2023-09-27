@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: c96aa43726dc91f4bbfe3ac945b62fb3
 TextScriptImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+guid: 439abe33eb294452bbdf8967274018ed
+timeCreated: 1695630801
+>>>>>>> Stashed changes
