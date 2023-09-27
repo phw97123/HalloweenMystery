@@ -1,28 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Entites;
 
-public class EnemyState : MonoBehaviour
+public interface IEnemyState
 {
-    protected ContactEnemyController enemyController;
-
-    public EnemyState(ContactEnemyController _enemyController)
-    {
-        enemyController = _enemyController;
-    }
-
-    public virtual void Enter()
-    {
-        // 상태 진입 시 실행할 코드 작성
-    }
-
-    public virtual void Update()
-    {
-        // 상태 업데이트 시 실행할 코드 작성
-    }
-
-    public virtual void Exit()
-    {
-        // 상태 종료 시 실행할 코드 작성
-    }
+    void Enter(MeleeEnemyController enemy, EntityController entityController);
+    void Update(MeleeEnemyController enemy, EntityController entityController);
+    void Exit(MeleeEnemyController enemy, EntityController entityController);
 }

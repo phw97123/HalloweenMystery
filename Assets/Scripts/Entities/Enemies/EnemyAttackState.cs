@@ -1,9 +1,8 @@
 using Entites;
 using UnityEngine;
 
-public class ChaseState : IEnemyState
+public class AttackState : IEnemyState
 {
-    
     public void Enter(MeleeEnemyController enemy, EntityController entityController)
     {
         //entityController.CallMove(enemy.DirectionToTarget());
@@ -12,11 +11,11 @@ public class ChaseState : IEnemyState
 
     public void Update(MeleeEnemyController enemy, EntityController entityController)
     {
-       
+
     }
 
     public void Exit(MeleeEnemyController enemy, EntityController entityController)
     {
-       
+
     }
 }
