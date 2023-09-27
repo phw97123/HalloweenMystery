@@ -207,6 +207,8 @@ GameObject:
   - component: {fileID: 8808232096091452320}
   - component: {fileID: 4380118732844188205}
   - component: {fileID: 4987322751038777043}
+  - component: {fileID: 5067162108088885383}
+  - component: {fileID: 777542905938925580}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -228,7 +230,7 @@ Transform:
   m_Children:
   - {fileID: 2285119856317916872}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2766114860112414956
 MonoBehaviour:
@@ -393,6 +395,33 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 0}
+--- !u!114 &5067162108088885383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771022144477631135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &777542905938925580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771022144477631135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616207aea0a23e44c9442f550aa12633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+  MaxShieldCount: 3
+  ShieldCount: 0
 --- !u!1 &6510918689314661524
 GameObject:
   m_ObjectHideFlags: 0
