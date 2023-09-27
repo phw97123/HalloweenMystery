@@ -543,6 +543,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 1771022144477631135, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771022144477631135, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771022144477631135, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987322751038777043, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: baseStats.speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987322751038777043, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: baseStats.maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987322751038777043, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
+      propertyPath: baseStats.attackData
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7234414035955937528, guid: fe398d9b42c37420fbd40fee8dbc2f0d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -615,7 +639,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534447825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
