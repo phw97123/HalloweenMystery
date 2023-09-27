@@ -22,7 +22,7 @@ MonoBehaviour:
   isKnockBackOn: 1
   knockBackDuration: 5
   knockBackPower: 0.1
-  bulletTag: ShotgunBullet
+  bulletTag: Fire
   projectilesPerAttack: 1
   anglePerShot: 4
   piercingCount: 1

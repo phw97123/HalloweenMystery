@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class RangeEnemyController : EnemyController
 {
-    [SerializeField] private float followRange = 15f;
-    [SerializeField] private float shootRange = 10f;
+    [SerializeField] 
+    private float followRange = 15f;
+    [SerializeField] 
+    private float shootRange = 10f;
 
-    private RangeAttack rangeAttack;
-    private StatsHandler Stats;
+    private RangeAttack _rangeAttack;
 
     protected override void Start()
     {
         base.Start();
-        rangeAttack = GetComponent<RangeAttack>();
-        Stats = GetComponent<StatsHandler>();
+        _rangeAttack = GetComponent<RangeAttack>();
     }
 
     protected override void FixedUpdate()
@@ -35,8 +35,8 @@ public class RangeEnemyController : EnemyController
                 {
                     CallLook(direction);
                     CallMove(Vector2.zero);
-                    rangeAttack.enabled = true; // RangeAttack 스크립트 활성화
-                    CallAttack(); // 공격 호출
+                    _rangeAttack.enabled = true;
+                    CallAttack();
                 }
             }
             else

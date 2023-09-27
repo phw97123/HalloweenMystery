@@ -11,13 +11,14 @@ public class EnemyController : EntityController
     protected StatsHandler Stats { get; private set; }
 
     GameManager gameManager;
-    protected Transform ClosestTarget { get; private set; }
+    protected Transform Target { get; private set; }
 
     protected virtual void Start()
     {
-        //gameManager = GameManager.instance;
+        Stats = GetComponent<StatsHandler>();
+
         //ClosestTarget = gameManager.Player;
-        ClosestTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     protected virtual void FixedUpdate()
@@ -26,11 +27,11 @@ public class EnemyController : EntityController
 
     protected float DistanceToTarget()
     {
-        return Vector3.Distance(transform.position, ClosestTarget.position);
+        return Vector3.Distance(transform.position, Target.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (ClosestTarget.position - transform.position).normalized;
+        return (Target.position - transform.position).normalized;
     }
 }

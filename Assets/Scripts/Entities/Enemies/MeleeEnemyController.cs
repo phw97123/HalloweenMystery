@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class MeleeEnemyController : EnemyController
 {
-    [SerializeField][Range(0f, 100f)] private float followRange;
-    [SerializeField] private string targetTag = "Player";
+    [SerializeField]
+    [Range(0f, 100f)] private float followRange;
+    [SerializeField] 
+    private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
     [SerializeField] private SpriteRenderer characterRendere;
@@ -13,7 +15,6 @@ public class MeleeEnemyController : EnemyController
     private HealthSystem _collidingTargetHealthSystem;
     private Movement _collidingMovement;
 
-    // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
