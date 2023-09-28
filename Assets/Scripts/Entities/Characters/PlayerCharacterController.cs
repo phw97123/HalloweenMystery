@@ -11,7 +11,6 @@ namespace Entities
 
         private void Awake()
         {
-            Debug.Log("awake");
             _camera = Camera.main;
         }
 
@@ -25,8 +24,8 @@ namespace Entities
         {
             Vector2 screenPoint = input.Get<Vector2>();
             Vector3 worldPoint = _camera.ScreenToWorldPoint(screenPoint);
-            Vector2 dir = worldPoint - transform.position.normalized;
-            //Debug.Log($"dir is {dir}");
+            Vector2 dir = (worldPoint - transform.position).normalized;
+            Debug.Log($"dir is {dir}");
             CallLook(dir.normalized);
         }
 

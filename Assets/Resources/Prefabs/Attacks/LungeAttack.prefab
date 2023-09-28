@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4108229040945224685}
-  - component: {fileID: 7689741141329779647}
   - component: {fileID: 5838611204698729054}
   - component: {fileID: 2882797778239087339}
   - component: {fileID: 5930503995465651053}
+  - component: {fileID: 5263655972223802188}
+  - component: {fileID: 8466170475955122448}
+  - component: {fileID: 8164233384526070157}
   m_Layer: 0
   m_Name: LungeAttack
   m_TagString: Untagged
@@ -36,21 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7689741141329779647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2271864676484962390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675886dfa4d7477092db5e9eb6f4890e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelCollision:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!50 &5838611204698729054
 Rigidbody2D:
   serializedVersion: 4
@@ -186,7 +173,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.30535775, g: 0.31119886, b: 0.8867924, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -226,6 +213,52 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5263655972223802188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7532020b7a4a18883884407344e341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCollision:
+    serializedVersion: 2
+    m_Bits: 0
+  isReady: 1
+--- !u!114 &8466170475955122448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f70abda92b443786db9163f3d93ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8164233384526070157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27f53c1cd541d2b31a16db947c3669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackStatus:
+    currentAttackCount: 0
+    isCritical: 0
+    direction: {x: 0, y: 0}
+    degree: 0
+    attackData: {fileID: 11400000, guid: db57cae490ace493ca21f6b354996b07, type: 2}
 --- !u!1 &4127848452280332628
 GameObject:
   m_ObjectHideFlags: 0

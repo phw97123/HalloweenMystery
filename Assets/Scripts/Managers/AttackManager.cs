@@ -45,12 +45,12 @@ namespace Managers
         {
             _pool = gameObject.AddComponent<ObjectPool>();
             _prefabs = new List<Poolable>();
-            
             //todo resourcesManager
             GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Attacks");
             ParticleSystem ps = Resources.Load<ParticleSystem>("Prefabs/VFX/Explosion");
+
             defaultParticleSystem = Instantiate(ps);
-            
+
             foreach (GameObject obj in objects)
             {
                 Poolable p = new Poolable();
@@ -59,11 +59,34 @@ namespace Managers
                 p.Tag = obj.name;
                 _prefabs.Add(p);
             }
+
             _pool.Initialize(_prefabs);
         }
 
-        public void CreateProjectile(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
+        public void MeleeAttack(
+            string prefabTag,
+            Vector2 startPosition,
+            Vector2 direction,
+            int currentAttackCount,
+            float degree,
+            MeleeAttackDataSO attackData)
         {
+            GameObject go = _pool.Pop(prefabTag);
+            AttackController controller = go.GetComponent<AttackController>();
+
+            //todo apply critical
+            controller.Initialize(
+                startPosition: startPosition,
+                direction: direction,
+                degree: degree,
+                currentAttackCount: currentAttackCount,
+                isCritical: false,
+                attackData: attackData);
+        }
+
+        public void RangeAttack(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
+        {
+            //todo migrate to range attack
             float startDegree = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             startDegree -= (rangeAttackData.projectilesPerAttack * rangeAttackData.anglePerShot * 0.5f);
 
@@ -76,6 +99,7 @@ namespace Managers
                     x: direction.x + Mathf.Cos(currentRad),
                     y: direction.y + Mathf.Sin(currentRad)).normalized;
 
+                //todo only exists it 
                 GameObject go = _pool.Pop(rangeAttackData.bulletTag);
                 ProjectileController controller = go.GetComponent<ProjectileController>();
                 controller.Initialize(startPosition, currentDirection, currentDegree, rangeAttackData);
@@ -87,8 +111,6 @@ namespace Managers
             if (showFx)
             {
                 //todo particle system
-                defaultParticleSystem.transform.position = obj.transform.position;
-                defaultParticleSystem.Play();
             }
 
             obj.SetActive(false);

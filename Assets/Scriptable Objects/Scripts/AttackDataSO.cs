@@ -6,6 +6,7 @@ using UnityEngine;
 public class AttackDataSO : ScriptableObject
 {
     [Header("Attack Info")] public LayerMask target;
+    public string prefabTag;
     public int damage;
     public float delay;
     public float speed;

@@ -9,20 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d23698e46ca64755b0a214eb22c252d, type: 3}
-  m_Name: SworldAttackData
+  m_Script: {fileID: 11500000, guid: 947f914be59df474ea26d248b6b92b89, type: 3}
+  m_Name: Player Axe Attack Data
   m_EditorClassIdentifier: 
   target:
     serializedVersion: 2
     m_Bits: 0
+  prefabTag: Axe
   damage: 0
-  delay: 1.5
-  speed: 5
-  range: 1
+  delay: 0
+  speed: 0
+  range: 0
   isKnockBackOn: 0
   knockBackDuration: 0
   knockBackPower: 0
-  attackTag: 
-  arc: 120
-  attackCount: 5
+  attackTag: Axe
+  arc: 0
+  attackCount: 0
   targets: 0

@@ -9,20 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86303b06eb26a4d75b2ed5a24afee03b, type: 3}
-  m_Name: ShotgunAttackData
+  m_Script: {fileID: 11500000, guid: 86442c168f23f924f9e77e74edcd68fd, type: 3}
+  m_Name: Player Pistol Attack Data
   m_EditorClassIdentifier: 
   target:
     serializedVersion: 2
     m_Bits: 0
   damage: 0
-  delay: 0.5
-  speed: 8
-  range: 4
+  delay: 0
+  speed: 0
+  range: 0
   isKnockBackOn: 0
   knockBackDuration: 0
   knockBackPower: 0
-  bulletTag: ShotgunBullet
-  projectilesPerAttack: 10
-  anglePerShot: 6
+  bulletTag: 
+  projectilesPerAttack: 0
+  anglePerShot: 0
   piercingCount: 0

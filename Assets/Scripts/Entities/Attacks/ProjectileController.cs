@@ -6,6 +6,7 @@ namespace Entities
 {
     public class ProjectileController : MonoBehaviour
     {
+        //todo refactor like melee attack
         private Rigidbody2D _rigidbody;
         private TrailRenderer _trailRenderer;
         private RangeAttackDataSO _rangeAttack;

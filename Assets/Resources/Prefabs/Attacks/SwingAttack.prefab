@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5838611204698729054}
   - component: {fileID: 2882797778239087339}
   - component: {fileID: 5930503995465651053}
+  - component: {fileID: 4392980596920140556}
+  - component: {fileID: -3720465516677378198}
   m_Layer: 0
   m_Name: SwingAttack
   m_TagString: Untagged
@@ -48,6 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675886dfa4d7477092db5e9eb6f4890e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCollision:
+    serializedVersion: 2
+    m_Bits: 0
+  isReady: 0
 --- !u!50 &5838611204698729054
 Rigidbody2D:
   serializedVersion: 4
@@ -170,39 +176,39 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.97069263
-        value: 0.45827526
-        inSlope: -1.0186771
-        outSlope: -1.0186771
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
+        time: 0.5573425
+        value: 0.5576935
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      - serializedVersion: 3
+        time: 0.5843706
+        value: 0
+        inSlope: -1.0186771
+        outSlope: -1.0186771
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.31044322, g: 0.7594365, b: 0.89775246, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
+      ctime1: 36430
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -232,6 +238,39 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &4392980596920140556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27f53c1cd541d2b31a16db947c3669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackStatus:
+    startPosition: {x: 0, y: 0}
+    attackType: 0
+    currentAttackCount: 0
+    isCritical: 0
+    direction: {x: 0, y: 0}
+    degree: 0
+    attackData: {fileID: 11400000, guid: e4a78f7f817194ae4af09f951d9acf5e, type: 2}
+--- !u!114 &-3720465516677378198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cf140782fc4e64b65bb93fdc8d2cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivot: {fileID: 4108229040945224685}
 --- !u!1 &4127848452280332628
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +345,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.23245955, g: 0, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
