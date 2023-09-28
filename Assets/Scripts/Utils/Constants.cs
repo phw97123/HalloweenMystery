@@ -4,5 +4,7 @@ namespace Utils
     {
         public const string SWING_TAG = "SwingAttack";
         public const string LUNGE_TAG = "SwingAttack";
+        public const string PLAYER_TAG = "Player";
+        public const string ARM_PIVOT = "ArmPivot";
     }
 }
