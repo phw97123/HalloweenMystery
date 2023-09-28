@@ -7,15 +7,13 @@ using UnityEngine;
 public class PickupBuff : PickupItem
 {
     [SerializeField] private BuffDataSO buffDataSO;
-    private StatsHandler _statsHandler;
+    private BuffSystem _buffSystem;
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        _statsHandler = receiver.GetComponent<StatsHandler>();
-        foreach (CharacterStats stat in buffDataSO.Stats)
-        {
-            _statsHandler.AddStatModifier(stat);
-        }
+        _buffSystem = receiver.GetComponent<BuffSystem>();
+        _buffSystem.AddBuffStats(buffDataSO);
+
         gameObject.SetActive(false);
         StartCoroutine(DelayRemoveStatModifier());
     }
@@ -23,10 +21,7 @@ public class PickupBuff : PickupItem
     IEnumerator DelayRemoveStatModifier()
     {
         yield return buffDataSO.BuffDuration;
-        foreach (CharacterStats stat in buffDataSO.Stats)
-        {
-            _statsHandler.RemoveStatModifier(stat);
-        }
+        _buffSystem.RemoveBuffStats(buffDataSO);
 
         Destroy(gameObject);
     }
