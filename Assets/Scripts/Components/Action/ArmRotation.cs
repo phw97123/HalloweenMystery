@@ -1,19 +1,20 @@
 using Components.Stats;
 using Entites;
 using Entities;
+using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Components.Action
 {
+    [Obsolete("Divide into BodyFlip, WeaponRotation")]
     public class ArmRotation : MonoBehaviour
     {
         private EntityController _controller;
         [SerializeField] private Transform armPivot;
         [SerializeField] private SpriteRenderer characterRenderer;
         [SerializeField] private SpriteRenderer weaponRenderer;
-        [SerializeField] private bool weaponFlipY = true;
 
 
         private void Awake()
@@ -22,9 +23,6 @@ namespace Components.Action
             weaponRenderer = GetComponentsInChildren<Transform>()
                 .First(go => go.gameObject.CompareTag("Weapon"))
                 .GetComponentInChildren<SpriteRenderer>();
-            Debug.Assert(armPivot != null);
-            Debug.Assert(characterRenderer != null);
-            Debug.Assert(weaponRenderer != null);
         }
 
         private void Start()
