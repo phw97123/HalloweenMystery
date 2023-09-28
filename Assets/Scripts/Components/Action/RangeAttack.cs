@@ -25,13 +25,12 @@ namespace Components.Action
             _attackManager = AttackManager.Instance;
             _stats = GetComponentInParent<StatsHandler>();
             _controller = GetComponentInParent<EntityController>();
-
-            Debug.Assert(_stats != null);
-            Debug.Assert(_controller != null);
         }
 
         private void Start()
         {
+            if (_controller == null) { return; }
+
             _controller.OnAttackEvent += Attack;
             _controller.OnLookEvent += Aim;
         }
