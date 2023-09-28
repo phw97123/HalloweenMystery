@@ -80,7 +80,7 @@ namespace Components.Action
 
         private void CreateProjectile(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
         {
-            AttackManager.Instance.RangeAttack(startPosition, direction, rangeAttackData);
+            _attackManager.RangeAttack(startPosition, direction, rangeAttackData);
         }
     }
 }
