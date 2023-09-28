@@ -57,10 +57,14 @@ namespace Components.Action
 
                 _isAttacking = false;
                 _timeSinceLastAttack = 0f;
+                //to position projectile on gun-point
+                Vector2 scaleOfWeapon = spawnPosition.lossyScale;
+                Vector3 startPosition = spawnPosition.position;
+                startPosition.x += _direction.x * scaleOfWeapon.x;
+                startPosition.y += _direction.y * scaleOfWeapon.y;
 
-                //todo attackManager
                 CreateProjectile(
-                    startPosition: spawnPosition.position,
+                    startPosition: startPosition,
                     direction: _direction,
                     rangeAttack
                 );
