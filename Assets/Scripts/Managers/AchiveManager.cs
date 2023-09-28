@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,7 @@ public enum Achievement
 public class AchiveManager : MonoBehaviour
 {
     private static AchiveManager _instance;
+
     public static AchiveManager Instance
     {
         get
@@ -44,7 +46,9 @@ public class AchiveManager : MonoBehaviour
 
     public AchievementData[] achievementDataList;
 
-    private Dictionary<Achievement, bool> achiveDic;
+    private Dictionary<Achievement, bool> achivementDic;
+
+    private DataManager dataManager;
 
     private void Awake()
     {
@@ -58,17 +62,32 @@ public class AchiveManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        achiveDic = new Dictionary<Achievement, bool>();
+        achivementDic = new Dictionary<Achievement, bool>();
 
-        //if(해금된 업적 데이터가 없다면) 
-        Init();
+        dataManager = GetComponent<DataManager>();
+
+        LoadAchievementData();
+    }
+
+    private void LoadAchievementData()
+    {
+        Dictionary<Achievement, bool> loadedAchievmentData = dataManager.LoadData<Dictionary<Achievement, bool>>();
+
+        if (loadedAchievmentData != null)
+        {
+            achivementDic = loadedAchievmentData;
+        }
+        else
+        {
+            Init();
+        }
     }
 
     private void Init()
     {
         foreach (Achievement achive in Enum.GetValues(typeof(Achievement)))
         {
-            achiveDic.Add(achive, false);
+            achivementDic.Add(achive, false);
         }
     }
 
@@ -79,19 +98,26 @@ public class AchiveManager : MonoBehaviour
 
     private void Unlocked()
     {
-        for (int i = 0; i < achievementDataList.Length; i++)
+        foreach (var kvp in achivementDic)
         {
-            //bool isUnlock = achiveDic[(Achive)i];
-            //무기 UI 활성화
+            if (kvp.Value)
+            {
+                Debug.Log("Achievement unlocked: " + kvp.Key);
+            }
         }
     }
 
-    public void UnlockAchieve(Achievement achive)
+    public void UnlockAchieve(Achievement achivement)
     {
-        if (achiveDic.ContainsKey(achive))
+        if (achivementDic.ContainsKey(achivement) && achivementDic[achivement] == false)
         {
-            achiveDic[achive] = true;
+            achivementDic[achivement] = true;
+            SaveAchievementData();
         }
+    }
+
+    private void SaveAchievementData()
+    {
+        dataManager.SaveData(achivementDic);
     }
 }
-
