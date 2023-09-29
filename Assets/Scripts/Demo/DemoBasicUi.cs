@@ -1,9 +1,10 @@
 #if UNITY_EDITOR
+using UI;
 using UnityEngine;
 
 namespace Managers
 {
-    public class DemoBasicUi : MonoBehaviour
+    public class DemoBasicUi : UIPopup
     {
         private DemoUi _parentUi;
 
