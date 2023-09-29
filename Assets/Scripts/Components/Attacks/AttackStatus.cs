@@ -15,6 +15,7 @@ namespace Components.Attacks
     [Serializable]
     public struct AttackStatus
     {
+        public string attackTag;
         public Vector2 startPosition;
         public AttackType attackType;
         public int currentAttackCount;
@@ -25,8 +26,7 @@ namespace Components.Attacks
         public AttackDataSO attackData;
 
         public AttackStatus(int currentAttackCount, bool isCritical, Vector2 startPosition, Vector2 direction,
-            float degree,
-            AttackDataSO attackData)
+            float degree, AttackDataSO attackData, string attackTag)
         {
             this.currentAttackCount = currentAttackCount;
             this.isCritical = isCritical;
@@ -34,7 +34,8 @@ namespace Components.Attacks
             this.degree = degree;
             this.attackData = attackData;
             this.startPosition = startPosition;
-            
+            this.attackTag = attackTag;
+
             if (attackData is MeleeAttackDataSO)
             {
                 attackType = AttackType.Melee;

@@ -26,6 +26,15 @@ namespace Components.Action
             _controller.OnLookEvent += RotateWeapon;
         }
 
+        private void OnDestroy()
+        {
+            if (_controller != null)
+            {
+                _controller.OnLookEvent -= RotateWeapon;                
+            }
+            
+        }
+
         private void RotateWeapon(Vector2 dir)
         {
             float angleDegree = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

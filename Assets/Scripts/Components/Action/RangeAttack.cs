@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Components.Action
 {
-    public class RangeAttack : MonoBehaviour
+    public class RangeAttack : BaseAttack
     {
         private StatsHandler _stats;
         private EntityController _controller;

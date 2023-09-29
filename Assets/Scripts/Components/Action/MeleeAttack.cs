@@ -8,7 +8,7 @@ using Utils;
 
 namespace Components.Action
 {
-    public class MeleeAttack : MonoBehaviour
+    public class MeleeAttack : BaseAttack
     {
         private EntityController _controller;
         private StatsHandler _stats;
@@ -90,10 +90,10 @@ namespace Components.Action
 
         private string GetCurrentAttackTag(MeleeAttackDataSO meleeAttack)
         {
-            if ((int)meleeAttack.attackCount <= _currentAttackCount)
-            {
-                return meleeAttack.prefabTag;
-            }
+            // if ((int)meleeAttack.attackCount <= _currentAttackCount)
+            // {
+            //     return meleeAttack.prefabTag;
+            // }
 
             if (meleeAttack.arc <= 0)
             {

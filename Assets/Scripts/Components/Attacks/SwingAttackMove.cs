@@ -67,7 +67,7 @@ namespace Components.Attacks
 
             if (_elapsedTime >= _endTime)
             {
-                _controller.Inactivate(_meleeAttack.prefabTag, false);
+                _controller.Inactivate(_handler.attackStatus.attackTag, false);
             }
         }
 
