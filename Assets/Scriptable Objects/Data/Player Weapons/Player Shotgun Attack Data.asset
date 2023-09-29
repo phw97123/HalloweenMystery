@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   prefabTag: Bullet
-  damage: 2
+  damage: 3
   delay: 1.5
-  speed: 20
-  range: 3.5
+  speed: 10
+  range: 5
   isKnockBackOn: 1
   knockBackDuration: 1
   knockBackPower: 1.5

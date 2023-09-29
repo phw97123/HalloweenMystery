@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   prefabTag: Axe
-  damage: 0
-  delay: 0
-  speed: 0
-  range: 0
-  isKnockBackOn: 0
-  knockBackDuration: 0
-  knockBackPower: 0
+  damage: 5
+  delay: 2.5
+  speed: 10
+  range: 3
+  isKnockBackOn: 1
+  knockBackDuration: 1
+  knockBackPower: 2
   attackTag: Axe
-  arc: 0
-  attackCount: 0
-  targets: 0
+  arc: 90
+  attackCount: 2
+  targets: 6
