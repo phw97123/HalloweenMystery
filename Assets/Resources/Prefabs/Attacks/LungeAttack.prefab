@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5263655972223802188}
   - component: {fileID: 8466170475955122448}
   - component: {fileID: 8164233384526070157}
+  - component: {fileID: -4274828846658960274}
   m_Layer: 0
   m_Name: LungeAttack
   m_TagString: Untagged
@@ -254,11 +255,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackStatus:
+    attackTag: 
+    startPosition: {x: 0, y: 0}
+    attackType: 0
     currentAttackCount: 0
     isCritical: 0
     direction: {x: 0, y: 0}
     degree: 0
     attackData: {fileID: 11400000, guid: db57cae490ace493ca21f6b354996b07, type: 2}
+--- !u!114 &-4274828846658960274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271864676484962390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c148d89c444900a3e965d3dab856cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCollision:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4127848452280332628
 GameObject:
   m_ObjectHideFlags: 0

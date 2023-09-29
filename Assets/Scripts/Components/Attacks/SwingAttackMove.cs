@@ -45,7 +45,7 @@ namespace Components.Attacks
             _meleeAttack = _handler.attackStatus.attackData as MeleeAttackDataSO;
             if (_meleeAttack == null) return;
             _elapsedTime = 0f;
-            pivot.localScale = new Vector3(pivot.localScale.x * _meleeAttack.range, 0);
+            pivot.localScale = new Vector3(_meleeAttack.range, 0.2f);
             _endTime = _meleeAttack.range * _meleeAttack.arc * Mathf.Deg2Rad / _meleeAttack.speed;
             _startPosition = _handler.attackStatus.startPosition;
 
