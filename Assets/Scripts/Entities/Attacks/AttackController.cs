@@ -11,7 +11,7 @@ namespace Entities
         [SerializeField] protected bool isReady = false;
 
         private AttackManager _attackManager;
-        private TrailRenderer _trailRenderer;
+        protected TrailRenderer _trailRenderer;
 
         protected AttackStatusHandler Handler;
         public event Action OnMoveEvent;
@@ -62,6 +62,7 @@ namespace Entities
                 attackTag: attackTag
             );
             Handler.SetStatus(status, this);
+            
             isReady = true;
         }
 

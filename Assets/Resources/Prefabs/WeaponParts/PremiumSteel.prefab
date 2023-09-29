@@ -211,11 +211,10 @@ MonoBehaviour:
     goldPercentage: 0
     itemDropPercentage: 0
     buffDurationIncrease: 0
-    attackData: {fileID: 11400000, guid: df63518e64bed2241a15fb6c5fc2f790, type: 2}
+    attackData: {fileID: 11400000, guid: 5a79b04a69cdb77419b0d9f589e1bd23, type: 2}
   interactTag: Player
   partsName: "\uACE0\uAE09\uCCA0"
-  partsDescription: "\uC6D0\uAC70\uB9AC \uBB34\uAE30\uC758 \uB51C\uB808\uC774\uB97C
-    1\uCD08 \uAC10\uC18C\uC2DC\uD0B5\uB2C8\uB2E4"
+  partsDescription: "\uACF5\uACA9\uC18D\uB3C4\uB97C 10 \uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4"
   price: 0
   isEquiped: 0
   descriptionText: {fileID: 3706205670441175888}

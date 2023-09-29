@@ -14,13 +14,12 @@ public class PickupBuff : PickupItem
         _buffSystem = receiver.GetComponent<BuffSystem>();
         _buffSystem.AddBuffStats(buffDataSO);
 
+        Invoke("DelayRemoveStatModifier", buffDataSO.BuffDuration);
         gameObject.SetActive(false);
-        StartCoroutine(DelayRemoveStatModifier());
     }
 
-    IEnumerator DelayRemoveStatModifier()
+    protected void DelayRemoveStatModifier()
     {
-        yield return buffDataSO.BuffDuration;
         _buffSystem.RemoveBuffStats(buffDataSO);
 
         Destroy(gameObject);
