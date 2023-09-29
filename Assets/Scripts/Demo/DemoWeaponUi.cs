@@ -3,12 +3,13 @@
 
 using Entites;
 using System;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Managers
 {
-    public class DemoWeaponUi : MonoBehaviour
+    public class DemoWeaponUi : UIPopup
     {
         private DemoUi _demoUi;
 

@@ -52,7 +52,7 @@ namespace Managers
         private void LoadDemoUI()
         {
             //todo
-            uiManager.ShowUIPopupByName("DemoUi");
+            uiManager.ShowUIPopupByName("Demo/DemoUi");
         }
 
 
