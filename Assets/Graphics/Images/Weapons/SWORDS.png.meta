@@ -141,9 +141,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -164,7 +164,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -183,9 +183,9 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -206,7 +206,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -225,9 +225,9 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -248,7 +248,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -269,7 +269,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -288,9 +288,9 @@ TextureImporter:
         serializedVersion: 2
         x: 224
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -311,7 +311,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -330,9 +330,9 @@ TextureImporter:
         serializedVersion: 2
         x: 288
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -353,7 +353,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -372,9 +372,9 @@ TextureImporter:
         serializedVersion: 2
         x: 352
         y: 608
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -395,7 +395,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -416,7 +416,7 @@ TextureImporter:
         y: 608
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -435,9 +435,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 576
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -456,9 +456,9 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 576
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -477,9 +477,9 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 576
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -498,9 +498,9 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 576
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -519,9 +519,9 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 576
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -540,9 +540,9 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 576
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -561,9 +561,9 @@ TextureImporter:
         serializedVersion: 2
         x: 192
         y: 576
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -582,9 +582,9 @@ TextureImporter:
         serializedVersion: 2
         x: 224
         y: 576
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -603,9 +603,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -624,9 +624,9 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -645,9 +645,9 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -666,9 +666,9 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -687,9 +687,9 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -708,9 +708,9 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 544
-        width: 29
-        height: 29
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -729,9 +729,9 @@ TextureImporter:
         serializedVersion: 2
         x: 224
         y: 544
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -750,9 +750,9 @@ TextureImporter:
         serializedVersion: 2
         x: 256
         y: 544
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -771,9 +771,9 @@ TextureImporter:
         serializedVersion: 2
         x: 288
         y: 544
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -791,10 +791,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 511
-        width: 33
-        height: 33
-      alignment: 0
+        y: 544
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -811,11 +811,11 @@ TextureImporter:
       name: SWORDS_32
       rect:
         serializedVersion: 2
-        x: 319
+        x: 352
         y: 544
-        width: 33
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -832,11 +832,11 @@ TextureImporter:
       name: SWORDS_33
       rect:
         serializedVersion: 2
-        x: 353
-        y: 543
-        width: 30
-        height: 30
-      alignment: 0
+        x: 384
+        y: 544
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -853,11 +853,11 @@ TextureImporter:
       name: SWORDS_34
       rect:
         serializedVersion: 2
-        x: 385
+        x: 416
         y: 544
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -874,11 +874,11 @@ TextureImporter:
       name: SWORDS_35
       rect:
         serializedVersion: 2
-        x: 417
-        y: 545
-        width: 30
-        height: 30
-      alignment: 0
+        x: 448
+        y: 544
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -897,9 +897,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -918,9 +918,9 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -939,9 +939,9 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -960,9 +960,9 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -981,9 +981,9 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1002,9 +1002,9 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 512
-        width: 30
-        height: 30
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1021,11 +1021,11 @@ TextureImporter:
       name: SWORDS_42
       rect:
         serializedVersion: 2
-        x: 415
-        y: 513
+        x: 320
+        y: 512
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1042,11 +1042,11 @@ TextureImporter:
       name: SWORDS_43
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        x: 352
+        y: 512
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1063,11 +1063,11 @@ TextureImporter:
       name: SWORDS_44
       rect:
         serializedVersion: 2
-        x: 32
-        y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        x: 384
+        y: 512
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1084,11 +1084,11 @@ TextureImporter:
       name: SWORDS_45
       rect:
         serializedVersion: 2
-        x: 64
-        y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        x: 416
+        y: 512
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1105,11 +1105,11 @@ TextureImporter:
       name: SWORDS_46
       rect:
         serializedVersion: 2
-        x: 96
-        y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        x: 448
+        y: 512
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1126,11 +1126,11 @@ TextureImporter:
       name: SWORDS_47
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1147,11 +1147,11 @@ TextureImporter:
       name: SWORDS_48
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1168,11 +1168,11 @@ TextureImporter:
       name: SWORDS_49
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1189,11 +1189,11 @@ TextureImporter:
       name: SWORDS_50
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 480
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1210,11 +1210,11 @@ TextureImporter:
       name: SWORDS_51
       rect:
         serializedVersion: 2
-        x: 0
-        y: 416
-        width: 64
-        height: 64
-      alignment: 0
+        x: 128
+        y: 480
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1231,11 +1231,11 @@ TextureImporter:
       name: SWORDS_52
       rect:
         serializedVersion: 2
-        x: 32
-        y: 384
-        width: 96
-        height: 96
-      alignment: 0
+        x: 160
+        y: 480
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1252,11 +1252,11 @@ TextureImporter:
       name: SWORDS_53
       rect:
         serializedVersion: 2
-        x: 96
-        y: 416
-        width: 64
-        height: 64
-      alignment: 0
+        x: 192
+        y: 480
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1273,11 +1273,11 @@ TextureImporter:
       name: SWORDS_54
       rect:
         serializedVersion: 2
-        x: 160
-        y: 448
+        x: 224
+        y: 480
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1294,11 +1294,11 @@ TextureImporter:
       name: SWORDS_55
       rect:
         serializedVersion: 2
-        x: 192
+        x: 0
         y: 448
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1315,11 +1315,11 @@ TextureImporter:
       name: SWORDS_56
       rect:
         serializedVersion: 2
-        x: 224
+        x: 32
         y: 448
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1336,11 +1336,11 @@ TextureImporter:
       name: SWORDS_57
       rect:
         serializedVersion: 2
-        x: 256
+        x: 64
         y: 448
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1357,11 +1357,11 @@ TextureImporter:
       name: SWORDS_58
       rect:
         serializedVersion: 2
-        x: 384
+        x: 96
         y: 448
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1378,11 +1378,11 @@ TextureImporter:
       name: SWORDS_59
       rect:
         serializedVersion: 2
-        x: 416
+        x: 128
         y: 448
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1399,11 +1399,11 @@ TextureImporter:
       name: SWORDS_60
       rect:
         serializedVersion: 2
-        x: 448
+        x: 160
         y: 448
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1420,11 +1420,11 @@ TextureImporter:
       name: SWORDS_61
       rect:
         serializedVersion: 2
-        x: 480
+        x: 192
         y: 448
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1441,11 +1441,11 @@ TextureImporter:
       name: SWORDS_62
       rect:
         serializedVersion: 2
-        x: 160
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
+        x: 224
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1462,11 +1462,11 @@ TextureImporter:
       name: SWORDS_63
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
+        x: 256
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1483,11 +1483,11 @@ TextureImporter:
       name: SWORDS_64
       rect:
         serializedVersion: 2
-        x: 224
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
+        x: 384
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1504,11 +1504,11 @@ TextureImporter:
       name: SWORDS_65
       rect:
         serializedVersion: 2
-        x: 384
-        y: 416
-        width: 31
-        height: 31
-      alignment: 0
+        x: 416
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1525,11 +1525,11 @@ TextureImporter:
       name: SWORDS_66
       rect:
         serializedVersion: 2
-        x: 416
-        y: 416
-        width: 31
-        height: 31
-      alignment: 0
+        x: 448
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1546,11 +1546,11 @@ TextureImporter:
       name: SWORDS_67
       rect:
         serializedVersion: 2
-        x: 448
-        y: 416
-        width: 31
-        height: 31
-      alignment: 0
+        x: 480
+        y: 448
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1567,11 +1567,11 @@ TextureImporter:
       name: SWORDS_68
       rect:
         serializedVersion: 2
-        x: 480
+        x: 0
         y: 416
-        width: 31
-        height: 31
-      alignment: 0
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1588,11 +1588,11 @@ TextureImporter:
       name: SWORDS_69
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 32
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1609,11 +1609,11 @@ TextureImporter:
       name: SWORDS_70
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 64
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1630,11 +1630,11 @@ TextureImporter:
       name: SWORDS_71
       rect:
         serializedVersion: 2
-        x: 288
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 96
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1651,11 +1651,11 @@ TextureImporter:
       name: SWORDS_72
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 192
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1672,11 +1672,11 @@ TextureImporter:
       name: SWORDS_73
       rect:
         serializedVersion: 2
-        x: 416
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 224
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1693,11 +1693,11 @@ TextureImporter:
       name: SWORDS_74
       rect:
         serializedVersion: 2
-        x: 448
-        y: 384
-        width: 31
-        height: 31
-      alignment: 0
+        x: 256
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1714,11 +1714,11 @@ TextureImporter:
       name: SWORDS_75
       rect:
         serializedVersion: 2
-        x: 480
-        y: 384
-        width: 31
+        x: 384
+        y: 416
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1735,11 +1735,11 @@ TextureImporter:
       name: SWORDS_76
       rect:
         serializedVersion: 2
-        x: 0
-        y: 352
-        width: 30
-        height: 30
-      alignment: 0
+        x: 416
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1756,11 +1756,11 @@ TextureImporter:
       name: SWORDS_77
       rect:
         serializedVersion: 2
-        x: 32
-        y: 352
-        width: 30
-        height: 30
-      alignment: 0
+        x: 448
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1777,11 +1777,11 @@ TextureImporter:
       name: SWORDS_78
       rect:
         serializedVersion: 2
-        x: 64
-        y: 352
-        width: 31
-        height: 31
-      alignment: 0
+        x: 480
+        y: 416
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1798,11 +1798,11 @@ TextureImporter:
       name: SWORDS_79
       rect:
         serializedVersion: 2
-        x: 96
-        y: 352
-        width: 31
-        height: 31
-      alignment: 0
+        x: 0
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1819,11 +1819,11 @@ TextureImporter:
       name: SWORDS_80
       rect:
         serializedVersion: 2
-        x: 128
-        y: 352
-        width: 31
-        height: 31
-      alignment: 0
+        x: 32
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1840,11 +1840,11 @@ TextureImporter:
       name: SWORDS_81
       rect:
         serializedVersion: 2
-        x: 480
-        y: 352
-        width: 31
-        height: 31
-      alignment: 0
+        x: 64
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1861,11 +1861,11 @@ TextureImporter:
       name: SWORDS_82
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
+        x: 96
+        y: 384
         width: 32
-        height: 30
-      alignment: 0
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1882,11 +1882,11 @@ TextureImporter:
       name: SWORDS_83
       rect:
         serializedVersion: 2
-        x: 32
-        y: 320
+        x: 128
+        y: 384
         width: 32
-        height: 30
-      alignment: 0
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1903,11 +1903,11 @@ TextureImporter:
       name: SWORDS_84
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
+        x: 160
+        y: 384
         width: 32
-        height: 30
-      alignment: 0
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1924,11 +1924,11 @@ TextureImporter:
       name: SWORDS_85
       rect:
         serializedVersion: 2
-        x: 160
-        y: 320
+        x: 192
+        y: 384
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1945,11 +1945,11 @@ TextureImporter:
       name: SWORDS_86
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
+        x: 224
+        y: 384
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1966,11 +1966,11 @@ TextureImporter:
       name: SWORDS_87
       rect:
         serializedVersion: 2
-        x: 352
-        y: 320
-        width: 31
-        height: 31
-      alignment: 0
+        x: 256
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1987,11 +1987,11 @@ TextureImporter:
       name: SWORDS_88
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
-        width: 30
-        height: 30
-      alignment: 0
+        x: 288
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2008,11 +2008,11 @@ TextureImporter:
       name: SWORDS_89
       rect:
         serializedVersion: 2
-        x: 32
-        y: 288
-        width: 31
-        height: 31
-      alignment: 0
+        x: 384
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2029,11 +2029,11 @@ TextureImporter:
       name: SWORDS_90
       rect:
         serializedVersion: 2
-        x: 64
-        y: 288
-        width: 31
-        height: 31
-      alignment: 0
+        x: 416
+        y: 384
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2050,11 +2050,11 @@ TextureImporter:
       name: SWORDS_91
       rect:
         serializedVersion: 2
-        x: 160
-        y: 288
-        width: 31
+        x: 448
+        y: 384
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2071,11 +2071,11 @@ TextureImporter:
       name: SWORDS_92
       rect:
         serializedVersion: 2
-        x: 192
-        y: 288
-        width: 31
+        x: 480
+        y: 384
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2092,11 +2092,11 @@ TextureImporter:
       name: SWORDS_93
       rect:
         serializedVersion: 2
-        x: 352
-        y: 288
-        width: 31
-        height: 31
-      alignment: 0
+        x: 0
+        y: 352
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2113,11 +2113,11 @@ TextureImporter:
       name: SWORDS_94
       rect:
         serializedVersion: 2
-        x: 2
-        y: 258
-        width: 26
-        height: 27
-      alignment: 0
+        x: 32
+        y: 352
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2134,11 +2134,11 @@ TextureImporter:
       name: SWORDS_95
       rect:
         serializedVersion: 2
-        x: 34
-        y: 258
-        width: 26
-        height: 27
-      alignment: 0
+        x: 64
+        y: 352
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2155,11 +2155,11 @@ TextureImporter:
       name: SWORDS_96
       rect:
         serializedVersion: 2
-        x: 66
-        y: 258
-        width: 26
-        height: 27
-      alignment: 0
+        x: 96
+        y: 352
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2176,11 +2176,11 @@ TextureImporter:
       name: SWORDS_97
       rect:
         serializedVersion: 2
-        x: 160
-        y: 224
-        width: 62
-        height: 64
-      alignment: 0
+        x: 128
+        y: 352
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2197,11 +2197,11 @@ TextureImporter:
       name: SWORDS_98
       rect:
         serializedVersion: 2
-        x: 352
-        y: 256
+        x: 480
+        y: 352
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2219,10 +2219,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
-        width: 31
-        height: 31
-      alignment: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2240,10 +2240,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 224
+        y: 320
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2260,11 +2260,11 @@ TextureImporter:
       name: SWORDS_101
       rect:
         serializedVersion: 2
-        x: 192
-        y: 224
+        x: 64
+        y: 320
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2281,11 +2281,11 @@ TextureImporter:
       name: SWORDS_102
       rect:
         serializedVersion: 2
-        x: 352
-        y: 224
+        x: 160
+        y: 320
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2302,11 +2302,11 @@ TextureImporter:
       name: SWORDS_103
       rect:
         serializedVersion: 2
-        x: 384
-        y: 224
+        x: 192
+        y: 320
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2323,11 +2323,11 @@ TextureImporter:
       name: SWORDS_104
       rect:
         serializedVersion: 2
-        x: 416
-        y: 224
+        x: 352
+        y: 320
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2344,11 +2344,11 @@ TextureImporter:
       name: SWORDS_105
       rect:
         serializedVersion: 2
-        x: 448
-        y: 224
+        x: 0
+        y: 288
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2365,11 +2365,11 @@ TextureImporter:
       name: SWORDS_106
       rect:
         serializedVersion: 2
-        x: 480
-        y: 224
-        width: 31
-        height: 31
-      alignment: 0
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2386,11 +2386,11 @@ TextureImporter:
       name: SWORDS_107
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 31
+        x: 64
+        y: 288
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2407,11 +2407,11 @@ TextureImporter:
       name: SWORDS_108
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
-        width: 31
+        x: 160
+        y: 288
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2428,11 +2428,11 @@ TextureImporter:
       name: SWORDS_109
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
-        width: 30
+        x: 192
+        y: 288
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2449,11 +2449,11 @@ TextureImporter:
       name: SWORDS_110
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 30
+        x: 352
+        y: 288
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2470,11 +2470,11 @@ TextureImporter:
       name: SWORDS_111
       rect:
         serializedVersion: 2
-        x: 352
-        y: 192
-        width: 31
-        height: 31
-      alignment: 0
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2491,11 +2491,11 @@ TextureImporter:
       name: SWORDS_112
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
-        width: 31
-        height: 31
-      alignment: 0
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2512,11 +2512,11 @@ TextureImporter:
       name: SWORDS_113
       rect:
         serializedVersion: 2
-        x: 416
-        y: 192
-        width: 31
-        height: 31
-      alignment: 0
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2533,11 +2533,11 @@ TextureImporter:
       name: SWORDS_114
       rect:
         serializedVersion: 2
-        x: 448
-        y: 192
-        width: 31
-        height: 31
-      alignment: 0
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2554,11 +2554,11 @@ TextureImporter:
       name: SWORDS_115
       rect:
         serializedVersion: 2
-        x: 480
-        y: 192
-        width: 31
-        height: 31
-      alignment: 0
+        x: 192
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2575,11 +2575,11 @@ TextureImporter:
       name: SWORDS_116
       rect:
         serializedVersion: 2
-        x: 2
-        y: 162
-        width: 28
-        height: 28
-      alignment: 0
+        x: 352
+        y: 256
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2596,11 +2596,11 @@ TextureImporter:
       name: SWORDS_117
       rect:
         serializedVersion: 2
-        x: 34
-        y: 162
-        width: 29
-        height: 29
-      alignment: 0
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2617,11 +2617,11 @@ TextureImporter:
       name: SWORDS_118
       rect:
         serializedVersion: 2
-        x: 161
-        y: 161
-        width: 29
-        height: 29
-      alignment: 0
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2638,11 +2638,11 @@ TextureImporter:
       name: SWORDS_119
       rect:
         serializedVersion: 2
-        x: 193
-        y: 161
-        width: 29
-        height: 29
-      alignment: 0
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2659,11 +2659,11 @@ TextureImporter:
       name: SWORDS_120
       rect:
         serializedVersion: 2
-        x: 354
-        y: 160
-        width: 28
+        x: 192
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2680,11 +2680,11 @@ TextureImporter:
       name: SWORDS_121
       rect:
         serializedVersion: 2
-        x: 386
-        y: 160
-        width: 28
+        x: 352
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2701,11 +2701,11 @@ TextureImporter:
       name: SWORDS_122
       rect:
         serializedVersion: 2
-        x: 418
-        y: 160
-        width: 28
+        x: 384
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2722,11 +2722,11 @@ TextureImporter:
       name: SWORDS_123
       rect:
         serializedVersion: 2
-        x: 450
-        y: 160
-        width: 28
+        x: 416
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2743,11 +2743,11 @@ TextureImporter:
       name: SWORDS_124
       rect:
         serializedVersion: 2
-        x: 482
-        y: 160
-        width: 28
+        x: 448
+        y: 224
+        width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -2764,18 +2764,18 @@ TextureImporter:
       name: SWORDS_125
       rect:
         serializedVersion: 2
-        x: 354
-        y: 513
-        width: 30
-        height: 30
-      alignment: 0
+        x: 480
+        y: 224
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a171f09325b84e2eb1b99cb57ab8326
+      spriteID: b73b34514ceaf4d8d9a454da5561a436
       internalID: -1068619945
       vertices: []
       indices: 
@@ -2785,18 +2785,18 @@ TextureImporter:
       name: SWORDS_126
       rect:
         serializedVersion: 2
-        x: 449
-        y: 545
-        width: 30
-        height: 30
-      alignment: 0
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8696127b55547fc9ca85ec0a5e08c1
+      spriteID: 86edd28e4bd6e4e6f86c01f3ca71fc7d
       internalID: -1161507777
       vertices: []
       indices: 
@@ -2806,18 +2806,18 @@ TextureImporter:
       name: SWORDS_127
       rect:
         serializedVersion: 2
-        x: 448
-        y: 512
-        width: 33
-        height: 33
-      alignment: 0
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff158bc00b8cf46259609a5b4e04faa2
+      spriteID: 5b3a8c5ae48124c3e95aacd2e630e70b
       internalID: 2084708270
       vertices: []
       indices: 
@@ -2827,19 +2827,334 @@ TextureImporter:
       name: SWORDS_128
       rect:
         serializedVersion: 2
-        x: 385
-        y: 512
+        x: 160
+        y: 192
         width: 32
         height: 32
-      alignment: 0
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a3c80ce3eca6402d86bc794ee985505
+      spriteID: 74e96fc8694ad4aed9be762327495963
       internalID: 886278156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_129
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eab289e01ed43229757eea78bc2603
+      internalID: 232991828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_130
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b8418fb4eda4e8c887bc062dfdbf08
+      internalID: -1798058016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_131
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216a86df8415540c89d2839a812bbf11
+      internalID: -697568478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_132
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3f8c23e017248e79d735a188617274
+      internalID: 1647534272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_133
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0e89fdf7d384929a638b072e3e34b7
+      internalID: 508305518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_134
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66ed6e5dcd9f4bc88ff0f2a761f2fba
+      internalID: 1177245260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f1dad38ee8445dbb9371a3a063983e
+      internalID: 2024833350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_136
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b2a9968eedf4d93b52e692f8201c02
+      internalID: 1633802806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_137
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6669b977c1ea24464936a8d39d675842
+      internalID: -941915041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_138
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c50b185707648a7beb53109c3adb88
+      internalID: -1107173784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_139
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986cefb27bd014eff9df79b51bfab99e
+      internalID: 1191336624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_140
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9055f2a64fb964bc7b65648a55bfe9d0
+      internalID: -462068057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_141
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69196509602484b9b8f50d1b6a10d435
+      internalID: -2103634511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_142
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b217b8580a1da4d28921c91de8f8fcf1
+      internalID: 5916945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SWORDS_143
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6175f0f1e1fb6496996d0928a3d7e6b4
+      internalID: -1424464769
       vertices: []
       indices: 
       edges: []
@@ -2889,8 +3204,23 @@ TextureImporter:
       SWORDS_126: -1161507777
       SWORDS_127: 2084708270
       SWORDS_128: 886278156
+      SWORDS_129: 232991828
       SWORDS_13: 604822275
+      SWORDS_130: -1798058016
+      SWORDS_131: -697568478
+      SWORDS_132: 1647534272
+      SWORDS_133: 508305518
+      SWORDS_134: 1177245260
+      SWORDS_135: 2024833350
+      SWORDS_136: 1633802806
+      SWORDS_137: -941915041
+      SWORDS_138: -1107173784
+      SWORDS_139: 1191336624
       SWORDS_14: 1876971349
+      SWORDS_140: -462068057
+      SWORDS_141: -2103634511
+      SWORDS_142: 5916945
+      SWORDS_143: -1424464769
       SWORDS_15: -1782601698
       SWORDS_16: 1678016971
       SWORDS_17: 420813639

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3168002016381801751}
   - component: {fileID: -3479889454578581725}
   - component: {fileID: 3634431478341980970}
+  - component: {fileID: -6258435262409982860}
+  - component: {fileID: -7061464168760666714}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Weapon
@@ -100,6 +102,31 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 11400000, guid: 2bf469491e32d4af2af6112de7297635, type: 2}
+--- !u!114 &-6258435262409982860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679385840508648627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059eaf1c4ca245b59bb1fb27ec976598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7061464168760666714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679385840508648627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc498ce6d787ee4e893c60575984f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 3168002016381801751}
 --- !u!1 &6447695933172984038
 GameObject:
   m_ObjectHideFlags: 0

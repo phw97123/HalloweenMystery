@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Components.Action
 {
-    public class RangeAttack : MonoBehaviour
+    public class RangeAttack : BaseAttack
     {
         private StatsHandler _stats;
         private EntityController _controller;
@@ -25,13 +25,12 @@ namespace Components.Action
             _attackManager = AttackManager.Instance;
             _stats = GetComponentInParent<StatsHandler>();
             _controller = GetComponentInParent<EntityController>();
-
-            Debug.Assert(_stats != null);
-            Debug.Assert(_controller != null);
         }
 
         private void Start()
         {
+            if (_controller == null) { return; }
+
             _controller.OnAttackEvent += Attack;
             _controller.OnLookEvent += Aim;
         }
@@ -58,10 +57,14 @@ namespace Components.Action
 
                 _isAttacking = false;
                 _timeSinceLastAttack = 0f;
+                //to position projectile on gun-point
+                Vector2 scaleOfWeapon = spawnPosition.lossyScale;
+                Vector3 startPosition = spawnPosition.position;
+                startPosition.x += _direction.x * scaleOfWeapon.x;
+                startPosition.y += _direction.y * scaleOfWeapon.y;
 
-                //todo attackManager
                 CreateProjectile(
-                    startPosition: spawnPosition.position,
+                    startPosition: startPosition,
                     direction: _direction,
                     rangeAttack
                 );
@@ -77,7 +80,7 @@ namespace Components.Action
 
         private void CreateProjectile(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
         {
-            AttackManager.Instance.RangeAttack(startPosition, direction, rangeAttackData);
+            _attackManager.RangeAttack(startPosition, direction, rangeAttackData);
         }
     }
 }

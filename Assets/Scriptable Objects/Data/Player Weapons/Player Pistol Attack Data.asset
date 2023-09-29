@@ -15,6 +15,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 0
+  prefabTag: Bullet
   damage: 0
   delay: 0
   speed: 0
@@ -22,7 +23,7 @@ MonoBehaviour:
   isKnockBackOn: 0
   knockBackDuration: 0
   knockBackPower: 0
-  bulletTag: 
+  bulletTag: Bullet
   projectilesPerAttack: 0
   anglePerShot: 0
   piercingCount: 0

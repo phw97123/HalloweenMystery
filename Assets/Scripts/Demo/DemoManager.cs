@@ -65,9 +65,11 @@ namespace Managers
             IsPlayerExists = true;
         }
 
-        public void CreateWeapons()
+        public void CreateWeapons(bool[] isAble)
         {
-            WeaponManager.Singleton.CreateInteractableWeapon("Shotgun" ,Vector2.zero);
+            Vector2 position = new Vector2(-3, -3);
+            Vector2 spacing = new Vector2(2, 0);
+            WeaponManager.Singleton.CreateInteractableWeapons(isAble, position, spacing);
         }
 
         public void CreateMonsters()
@@ -76,7 +78,7 @@ namespace Managers
 
         public void EnterDungeon()
         {
-            throw new NotImplementedException();
+            //todo 콜로세움
         }
     }
 }

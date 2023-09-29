@@ -116,7 +116,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9076341948280562985}
-  - component: {fileID: 8726447850123791297}
   m_Layer: 0
   m_Name: ArmPivot
   m_TagString: Weapon
@@ -132,25 +131,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4185930880445949911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3617987033938848743}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8726447850123791297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185930880445949911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ede7d1ef0c6a49438dd46f67db0c12d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4208740728094762288
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +150,6 @@ GameObject:
   - component: {fileID: 5363648498314888440}
   - component: {fileID: 539216782027120382}
   - component: {fileID: 2833597010151504122}
-  - component: {fileID: 1988991135616767144}
   - component: {fileID: 8954533745869906929}
   - component: {fileID: 2152737393964110136}
   - component: {fileID: 5756934646297591042}
@@ -246,21 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f3102704696644984fbc636ae665c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1988991135616767144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4208740728094762288}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f36c9ae7a9ff8478e89b95b66925d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armPivot: {fileID: 9076341948280562985}
-  characterRenderer: {fileID: 5352384319879274910}
-  weaponRenderer: {fileID: 0}
 --- !u!114 &8954533745869906929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStats:
-    changeType: 1
+    changeType: 0
     maxHealth: 100
     speed: 3
     criticalPercentage: 0
@@ -379,3 +350,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89086a6af59f411da8fe6c09bc6cd7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 5352384319879274910}

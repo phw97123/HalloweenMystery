@@ -45,7 +45,8 @@ namespace Managers
         {
             _pool = gameObject.AddComponent<ObjectPool>();
             _prefabs = new List<Poolable>();
-            //todo resourcesManager
+            
+            //todo resourcesManager and only required prefabs
             GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Attacks");
             ParticleSystem ps = Resources.Load<ParticleSystem>("Prefabs/VFX/Explosion");
 
@@ -81,7 +82,8 @@ namespace Managers
                 degree: degree,
                 currentAttackCount: currentAttackCount,
                 isCritical: false,
-                attackData: attackData);
+                attackData: attackData,
+                attackTag : prefabTag);
         }
 
         public void RangeAttack(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)

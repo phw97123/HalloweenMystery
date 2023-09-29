@@ -12,12 +12,10 @@ namespace Entities
 
         private AttackManager _attackManager;
         private TrailRenderer _trailRenderer;
-        private string _prefabTag;
 
         protected AttackStatusHandler Handler;
         public event Action OnMoveEvent;
         public event Action<float> OnRotationChanged;
-        public event Action<Collider2D> OnTriggerEnterEvent;
 
         protected virtual void Awake()
         {
@@ -49,10 +47,10 @@ namespace Entities
             float degree,
             int currentAttackCount,
             bool isCritical,
-            AttackDataSO attackData)
+            AttackDataSO attackData,
+            string attackTag)
         {
             CallRotateAttack(degree);
-            _prefabTag = attackData.prefabTag;
             transform.position = startPosition;
             AttackStatus status = new AttackStatus(
                 startPosition: startPosition,
@@ -60,7 +58,8 @@ namespace Entities
                 isCritical: isCritical,
                 direction: direction,
                 degree: degree,
-                attackData: attackData
+                attackData: attackData,
+                attackTag: attackTag
             );
             Handler.SetStatus(status, this);
             isReady = true;

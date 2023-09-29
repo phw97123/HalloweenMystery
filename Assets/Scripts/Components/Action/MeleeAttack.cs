@@ -8,7 +8,7 @@ using Utils;
 
 namespace Components.Action
 {
-    public class MeleeAttack : MonoBehaviour
+    public class MeleeAttack : BaseAttack
     {
         private EntityController _controller;
         private StatsHandler _stats;
@@ -27,12 +27,12 @@ namespace Components.Action
             _attackManager = AttackManager.Instance;
             _controller = GetComponentInParent<EntityController>();
             _stats = GetComponentInParent<StatsHandler>();
-            Debug.Assert(_controller != null);
-            Debug.Assert(_stats != null);
         }
 
         private void Start()
         {
+            if (_controller == null) { return; }
+
             _controller.OnAttackEvent += Attack;
             _controller.OnLookEvent += Aim;
         }
@@ -90,10 +90,10 @@ namespace Components.Action
 
         private string GetCurrentAttackTag(MeleeAttackDataSO meleeAttack)
         {
-            if ((int)meleeAttack.attackCount <= _currentAttackCount)
-            {
-                return meleeAttack.prefabTag;
-            }
+            // if ((int)meleeAttack.attackCount <= _currentAttackCount)
+            // {
+            //     return meleeAttack.prefabTag;
+            // }
 
             if (meleeAttack.arc <= 0)
             {
