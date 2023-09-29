@@ -15,7 +15,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 0
-  prefabTag: ShotgunBullet
+  prefabTag: Bullet
   damage: 2
   delay: 1.5
   speed: 20
@@ -23,7 +23,7 @@ MonoBehaviour:
   isKnockBackOn: 1
   knockBackDuration: 1
   knockBackPower: 1.5
-  bulletTag: ShotgunBullet
+  bulletTag: Bullet
   projectilesPerAttack: 5
   anglePerShot: 5
   piercingCount: 0

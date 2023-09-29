@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStats:
-    changeType: 1
+    changeType: 0
     maxHealth: 100
     speed: 3
     criticalPercentage: 0
