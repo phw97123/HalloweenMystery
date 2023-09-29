@@ -73,4 +73,10 @@ public class MeleeEnemyController : EnemyController
         }
         _isCollidingWithTarget = false;
     }
+
+    private void ApplyHealthChange()
+    {
+        AttackDataSO attackSo = Stats.CurrentStats.attackData;
+        bool hasBeenChanged = _collidingTargetHealthSystem.ChangeHealth(-attackSo.damage);
+    }
 }

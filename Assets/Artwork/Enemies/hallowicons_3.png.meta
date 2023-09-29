@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 933797bc72f6c7f48ac9a137ad19e124
+guid: 4459f755920ef0c4b972ce04cc258405
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,19 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,589 +123,505 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliff_0
+      name: hallowicons_3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
+        x: 6
+        y: 52
+        width: 14
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c55528278cd449d42ba9cf8fa6fc794e
-      internalID: -1052976380
+      spriteID: 90ee15d08f7cf1a49be276664b52b22a
+      internalID: -1971418908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_1
+      name: hallowicons_3_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
+        x: 30
+        y: 52
+        width: 14
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 976f81cd872489044b0bd3455b615155
-      internalID: 616293276
+      spriteID: 633120683da00c24883e888995a90382
+      internalID: -522235820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_2
+      name: hallowicons_3_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
+        x: 54
+        y: 52
+        width: 14
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 998f558d98a1b414abd79fb2331c1deb
-      internalID: 449294237
+      spriteID: 30c296d16a426984bb68f5114f477399
+      internalID: 4603466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_3
+      name: hallowicons_3_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
+        x: 79
+        y: 54
+        width: 13
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 963218adc11670844b9c14831eb4a589
-      internalID: -1826974612
+      spriteID: f191620d162d4194a8d61877476db1e6
+      internalID: -1025300684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_4
+      name: hallowicons_3_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
+        x: 104
+        y: 54
+        width: 10
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51dc268dc02cbf43bda1718424f763d
-      internalID: 478327906
+      spriteID: 5da1c848c11a2dc45a291f6cfb64e51f
+      internalID: -1915252509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_5
+      name: hallowicons_3_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 125
+        y: 52
         width: 16
-        height: 16
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e3eab07973aa504a808dc12ffb52753
-      internalID: -2042186385
+      spriteID: d56a8a9e7b207e64d936efd4d34ae803
+      internalID: 46955538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_6
+      name: hallowicons_3_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 149
+        y: 52
         width: 16
-        height: 16
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cff0747b15902543ad6d244d9730eda
-      internalID: 1744030188
+      spriteID: 3723492e786002d4a83b01097716d448
+      internalID: 1389355557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_7
+      name: hallowicons_3_7
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 173
+        y: 52
         width: 16
-        height: 16
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0d1210db4b328745958dbc98bae9528
-      internalID: 440330776
+      spriteID: 881dee5ef21154c489d220caec56b286
+      internalID: 308947561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_8
+      name: hallowicons_3_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
+        x: 5
+        y: 28
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a40180ff479b5c44c9e4ef5f1741c670
-      internalID: 1966387787
+      spriteID: c0d6d96beca8a9b4ba54945060793eb1
+      internalID: -1607198197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_9
+      name: hallowicons_3_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 30
+        y: 28
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 672b1832fc725ef4eb125124af50dd68
-      internalID: 257648413
+      spriteID: 97590cd095dfb1949924e626be4529c6
+      internalID: -1419475910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_10
+      name: hallowicons_3_10
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
+        x: 54
+        y: 29
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f151d45d6b24e544900ab192abbcdfd
-      internalID: 118083280
+      spriteID: 23ee118defdb50048a848c79586abdd9
+      internalID: 443438169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_11
+      name: hallowicons_3_11
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 16
-        height: 16
+        x: 78
+        y: 29
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2ebf20556bc8264ba2713ff015556c1
-      internalID: 2040636337
+      spriteID: 9e5c220b6d7e6c44eba0341bc1d32803
+      internalID: -109449639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_12
+      name: hallowicons_3_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 102
+        y: 29
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dce1c78713cbed4387faaca304c1f90
-      internalID: 1320400384
+      spriteID: aaff2bcc698046649b47fcc4ff7a8a1c
+      internalID: 1189504262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_13
+      name: hallowicons_3_13
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 126
+        y: 29
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70fe4b26bda74044b9648a374214bd4d
-      internalID: 1854077051
+      spriteID: 7d9b7a2ce2dc6304c99653c8e943c02d
+      internalID: 914721511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_14
+      name: hallowicons_3_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
+        x: 154
+        y: 29
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5431de96c97e45946b149d48e38c6f70
-      internalID: -1426392515
+      spriteID: da96e11adab5b734181e4f11c157a755
+      internalID: 402317197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_15
+      name: hallowicons_3_15
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
+        x: 178
+        y: 29
+        width: 7
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79d3e8e747b65f2409a38942a2142e18
-      internalID: -859448755
+      spriteID: a18faa4f49e2feb44964524a1521865f
+      internalID: -854187133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_16
+      name: hallowicons_3_16
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
+        x: 6
+        y: 5
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c8bc00d0505ea45acd7335c4e14a3a
-      internalID: 1106816123
+      spriteID: 5ef267f125572d04f88cd41c24fbb184
+      internalID: 1600480442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_17
+      name: hallowicons_3_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 31
+        y: 5
+        width: 13
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acdca31b449163043b99ef695bcbd23a
-      internalID: -1536271892
+      spriteID: 45542de9f0c168547bf95eefe05ac2bc
+      internalID: 1204854166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_18
+      name: hallowicons_3_18
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 54
+        y: 5
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15edd4602b216f94288a9067f7e9665e
-      internalID: 292217106
+      spriteID: 71c2b052c73598f478f45f22e8eb3d6b
+      internalID: 1312908658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_19
+      name: hallowicons_3_19
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
+        x: 78
+        y: 5
+        width: 14
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f408b9d963174a4b91a61cc24228757
-      internalID: -2121255886
+      spriteID: fe17b6e4a58844b40be032c1ce977b2e
+      internalID: 609994749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_20
+      name: hallowicons_3_20
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
-        width: 16
-        height: 16
+        x: 101
+        y: 6
+        width: 15
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0325c4afc9317b345ab2a6b30f0c181f
-      internalID: 1553068533
+      spriteID: 20e233115c0b8c14c8a724bad026f7a0
+      internalID: 1718891870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_21
+      name: hallowicons_3_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 127
+        y: 5
+        width: 12
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 301bb77a35a87364f94a8e5c5dbec4cd
-      internalID: -217864726
+      spriteID: 6c95130c068d2b142866a51c5076e2ab
+      internalID: 1518730241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_22
+      name: hallowicons_3_22
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 151
+        y: 5
+        width: 12
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4c0a6b11508d94a9e458e1912d1864
-      internalID: 435533495
+      spriteID: 156ec7065665b63469a0f056ad19ba47
+      internalID: 322526572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cliff_23
+      name: hallowicons_3_23
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
+        x: 176
+        y: 5
+        width: 9
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6561a0052bcf30943bc4e379fba1365c
-      internalID: 1412795452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cliff_24
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b562b05917abfb446b6bc2b2428016ad
-      internalID: 280360580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cliff_25
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a41d9929f46bf3f4caa91860128c043a
-      internalID: 693969120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cliff_26
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66ec2b6de6f02e649a729b649ccf8e05
-      internalID: -1203374436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cliff_27
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e782ddec16413a942b3719fea8fd8aee
-      internalID: 738371423
+      spriteID: e69389207bd3ba947b5c94f515a6ceaf
+      internalID: -1328190333
       vertices: []
       indices: 
       edges: []
@@ -734,34 +637,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cliff_0: -1052976380
-      Cliff_1: 616293276
-      Cliff_10: 118083280
-      Cliff_11: 2040636337
-      Cliff_12: 1320400384
-      Cliff_13: 1854077051
-      Cliff_14: -1426392515
-      Cliff_15: -859448755
-      Cliff_16: 1106816123
-      Cliff_17: -1536271892
-      Cliff_18: 292217106
-      Cliff_19: -2121255886
-      Cliff_2: 449294237
-      Cliff_20: 1553068533
-      Cliff_21: -217864726
-      Cliff_22: 435533495
-      Cliff_23: 1412795452
-      Cliff_24: 280360580
-      Cliff_25: 693969120
-      Cliff_26: -1203374436
-      Cliff_27: 738371423
-      Cliff_3: -1826974612
-      Cliff_4: 478327906
-      Cliff_5: -2042186385
-      Cliff_6: 1744030188
-      Cliff_7: 440330776
-      Cliff_8: 1966387787
-      Cliff_9: 257648413
+      hallowicons_3_0: -1971418908
+      hallowicons_3_1: -522235820
+      hallowicons_3_10: 443438169
+      hallowicons_3_11: -109449639
+      hallowicons_3_12: 1189504262
+      hallowicons_3_13: 914721511
+      hallowicons_3_14: 402317197
+      hallowicons_3_15: -854187133
+      hallowicons_3_16: 1600480442
+      hallowicons_3_17: 1204854166
+      hallowicons_3_18: 1312908658
+      hallowicons_3_19: 609994749
+      hallowicons_3_2: 4603466
+      hallowicons_3_20: 1718891870
+      hallowicons_3_21: 1518730241
+      hallowicons_3_22: 322526572
+      hallowicons_3_23: -1328190333
+      hallowicons_3_3: -1025300684
+      hallowicons_3_4: -1915252509
+      hallowicons_3_5: 46955538
+      hallowicons_3_6: 1389355557
+      hallowicons_3_7: 308947561
+      hallowicons_3_8: -1607198197
+      hallowicons_3_9: -1419475910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
