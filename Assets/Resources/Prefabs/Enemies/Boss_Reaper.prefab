@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7170074681015447999}
   - component: {fileID: 5567531997432231540}
+  - component: {fileID: 7065380556041169845}
   m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7065380556041169845
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022469983807356995}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 774e3377693216d4fbfed9e2c3f546e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6727007649923854942
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +122,7 @@ GameObject:
   - component: {fileID: 1495831230329623144}
   - component: {fileID: 9199623745246444281}
   - component: {fileID: 2799692931641169301}
+  - component: {fileID: 8008032104021938277}
   m_Layer: 7
   m_Name: Boss_Reaper
   m_TagString: Enemy
@@ -121,7 +144,7 @@ Transform:
   m_Children:
   - {fileID: 7170074681015447999}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &8637346522560883449
 CapsuleCollider2D:
@@ -245,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     changeType: 0
-    maxHealth: 3
+    maxHealth: 18
     speed: 1
     criticalPercentage: 0
     goldPercentage: 0
@@ -262,5 +285,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8008032104021938277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6727007649923854942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

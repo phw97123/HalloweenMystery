@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5232586040167593854}
   - component: {fileID: 7189309915281218295}
+  - component: {fileID: 7108384468904184211}
   m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7108384468904184211
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344207496026941499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1da8878065f5c0b469284777b78b67f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3651637054455585558
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +123,7 @@ GameObject:
   - component: {fileID: 8140824158933701615}
   - component: {fileID: 3460915836767273974}
   - component: {fileID: 9112346570327378055}
+  - component: {fileID: 2420830293315728463}
   m_Layer: 7
   m_Name: Ghost_Red
   m_TagString: Enemy
@@ -122,7 +145,7 @@ Transform:
   m_Children:
   - {fileID: 5232586040167593854}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &4890394163853639389
 CapsuleCollider2D:
@@ -273,5 +296,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2420830293315728463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3651637054455585558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
