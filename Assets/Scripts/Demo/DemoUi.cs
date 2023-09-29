@@ -12,7 +12,8 @@ namespace Managers
         Basic,
         CreateWeapon,
         CreateMonsters,
-        Fight
+        Dungeon,
+        CreateParts
     }
 
     public class DemoUi : UIPopup
@@ -21,6 +22,7 @@ namespace Managers
         [SerializeField] private Button createWeaponsButton;
         [SerializeField] private Button createMonsterButton;
         [SerializeField] private Button enterDungeonButton;
+        [SerializeField] private Button partsButton;
 
 
         private bool _isReady;
@@ -59,6 +61,7 @@ namespace Managers
             createWeaponsButton.onClick.AddListener(() => { _stack.Push(DemoState.CreateWeapon); });
             createMonsterButton.onClick.AddListener(DemoManager.Singleton.CreateMonsters);
             enterDungeonButton.onClick.AddListener(DemoManager.Singleton.EnterDungeon);
+            partsButton.onClick.AddListener((() => { _stack.Push(DemoState.CreateParts); }));
         }
 
         private void OnDisable()

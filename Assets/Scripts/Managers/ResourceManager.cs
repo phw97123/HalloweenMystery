@@ -5,15 +5,34 @@ using System.Collections.Generic;
 
 public class ResourceManager : MonoBehaviour
 {
-    public static ResourceManager Instance;
+    private static ResourceManager _instance;
+
+    public static ResourceManager Instance
+    {
+        get
+        {
+            if (_instance != null) { return _instance; }
+
+            _instance = FindObjectOfType<ResourceManager>();
+            if (_instance != null) { return _instance; }
+
+            _instance = new GameObject(nameof(ResourceManager) + "-singleton").AddComponent<ResourceManager>();
+            return _instance;
+        }
+    }
 
     public enum PrefabFolder { Attacks, Character, DropItems, Enemies, UI, VFX, WeaponParts, Weapons }
+
     private Dictionary<string, int> _prefabsFolder = new Dictionary<string, int>();
     private string _folderPath = "Assets/Resources/Prefabs";
 
     private void Awake()
     {
-        Instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+
         GetPrefabName();
         DontDestroyOnLoad(gameObject);
     }
@@ -22,8 +41,8 @@ public class ResourceManager : MonoBehaviour
     {
         foreach (PrefabFolder folder in Enum.GetValues(typeof(PrefabFolder)))
         {
-            string[] prefabPaths = Directory.GetFiles(_folderPath + "/"+ folder.ToString(), "*.prefab");
-            foreach(string prefabPath in prefabPaths)
+            string[] prefabPaths = Directory.GetFiles(_folderPath + "/" + folder.ToString(), "*.prefab");
+            foreach (string prefabPath in prefabPaths)
             {
                 _prefabsFolder.Add(Path.GetFileNameWithoutExtension(prefabPath), (int)folder);
             }
