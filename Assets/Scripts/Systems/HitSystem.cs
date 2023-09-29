@@ -23,6 +23,11 @@ namespace Systems
 
         private void Start()
         {
+            if (_handler.attackStatus.attackData == null)
+            {
+                return;
+            }
+
             switch (_handler.attackStatus.attackType)
             {
                 case AttackType.Melee:
@@ -44,13 +49,17 @@ namespace Systems
                 _controller.Inactivate(_handler.attackStatus.attackData.prefabTag, false);
             }
 
+            LayerMask target = _handler.attackStatus.attackData.target;
+            if (target.value != (target.value | (1 << other.gameObject.layer))) { return; }
+
             if (_hitInstanceIdSet.Contains(other.GetInstanceID()) ||
-                _hitInstanceIdSet.Count >= _maxTargetCount) { return; }
+                _hitInstanceIdSet.Count >= _maxTargetCount
+               ) { return; }
 
             HealthSystem healthSystem = other.GetComponent<HealthSystem>();
             if (healthSystem == null) { return; }
 
-            if (healthSystem.ChangeHealth(_handler.attackStatus.attackData.damage))
+            if (healthSystem.ChangeHealth(-_handler.attackStatus.attackData.damage))
             {
                 _hitInstanceIdSet.Add(other.GetInstanceID());
                 if (_handler.attackStatus.attackType == AttackType.Range && _maxTargetCount <= _hitInstanceIdSet.Count)

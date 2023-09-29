@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 085e80df0419b044a81ef67f6645f828
+guid: e09afbb6fbf768547a0e77105ae0caef
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,19 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,169 +123,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_campfire_starting_0
+      name: reaper_blade_3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 64
+        x: 18
+        y: 324
+        width: 75
+        height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d3e87ad62407324095f454666b3076b
-      internalID: 1664936335
+      spriteID: 2124d7a06d41e9d41af534cdca8aec76
+      internalID: 1881585125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_1
+      name: reaper_blade_3_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 64
+        x: 111
+        y: 324
+        width: 75
+        height: 90
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd28d3f729587749943b042f75c7de8
-      internalID: 1868540667
+      spriteID: 15340595c8ce6204bbc7b5811796ce7a
+      internalID: 1869784031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_2
+      name: reaper_blade_3_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 64
+        x: 210
+        y: 324
+        width: 75
+        height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b7f6cc396f995440a1a7d628bfe65f0
-      internalID: -765351744
+      spriteID: a82b69b64e47e324883f40dba2000918
+      internalID: -404219452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_3
+      name: reaper_blade_3_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 64
+        x: 15
+        y: 216
+        width: 75
+        height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6baf6dec15ff1f4f8373309adf902ec
-      internalID: 254975836
+      spriteID: 59502a527a1431147a92001cde80f547
+      internalID: -2078837848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_4
+      name: reaper_blade_3_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 64
+        x: 111
+        y: 216
+        width: 75
+        height: 90
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b3e44f64e3cfd043a7d3e80d4e2ae68
-      internalID: -1850809142
+      spriteID: 18f558c7fa1d09941976589e8913d1e5
+      internalID: 925870775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_5
+      name: reaper_blade_3_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 64
+        x: 207
+        y: 216
+        width: 75
+        height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61df1a4dca12c434787ee996758d05c4
-      internalID: -1332183042
+      spriteID: 28381c03659d4f54b8df37223c617730
+      internalID: -1799381080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_6
+      name: reaper_blade_3_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 64
+        x: 3
+        y: 108
+        width: 75
+        height: 87
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1d497f027760b9438cae4822bdc9f78
-      internalID: 1073051182
+      spriteID: 5b201140ccc0d264d8766fabc8c02cdb
+      internalID: -204796216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_campfire_starting_7
+      name: reaper_blade_3_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 64
+        x: 99
+        y: 108
+        width: 75
+        height: 90
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f644d3bbac974d347b6ab9cf0c541a18
-      internalID: -1646148678
+      spriteID: 3da80609a575b9542b413f9b6582abdc
+      internalID: 1756268713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_blade_3_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 108
+        width: 75
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289a6f6473706414a93d34504c5bfb1b
+      internalID: -1173351181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_blade_3_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 75
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c6b9ce59355e74cb96e2f50a7a5b5b
+      internalID: 1743574923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_blade_3_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 75
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53b7c51b2c737340ad3c415597f69c7
+      internalID: -1993557417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_blade_3_11
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 75
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cea45c533460b648bbc792a078a3dd2
+      internalID: 153858131
       vertices: []
       indices: 
       edges: []
@@ -314,14 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_campfire_starting_0: 1664936335
-      spr_campfire_starting_1: 1868540667
-      spr_campfire_starting_2: -765351744
-      spr_campfire_starting_3: 254975836
-      spr_campfire_starting_4: -1850809142
-      spr_campfire_starting_5: -1332183042
-      spr_campfire_starting_6: 1073051182
-      spr_campfire_starting_7: -1646148678
+      reaper_blade_3_0: 1881585125
+      reaper_blade_3_1: 1869784031
+      reaper_blade_3_10: -1993557417
+      reaper_blade_3_11: 153858131
+      reaper_blade_3_2: -404219452
+      reaper_blade_3_3: -2078837848
+      reaper_blade_3_4: 925870775
+      reaper_blade_3_5: -1799381080
+      reaper_blade_3_6: -204796216
+      reaper_blade_3_7: 1756268713
+      reaper_blade_3_8: -1173351181
+      reaper_blade_3_9: 1743574923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

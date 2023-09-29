@@ -41,6 +41,12 @@ namespace Managers
         {
             if (_popUpList.TryGetValue(name, out UIPopup popup))
             {
+                if (popup == null)
+                {
+                    GameObject.Destroy(popup);
+                    popup = Object.Instantiate(prefab).GetComponent<UIPopup>();
+                }
+
                 popup.gameObject.SetActive(true);
                 return popup;
             }

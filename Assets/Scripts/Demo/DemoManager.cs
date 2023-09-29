@@ -74,6 +74,8 @@ namespace Managers
 
         public void CreateMonsters()
         {
+            Object go = Resources.Load("Prefabs/Enemies/Ghost_White");
+            Instantiate(go);
         }
 
         public void EnterDungeon()

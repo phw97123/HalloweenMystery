@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6280830186271216996}
   - component: {fileID: 769931444158323639}
   - component: {fileID: 6846654593874578992}
-  m_Layer: 0
-  m_Name: Ghost (2)
-  m_TagString: Untagged
+  - component: {fileID: 7124260467052084466}
+  m_Layer: 7
+  m_Name: Ghost_Green
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 8576531521172743766}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &7897480679753286288
 CapsuleCollider2D:
@@ -176,6 +177,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  MaxShieldCount: 3
+  ShieldCount: 0
+--- !u!114 &7124260467052084466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598296402358194975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796382784013580796
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8576531521172743766}
   - component: {fileID: 7108913945377762860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

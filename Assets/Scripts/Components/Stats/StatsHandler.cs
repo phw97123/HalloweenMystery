@@ -21,6 +21,7 @@ namespace Components.Stats
         {
             UpdateCharacterStats();
         }
+
         public void AddStatModifier(CharacterStats statModifier)
         {
             _statsModifiers.Add(statModifier);
@@ -41,7 +42,12 @@ namespace Components.Stats
                 attackSO = Instantiate(baseStats.attackData);
             }
 
-            CurrentStats = new CharacterStats { attackData = attackSO };
+            CurrentStats = new CharacterStats
+            {
+                attackData = attackSO,
+                changeType = baseStats?.changeType ?? StatsChangeType.Override
+            };
+
             UpdateStats((a, b) => b, baseStats);
             if (CurrentStats.attackData != null)
             {
@@ -71,10 +77,13 @@ namespace Components.Stats
         {
             CurrentStats.maxHealth = Mathf.CeilToInt(operation(CurrentStats.maxHealth, newModifier.maxHealth));
             CurrentStats.speed = operation(CurrentStats.speed, newModifier.speed);
-            CurrentStats.criticalPercentage = operation(CurrentStats.criticalPercentage, newModifier.criticalPercentage);
+            CurrentStats.criticalPercentage =
+                operation(CurrentStats.criticalPercentage, newModifier.criticalPercentage);
             CurrentStats.goldPercentage = operation(CurrentStats.goldPercentage, newModifier.goldPercentage);
-            CurrentStats.itemDropPercentage = operation(CurrentStats.itemDropPercentage, newModifier.itemDropPercentage);
-            CurrentStats.buffDurationIncrease = operation(CurrentStats.buffDurationIncrease, newModifier.buffDurationIncrease);
+            CurrentStats.itemDropPercentage =
+                operation(CurrentStats.itemDropPercentage, newModifier.itemDropPercentage);
+            CurrentStats.buffDurationIncrease =
+                operation(CurrentStats.buffDurationIncrease, newModifier.buffDurationIncrease);
 
             if (CurrentStats.attackData == null || newModifier.attackData == null)
                 return;
@@ -97,7 +106,8 @@ namespace Components.Stats
             }
         }
 
-        private void UpdateAttackStats(Func<float, float, float> operation, AttackDataSO currentAttack, AttackDataSO newAttack)
+        private void UpdateAttackStats(Func<float, float, float> operation, AttackDataSO currentAttack,
+            AttackDataSO newAttack)
         {
             if (currentAttack == null || newAttack == null)
             {
@@ -122,8 +132,10 @@ namespace Components.Stats
             MeleeAttackDataSO rangedAttacksModifier = (MeleeAttackDataSO)newModifier.attackData;
 
             currentRangedAttacks.arc = operation(currentRangedAttacks.arc, rangedAttacksModifier.arc);
-            currentRangedAttacks.attackCount = operation(currentRangedAttacks.attackCount, rangedAttacksModifier.attackCount);
-            currentRangedAttacks.targets = Mathf.CeilToInt(operation(currentRangedAttacks.targets,rangedAttacksModifier.targets));
+            currentRangedAttacks.attackCount =
+                operation(currentRangedAttacks.attackCount, rangedAttacksModifier.attackCount);
+            currentRangedAttacks.targets =
+                Mathf.CeilToInt(operation(currentRangedAttacks.targets, rangedAttacksModifier.targets));
         }
 
         private void ApplyRangeStats(Func<float, float, float> operation, CharacterStats newModifier)
@@ -136,10 +148,13 @@ namespace Components.Stats
             }
 
             RangeAttackDataSO rangedAttacksModifier = (RangeAttackDataSO)newModifier.attackData;
-            
-            currentRangedAttacks.projectilesPerAttack = operation(currentRangedAttacks.projectilesPerAttack, rangedAttacksModifier.projectilesPerAttack);
-            currentRangedAttacks.anglePerShot = operation(currentRangedAttacks.anglePerShot, rangedAttacksModifier.anglePerShot);
-            currentRangedAttacks.piercingCount = operation(currentRangedAttacks.piercingCount, rangedAttacksModifier.piercingCount);
+
+            currentRangedAttacks.projectilesPerAttack = operation(currentRangedAttacks.projectilesPerAttack,
+                rangedAttacksModifier.projectilesPerAttack);
+            currentRangedAttacks.anglePerShot =
+                operation(currentRangedAttacks.anglePerShot, rangedAttacksModifier.anglePerShot);
+            currentRangedAttacks.piercingCount =
+                operation(currentRangedAttacks.piercingCount, rangedAttacksModifier.piercingCount);
         }
 
         private void LimitStats(ref float stat, float minVal)
