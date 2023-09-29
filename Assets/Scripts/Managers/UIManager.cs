@@ -44,6 +44,7 @@ namespace Managers
                 if (popup == null)
                 {
                     popup = Object.Instantiate(prefab).GetComponent<UIPopup>();
+                    _popUpList[name] = popup;
                 }
 
                 popup.gameObject.SetActive(true);
