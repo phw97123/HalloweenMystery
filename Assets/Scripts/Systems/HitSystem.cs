@@ -49,10 +49,11 @@ namespace Systems
                 _controller.Inactivate(_handler.attackStatus.attackData.prefabTag, false);
             }
 
+            LayerMask target = _handler.attackStatus.attackData.target;
+            if (target.value != (target.value | (1 << other.gameObject.layer))) { return; }
+
             if (_hitInstanceIdSet.Contains(other.GetInstanceID()) ||
-                _hitInstanceIdSet.Count >= _maxTargetCount ||
-                _handler.attackStatus.attackData.target.value !=
-                (_handler.attackStatus.attackData.target.value | (1 << other.gameObject.layer))
+                _hitInstanceIdSet.Count >= _maxTargetCount
                ) { return; }
 
             HealthSystem healthSystem = other.GetComponent<HealthSystem>();
