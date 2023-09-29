@@ -80,7 +80,12 @@ namespace Managers
 
         public void EnterDungeon()
         {
-            //todo 콜로세움
+            uiManager.ShowUIPopupByName("DungeonUi");
+        }
+
+        public void CreateWeaponParts()
+        {
+            
         }
     }
 }
