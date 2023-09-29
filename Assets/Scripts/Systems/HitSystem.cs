@@ -1,8 +1,10 @@
+using Components.Action;
 using Components.Attacks;
 using Entities;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Systems
 {
@@ -61,6 +63,15 @@ namespace Systems
 
             if (healthSystem.ChangeHealth(-_handler.attackStatus.attackData.damage))
             {
+                if(_handler.attackStatus.attackData.isKnockBackOn)
+                {
+                    Movement movement = other.GetComponent<Movement>();
+                    if(movement != null)
+                    {
+                        movement.ApplyKnockback(transform, _handler.attackStatus.attackData.knockBackPower, _handler.attackStatus.attackData.knockBackDuration); 
+                    }
+                }
+
                 _hitInstanceIdSet.Add(other.GetInstanceID());
                 if (_handler.attackStatus.attackType == AttackType.Range && _maxTargetCount <= _hitInstanceIdSet.Count)
                 {
