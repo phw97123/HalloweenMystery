@@ -31,12 +31,18 @@ public class MeleeEnemyController : EnemyController
     {
         base.FixedUpdate();
 
+        if (_isCollidingWithTarget)
+        {
+            ApplyHealthChange();
+            Debug.Log("attacking");
+        }
+
         Vector2 direction = Vector2.zero;
         if (DistanceToTarget() < followRange)
         {
             direction = DirectionToTarget();
         }
-
+        
         CallMove(direction);
         Rotate(direction);
     }

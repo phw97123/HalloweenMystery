@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReaperBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed;
     public int damage;
@@ -14,8 +14,11 @@ public class ReaperBullet : MonoBehaviour
 
     private void InitializeMoveDirection()
     {
-        float randomAngle = Random.Range(0f, 360f);
-        moveDirection = Quaternion.Euler(0, 0, randomAngle) * Vector2.up;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            moveDirection = (playerObject.transform.position - transform.position).normalized;
+        }
     }
 
     private void Update()
