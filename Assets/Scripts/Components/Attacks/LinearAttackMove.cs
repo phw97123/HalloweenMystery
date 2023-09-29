@@ -36,7 +36,7 @@ namespace Components.Attacks
             AttackDataSO attackData = _handler.attackStatus.attackData;
             if (_distance >= _maxDistance)
             {
-                _controller.Inactivate(attackData.prefabTag, false);
+                _controller.Inactivate(_handler.attackStatus.attackTag, false);
             }
 
             _rigidbody.velocity = _handler.attackStatus.direction * attackData.speed;
