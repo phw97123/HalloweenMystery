@@ -67,7 +67,7 @@ public class RoomContentGenerator : MonoBehaviour
             dungeonData.GetRoomFloorWithoutCorridors(roomIndex)
             );
 
-        //FocusCameraOnThePlayer(placedPrefabs[placedPrefabs.Count - 1].transform);
+        FocusCameraOnThePlayer(placedPrefabs[placedPrefabs.Count - 1].transform);
 
         spawnedObjects.AddRange(placedPrefabs);
 
@@ -76,7 +76,7 @@ public class RoomContentGenerator : MonoBehaviour
 
     private void FocusCameraOnThePlayer(Transform playerTransform)
     {
-        cinemachineCamera.LookAt = playerTransform;
+        //cinemachineCamera.LookAt = playerTransform;
         cinemachineCamera.Follow = playerTransform;
     }
 

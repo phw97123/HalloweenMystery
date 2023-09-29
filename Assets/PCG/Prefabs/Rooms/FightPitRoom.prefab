@@ -48,7 +48,7 @@ MonoBehaviour:
   enemyPlacementData:
   - minQuantity: 5
     maxQuantity: 10
-    enemyPrefab: {fileID: 598296402358194975, guid: 7fcf1c37bbb8b8948bcd11e4d2d83f80, type: 3}
+    enemyPrefab: {fileID: 6727007649923854942, guid: 163598b65c7f5984c8ab62089282b49a, type: 3}
     enemySize: {x: 1, y: 1}
   itemData:
   - minQuantity: 3
