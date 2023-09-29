@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BossEnemyController : EnemyController
 {
-    [SerializeField] private float specialAttackRange = 10f;
-
     [SerializeField] private float summonInterval = 10f;
     [SerializeField] private GameObject[] minionPrefabs;
     [SerializeField] private Transform summonPosition;
@@ -16,7 +14,7 @@ public class BossEnemyController : EnemyController
     protected override void Start()
     {
         base.Start();
-        _lastSummonTime = summonInterval;
+        _lastSummonTime = -summonInterval;
     }
 
     protected override void FixedUpdate()
@@ -25,21 +23,11 @@ public class BossEnemyController : EnemyController
 
         float distance = DistanceToTarget();
 
-        if (distance <= specialAttackRange)
-        {
-            PerformSpecialAttack();
-        }
-
         if (Time.time - _lastSummonTime >= summonInterval)
         {
             SummonMinion();
             _lastSummonTime = Time.time;
         }
-    }
-
-    private void PerformSpecialAttack()
-    {
-        // 공격 로직
     }
 
     private void SummonMinion()
@@ -49,7 +37,7 @@ public class BossEnemyController : EnemyController
             int randomIndex = Random.Range(0, minionPrefabs.Length);
             GameObject selectedMinionPrefab = minionPrefabs[randomIndex];
 
-            GameObject minion = Instantiate(selectedMinionPrefab, summonPosition.position, Quaternion.identity, summonPosition);
+            GameObject minion = Instantiate(selectedMinionPrefab, summonPosition.position, Quaternion.identity);
 
             _minions.Add(minion);
         }
