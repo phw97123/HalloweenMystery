@@ -1,3 +1,4 @@
+using Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,13 @@ public enum Achievement
     NoDamageClear,
     WallShooter,
     NoItemClear
+}
+
+public class AchievementData
+{
+    public Achievement achivement;
+    public GameObject unLockedWeapon;
+    public bool isAchive;
 }
 
 public class AchiveManager : MonoBehaviour
@@ -36,19 +44,10 @@ public class AchiveManager : MonoBehaviour
             return _instance;
         }
     }
-
-    [System.Serializable]
-    public class AchievementData
-    {
-        public Achievement achivement;
-        public GameObject unLockedWeapon;
-    }
-
-    public AchievementData[] achievementDataList;
-
-    private Dictionary<Achievement, bool> achivementDic;
-
     private DataManager dataManager;
+
+    private Achievement[] achievements;
+    private AchievementData[] achievementDataArray;
 
     private void Awake()
     {
@@ -62,20 +61,23 @@ public class AchiveManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        achivementDic = new Dictionary<Achievement, bool>();
-
-        dataManager = GetComponent<DataManager>();
+        dataManager = DataManager.Instance;
 
         LoadAchievementData();
     }
 
+    private void Start()
+    {
+        Unlocked();
+    }
+
     private void LoadAchievementData()
     {
-        Dictionary<Achievement, bool> loadedAchievmentData = dataManager.LoadData<Dictionary<Achievement, bool>>();
+        AchievementData[] loadedAchievementDataArray = dataManager.LoadData<AchievementData[]>();
 
-        if (loadedAchievmentData != null)
+        if (loadedAchievementDataArray != null)
         {
-            achivementDic = loadedAchievmentData;
+            achievementDataArray = loadedAchievementDataArray;
         }
         else
         {
@@ -85,39 +87,65 @@ public class AchiveManager : MonoBehaviour
 
     private void Init()
     {
-        foreach (Achievement achive in Enum.GetValues(typeof(Achievement)))
-        {
-            achivementDic.Add(achive, false);
-        }
-    }
+        achievements = (Achievement[])Enum.GetValues(typeof(Achievement));
+        achievementDataArray = new AchievementData[achievements.Length];
 
-    private void Start()
-    {
-        Unlocked();
+        for (int i = 0; i < achievements.Length; i++)
+        {
+            achievementDataArray[i] = new AchievementData
+            {
+                achivement = achievements[i],
+                unLockedWeapon = null,
+                isAchive = false
+            };
+        }
     }
 
     private void Unlocked()
     {
-        foreach (var kvp in achivementDic)
+        foreach (var unlock in achievementDataArray)
         {
-            if (kvp.Value)
+            if (unlock.isAchive)
             {
-                Debug.Log("Achievement unlocked: " + kvp.Key);
+                Debug.Log("Achievement unlocked: " + unlock.achivement);
+                SetAchievementRewards(unlock.achivement); 
             }
         }
     }
 
     public void UnlockAchieve(Achievement achivement)
     {
-        if (achivementDic.ContainsKey(achivement) && achivementDic[achivement] == false)
+        if (achievementDataArray[(int)achivement].achivement == achivement && achievementDataArray[(int)achivement].isAchive == false)
         {
-            achivementDic[achivement] = true;
+            achievementDataArray[(int)achivement].isAchive = true;
             SaveAchievementData();
         }
     }
 
     private void SaveAchievementData()
     {
-        dataManager.SaveData(achivementDic);
+        dataManager.SaveData(achievementDataArray);
+    }
+
+    private void SetAchievementRewards(Achievement achivement)
+    {
+        switch (achivement)
+        {
+            case Achievement.StageClear1:
+                //achievementDataArray[(int)achivement].unLockedWeapon = WeaponManager.Singleton.CreateInteractableWeapon(weaponName,position); 
+                break;
+            case Achievement.StageClear2:
+                break;
+            case Achievement.LastBossClear:
+                break;
+            case Achievement.MonsterKiller:
+                break;
+            case Achievement.NoDamageClear:
+                break;
+            case Achievement.WallShooter:
+                break;
+            case Achievement.NoItemClear:
+                break;
+        }
     }
 }
