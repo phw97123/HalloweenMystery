@@ -10,10 +10,16 @@ namespace Entities
         private Camera _camera;
 
         public event Action OnInteractionEvent;
+        public event Action OnInteractionItemPartsEvent;
 
         protected void CallInteraction()
         {
             OnInteractionEvent?.Invoke();
+        }
+
+        protected void CallInteractionItemParts()
+        {
+            OnInteractionItemPartsEvent?.Invoke();
         }
 
         private void Awake()
@@ -48,6 +54,14 @@ namespace Entities
             if (value.isPressed)
             {
                 CallInteraction();
+            }
+        }
+
+        public void OnInteractItemParts(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                CallInteractionItemParts();
             }
         }
     }
