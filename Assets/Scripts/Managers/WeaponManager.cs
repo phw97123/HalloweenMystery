@@ -67,8 +67,10 @@ namespace Managers
 
             for (int i = 0; i < availWeapons.Length; i++)
             {
-                GameObject go = _resourceManager.LoadPrefab(availWeapons[i].ToString());
-                Instantiate(go, (startPosition + spacing * i), Quaternion.identity);
+                //todo refactor resourcesManager
+                Debug.Log($"Prefabs/Weapons/{availWeapons[i].ToString()}");
+                GameObject go = Resources.Load<GameObject>($"Prefabs/Weapons/{availWeapons[i].ToString()}");
+                CreateInteractableWeaponByPrefab(go, startPosition + spacing * i);
             }
         }
 
