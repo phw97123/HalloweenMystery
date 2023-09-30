@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReaperObjectPool : MonoBehaviour
+public class EnemyObjectPool : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public int poolSize = 10;

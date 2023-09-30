@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class RangedEnemyController : EnemyController
 {
-    public float stoppingDistance;
-    public float retreatDistance;
-    public float attackInterval;
-    public int numProjectiles;
+    [SerializeField] private float stoppingDistance;
+    [SerializeField] private float retreatDistance;
+    [SerializeField] private float attackInterval;
+    [SerializeField] private int numProjectiles;
 
     [SerializeField] private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
-    private Transform player;
-    private float timeUntilNextAttack;
-    private ReaperObjectPool objectPoolManager;
-    private StatsHandler statsHandler;
+    private Transform _player;
+    private float _timeUntilNextAttack;
+    private EnemyObjectPool _objectPoolManager;
+    private StatsHandler _statsHandler;
 
-    private HealthSystem healthSystem;
+    private HealthSystem _healthSystem;
     private HealthSystem _collidingTargetHealthSystem;
     private Movement _collidingMovement;
 
@@ -31,14 +31,14 @@ public class RangedEnemyController : EnemyController
     private void InitializePlayer()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag(targetTag);
-        player = playerObject != null ? playerObject.transform : null;
+        _player = playerObject != null ? playerObject.transform : null;
     }
 
     private void InitializeAttackParams()
     {
-        timeUntilNextAttack = attackInterval;
-        objectPoolManager = FindObjectOfType<ReaperObjectPool>();
-        statsHandler = GetComponent<StatsHandler>();
+        _timeUntilNextAttack = attackInterval;
+        _objectPoolManager = FindObjectOfType<EnemyObjectPool>();
+        _statsHandler = GetComponent<StatsHandler>();
     }
 
     private void Update()
@@ -60,26 +60,26 @@ public class RangedEnemyController : EnemyController
 
     private void HandleMovement()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        float speed = statsHandler.CurrentStats.speed;
+        float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
+        float speed = _statsHandler.CurrentStats.speed;
 
         if (distanceToPlayer > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _player.position, -speed * Time.deltaTime);
         }
     }
 
     private void HandleAttack()
     {
-        if (timeUntilNextAttack <= 0)
+        if (_timeUntilNextAttack <= 0)
         {
             for (int i = 0; i < numProjectiles; i++)
             {
-                GameObject bullet = objectPoolManager.GetPooledProjectile();
+                GameObject bullet = _objectPoolManager.GetPooledProjectile();
 
                 if (bullet != null)
                 {
@@ -87,11 +87,11 @@ public class RangedEnemyController : EnemyController
                     bullet.SetActive(true);
                 }
             }
-            timeUntilNextAttack = attackInterval;
+            _timeUntilNextAttack = attackInterval;
         }
         else
         {
-            timeUntilNextAttack -= Time.deltaTime;
+            _timeUntilNextAttack -= Time.deltaTime;
         }
     }
 
