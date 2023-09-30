@@ -11,7 +11,7 @@ namespace Entities
         [SerializeField] protected bool isReady = false;
 
         private AttackManager _attackManager;
-        protected TrailRenderer _trailRenderer;
+        protected TrailRenderer TrailRenderer;
 
         protected AttackStatusHandler Handler;
         public event Action OnMoveEvent;
@@ -19,9 +19,14 @@ namespace Entities
 
         protected virtual void Awake()
         {
-            _trailRenderer = GetComponent<TrailRenderer>();
+            TrailRenderer = GetComponent<TrailRenderer>();
             _attackManager = AttackManager.Instance;
             Handler = GetComponent<AttackStatusHandler>();
+        }
+
+        private void Start()
+        {
+            TrailRenderer.Clear();
         }
 
         protected virtual void Update()
@@ -74,8 +79,7 @@ namespace Entities
         public virtual void Inactivate(string prefabTag, bool showFx)
         {
             isReady = false;
-            gameObject.SetActive(false);
-            _trailRenderer.Clear();
+            TrailRenderer.Clear();
             _attackManager.InactivateGameObject(gameObject, prefabTag, showFx);
         }
     }

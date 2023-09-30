@@ -11,7 +11,6 @@ namespace Components.Attacks
         private AttackStatusHandler _handler;
 
         private float _distance;
-        private float _maxDistance;
 
         private void Awake()
         {
@@ -28,13 +27,13 @@ namespace Components.Attacks
         private void OnEnable()
         {
             _distance = 0f;
-            _maxDistance = _handler.attackStatus.attackData.range;
         }
 
         private void Move()
         {
             AttackDataSO attackData = _handler.attackStatus.attackData;
-            if (_distance >= _maxDistance)
+            float maxDistance = _handler.attackStatus.attackData.range;
+            if (_distance > 0 && _distance >= maxDistance)
             {
                 _controller.Inactivate(_handler.attackStatus.attackTag, false);
             }

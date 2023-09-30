@@ -16,6 +16,12 @@ namespace Utils
     {
         private readonly Dictionary<string, Queue<GameObject>> _pool = new Dictionary<string, Queue<GameObject>>();
         private readonly Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
+        private ResourceManager _resourceManager;
+
+        private void Awake()
+        {
+            _resourceManager = ResourceManager.Instance;
+        }
 
         public void Initialize(List<Poolable> prefabs)
         {
@@ -42,9 +48,25 @@ namespace Utils
         public GameObject Pop(string prefabTag)
         {
             GameObject go;
-            go = _pool[prefabTag].Count > 0 ? _pool[prefabTag].Dequeue() : Instantiate(_prefabs[prefabTag]);
-            go.SetActive(true);
+            if (ContainsKey(prefabTag))
+            {
+                go = _pool[prefabTag].Count > 0 ? _pool[prefabTag].Dequeue() : Instantiate(_prefabs[prefabTag]);
+                go.SetActive(true);
+            }
+            else
+            {
+                GameObject obj = _resourceManager.LoadPrefab(prefabTag);
+                _pool.Add(prefabTag, new Queue<GameObject>());
+                _prefabs[prefabTag] = obj;
+                go = Instantiate(obj);
+            }
+
             return go;
+        }
+
+        public bool ContainsKey(string key)
+        {
+            return _pool.ContainsKey(key) && _prefabs.ContainsKey(key);
         }
     }
 }

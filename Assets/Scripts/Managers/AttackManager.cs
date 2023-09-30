@@ -7,6 +7,7 @@ namespace Managers
 {
     public class AttackManager : MonoBehaviour
     {
+        
         private static AttackManager _instance = null;
 
         public static AttackManager Instance
@@ -46,21 +47,12 @@ namespace Managers
             _pool = gameObject.AddComponent<ObjectPool>();
             _prefabs = new List<Poolable>();
             
-            //todo resourcesManager and only required prefabs
+            //todo resourcesManager and only required prefabs 
+            //todo refactor
             GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Attacks");
             ParticleSystem ps = Resources.Load<ParticleSystem>("Prefabs/VFX/Explosion");
 
             defaultParticleSystem = Instantiate(ps);
-
-            foreach (GameObject obj in objects)
-            {
-                Poolable p = new Poolable();
-                p.Prefab = obj;
-                p.Size = 5;
-                p.Tag = obj.name;
-                _prefabs.Add(p);
-            }
-
             _pool.Initialize(_prefabs);
         }
 
@@ -88,7 +80,6 @@ namespace Managers
 
         public void RangeAttack(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
         {
-            //todo migrate to range attack
             float startDegree = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             startDegree -= (rangeAttackData.projectilesPerAttack * rangeAttackData.anglePerShot * 0.5f);
 
