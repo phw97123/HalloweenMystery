@@ -6,6 +6,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public interface IReward { }
+
+public class WeaponTypeReward : IReward
+{
+    public WeaponType weaponType { get; set; }
+}
+
 public enum Achievement
 {
     StageClear1,
@@ -20,7 +27,7 @@ public enum Achievement
 public class AchievementData
 {
     public Achievement achivement;
-    public GameObject unLockedWeapon;
+    public IReward reward;
     public bool isAchive;
 }
 
@@ -49,6 +56,15 @@ public class AchiveManager : MonoBehaviour
     private Achievement[] achievements;
     private AchievementData[] achievementDataArray;
 
+    private Dictionary<Achievement, IReward> rewardMappings = new Dictionary<Achievement, IReward>
+    {
+        {Achievement.StageClear1, new WeaponTypeReward { weaponType = WeaponType.Axe} },
+        {Achievement.StageClear2, new WeaponTypeReward { weaponType = WeaponType.Dagger} },
+        {Achievement.LastBossClear, new WeaponTypeReward { weaponType = WeaponType.Rifle} },
+        {Achievement.MonsterKiller, new WeaponTypeReward { weaponType = WeaponType.Pistol} },
+        {Achievement.WallShooter, new WeaponTypeReward { weaponType = WeaponType.Shotgun} },
+    };
+
     private void Awake()
     {
         if (_instance == null)
@@ -64,11 +80,6 @@ public class AchiveManager : MonoBehaviour
         dataManager = DataManager.Instance;
 
         LoadAchievementData();
-    }
-
-    private void Start()
-    {
-        Unlocked();
     }
 
     private void LoadAchievementData()
@@ -95,21 +106,17 @@ public class AchiveManager : MonoBehaviour
             achievementDataArray[i] = new AchievementData
             {
                 achivement = achievements[i],
-                unLockedWeapon = null,
                 isAchive = false
             };
+            SetAchievementRewards(achievements[i]);
         }
     }
 
-    private void Unlocked()
+    private void SetAchievementRewards(Achievement achivement)
     {
-        foreach (var unlock in achievementDataArray)
+        if (rewardMappings.ContainsKey(achivement))
         {
-            if (unlock.isAchive)
-            {
-                Debug.Log("Achievement unlocked: " + unlock.achivement);
-                SetAchievementRewards(unlock.achivement); 
-            }
+            achievementDataArray[(int)achivement].reward = rewardMappings[achivement];
         }
     }
 
@@ -127,25 +134,8 @@ public class AchiveManager : MonoBehaviour
         dataManager.SaveData(achievementDataArray);
     }
 
-    private void SetAchievementRewards(Achievement achivement)
+    public AchievementData[] GetAchievementData()
     {
-        switch (achivement)
-        {
-            case Achievement.StageClear1:
-                //achievementDataArray[(int)achivement].unLockedWeapon = WeaponManager.Singleton.CreateInteractableWeapon(weaponName,position); 
-                break;
-            case Achievement.StageClear2:
-                break;
-            case Achievement.LastBossClear:
-                break;
-            case Achievement.MonsterKiller:
-                break;
-            case Achievement.NoDamageClear:
-                break;
-            case Achievement.WallShooter:
-                break;
-            case Achievement.NoItemClear:
-                break;
-        }
+        return achievementDataArray;
     }
 }
