@@ -30,11 +30,21 @@ namespace Managers
         }
 
 
+        //todo refactor name -> createInteractableWeaponByName
         public void CreateInteractableWeapon(string weaponName, Vector2 position)
         {
             //todo by ResourcesManager
             GameObject obj = Resources.Load<GameObject>($"Prefabs/Weapons/{weaponName}");
             GameObject go = Instantiate(obj, position, Quaternion.identity);
+
+            go.AddComponent<InteractController>();
+            go.AddComponent<EquipWeapon>();
+        }
+
+        public void CreateInteractableWeaponByPrefab(GameObject prefab, Vector2 position)
+        {
+            //todo by ResourcesManager
+            GameObject go = Instantiate(prefab, position, Quaternion.identity);
 
             go.AddComponent<InteractController>();
             go.AddComponent<EquipWeapon>();
@@ -49,7 +59,8 @@ namespace Managers
             {
                 if (!isAble[i]) { continue; }
 
-                Instantiate(objects[i], startPosition + spacing * i, Quaternion.identity);
+                Vector2 position = (startPosition + spacing * i);
+                CreateInteractableWeaponByPrefab(objects[i], position);
             }
         }
 
