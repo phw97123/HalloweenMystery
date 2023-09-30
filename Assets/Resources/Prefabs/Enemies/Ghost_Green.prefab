@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 769931444158323639}
   - component: {fileID: 6846654593874578992}
   - component: {fileID: 7124260467052084466}
+  - component: {fileID: 2501168455770908642}
   m_Layer: 7
   m_Name: Ghost_Green
   m_TagString: Enemy
@@ -38,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 8576531521172743766}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &7897480679753286288
 CapsuleCollider2D:
@@ -69,7 +70,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -117,7 +118,7 @@ MonoBehaviour:
   baseStats:
     changeType: 0
     maxHealth: 3
-    speed: 1
+    speed: 5
     criticalPercentage: 0
     goldPercentage: 0
     itemDropPercentage: 0
@@ -147,8 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0806c568a62c93b45b633f8b25a49e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportDistance: 5
-  teleportCooldown: 4
+  moveCooldown: 2
 --- !u!114 &769931444158323639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2501168455770908642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598296402358194975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796382784013580796
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8576531521172743766}
   - component: {fileID: 7108913945377762860}
+  - component: {fileID: 2635997791413260005}
   m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
@@ -275,3 +288,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2635997791413260005
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796382784013580796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1da8878065f5c0b469284777b78b67f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

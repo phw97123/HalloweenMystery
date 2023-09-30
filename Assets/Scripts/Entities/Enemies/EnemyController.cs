@@ -15,15 +15,27 @@ public class EnemyController : EntityController
 
     protected virtual void Start()
     {
-        Stats = GetComponent<StatsHandler>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            Target = playerObject.transform;
 
-        //ClosestTarget = gameManager.Player;
-        Target = GameObject.FindGameObjectWithTag("Player").transform;
+            float distance = DistanceToTarget();
+            Vector2 direction = DirectionToTarget();
+        }
+        else
+        {
+            Target = null;
+        }
+
+        Stats = GetComponent<StatsHandler>();      
     }
 
     protected virtual void FixedUpdate()
     {
+        
     }
+
 
     protected float DistanceToTarget()
     {
