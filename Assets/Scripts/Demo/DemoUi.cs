@@ -76,7 +76,7 @@ namespace Managers
         {
             if (_stack.Count <= 0) { return; }
 
-            _currentState = NewState;
+            _currentState = NewState;  
             OnStateChanged?.Invoke(_currentState);
         }
 

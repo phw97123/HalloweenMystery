@@ -10,6 +10,7 @@ using Text = TMPro.TextMeshProUGUI;
 
 namespace Managers
 {
+    //todo extends ContentListView
     public class DemoPartsUI : MonoBehaviour
     {
         private DemoUi _demoUi;

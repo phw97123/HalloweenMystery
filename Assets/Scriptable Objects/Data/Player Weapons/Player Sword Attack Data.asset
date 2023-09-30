@@ -21,9 +21,9 @@ MonoBehaviour:
   speed: 15
   range: 2
   isKnockBackOn: 1
-  knockBackDuration: 0
-  knockBackPower: 0
-  attackTag: SwordAttack
+  knockBackDuration: 1
+  knockBackPower: 1
+  finalAttackTag: 
   arc: 90
   attackCount: 3
   targets: 3
