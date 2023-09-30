@@ -1,4 +1,5 @@
 using Managers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,15 +19,11 @@ public class RoomManager : MonoBehaviour
     private void Start()
     {
         Instantiate(ResourceManager.Instance.LoadPrefab("BlueMan"));
-        for (int i = 0; i < spawnPostions.Length; i++)
-        {
-            bool[] isAbleArray = new bool[spawnPostions.Length];
-            isAbleArray[i] = true;
-            WeaponManager.Singleton.CreateInteractableWeapons(isAbleArray, spawnPostions[i].position, Vector2.zero);
-        }
+        WeaponType[] types = (WeaponType[])Enum.GetValues(typeof(WeaponType));
+        WeaponManager.Singleton.CreateInteractableWeapons(types, spawnPostions[0].position, new Vector2(2, 0));
     }
 
-    public void ChangeScene() 
+    public void ChangeScene()
     {
         GameManager.Instance.ChangeScene(Scenes.RoomContent);
     }

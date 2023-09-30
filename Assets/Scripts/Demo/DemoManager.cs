@@ -69,7 +69,6 @@ namespace Managers
         {
             Vector2 position = new Vector2(-3, -3);
             Vector2 spacing = new Vector2(2, 0);
-            WeaponManager.Singleton.CreateInteractableWeapons(isAble, position, spacing);
         }
 
         public void CreateMonsters()

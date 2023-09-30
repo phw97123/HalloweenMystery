@@ -10,8 +10,19 @@ using Utils;
 
 namespace Managers
 {
+    public enum WeaponType
+    {
+        Sword,
+        Dagger,
+        Axe,
+        Pistol,
+        Rifle,
+        Shotgun,
+    }
+
     public class WeaponManager : MonoBehaviour
     {
+        private ResourceManager _resourceManager;
         private static WeaponManager _singleton;
 
         public static WeaponManager Singleton
@@ -50,17 +61,14 @@ namespace Managers
             go.AddComponent<EquipWeapon>();
         }
 
-        public void CreateInteractableWeapons(bool[] isAble, Vector2 startPosition, Vector2 spacing)
+        public void CreateInteractableWeapons(WeaponType[] availWeapons, Vector2 startPosition, Vector2 spacing)
         {
             //todo Refactor bool -> achievement 
-            GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Weapons");
 
-            for (int i = 0; i < objects.Length; i++)
+            for (int i = 0; i < availWeapons.Length; i++)
             {
-                if (!isAble[i]) { continue; }
-
-                Vector2 position = (startPosition + spacing * i);
-                CreateInteractableWeaponByPrefab(objects[i], position);
+                GameObject go = _resourceManager.LoadPrefab(availWeapons[i].ToString());
+                Instantiate(go, (startPosition + spacing * i), Quaternion.identity);
             }
         }
 
