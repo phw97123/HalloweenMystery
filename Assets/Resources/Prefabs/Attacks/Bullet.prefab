@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2187352752471016391}
   - component: {fileID: -967589579943808196}
   - component: {fileID: 7408313351590182248}
+  - component: {fileID: 8267698912276254326}
+  - component: {fileID: 7405201671686595252}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -79,7 +81,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.7
+  m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -224,6 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932ac69caaa8434d939a31d5fa09ebcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCollision:
+    serializedVersion: 2
+    m_Bits: 256
+  isReady: 0
 --- !u!114 &7408313351590182248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +251,33 @@ MonoBehaviour:
     direction: {x: 0, y: 0}
     degree: 0
     attackData: {fileID: 0}
+--- !u!114 &8267698912276254326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766532551015113326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f70abda92b443786db9163f3d93ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7405201671686595252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766532551015113326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c148d89c444900a3e965d3dab856cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCollision:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &4798852984882764712
 GameObject:
   m_ObjectHideFlags: 0

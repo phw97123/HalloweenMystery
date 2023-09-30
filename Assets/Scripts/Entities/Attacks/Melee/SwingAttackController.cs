@@ -12,7 +12,7 @@ namespace Entities
             MeleeAttackDataSO meleeAttack = Handler.attackStatus.attackData as MeleeAttackDataSO;
             if (meleeAttack == null) { return; }
             
-            _trailRenderer.startWidth = Handler.attackStatus.attackData.range;
+            TrailRenderer.startWidth = Handler.attackStatus.attackData.range;
             CallRotateAttack(Handler.attackStatus.degree);
             if ((Handler.attackStatus.currentAttackCount & 1) == 1)
             {
