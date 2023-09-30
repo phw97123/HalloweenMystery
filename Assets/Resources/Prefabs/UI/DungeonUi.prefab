@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 3342247646314593119}
   - component: {fileID: 7089268843330220342}
   m_Layer: 5
-  m_Name: DungeonUi
+  m_Name: DungeonUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

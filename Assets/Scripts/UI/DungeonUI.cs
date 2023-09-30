@@ -6,7 +6,7 @@ using Text = TMPro.TextMeshProUGUI;
 
 namespace UI
 {
-    public class DungeonUiController : UIPopup
+    public class DungeonUI : UIPopup
     {
         private GameManager _gameManager;
         [SerializeField] private Text elapsedTimeText;
