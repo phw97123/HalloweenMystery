@@ -36,7 +36,7 @@ namespace Systems
                     _maxTargetCount = ((MeleeAttackDataSO)_handler.attackStatus.attackData).targets;
                     break;
                 case AttackType.Range:
-                    _maxTargetCount = (int)((RangeAttackDataSO)_handler.attackStatus.attackData).piercingCount;
+                    _maxTargetCount = 1 + (int)((RangeAttackDataSO)_handler.attackStatus.attackData).piercingCount;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
