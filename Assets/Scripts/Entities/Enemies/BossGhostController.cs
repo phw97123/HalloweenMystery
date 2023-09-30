@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossEnemyController : EnemyController
+public class BossGhostController : EnemyController
 {
     [SerializeField] private float summonInterval = 10f;
     [SerializeField] private GameObject[] minionPrefabs;

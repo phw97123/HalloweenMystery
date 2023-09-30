@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b47d471dad9cd49448657d81bd851f78
+guid: bb0644d1717508644bd29b1c7c7745d1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: witch2_3_0
+      name: witch2_cauldron_3_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 324
+        x: 0
+        y: 0
+        width: 96
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41999a88d31a9c344ad21106e831f9a9
+      internalID: 1229429955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch2_cauldron_3_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 432
         width: 63
-        height: 99
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +158,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f03126a07dcdb43bd673bad64be85d
-      internalID: -989903875
+      spriteID: 3b5661c95cb6c444abfaa37410c2bd87
+      internalID: 850929233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch2_3_1
+      name: witch2_cauldron_3_2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 324
+        x: 192
+        y: 0
+        width: 96
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbe2534f25720e4c917f794d05293d8
+      internalID: -800980705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch2_cauldron_3_3
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 288
         width: 63
-        height: 102
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c460cb0dbf5376e429ee6790fb4bc276
-      internalID: 1814829546
+      spriteID: 6fd7f86b8be4a0b49adf1d85bc27d86e
+      internalID: 913166896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch2_3_2
+      name: witch2_cauldron_3_4
       rect:
         serializedVersion: 2
-        x: 162
-        y: 324
+        x: 111
+        y: 144
         width: 63
-        height: 99
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,146 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12e7c94b785bc9643bf0039113463023
-      internalID: 133337708
+      spriteID: 562f52842284c3a4a8cf6c0fc7f01759
+      internalID: 2027178549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch2_3_3
+      name: witch2_cauldron_3_5
       rect:
         serializedVersion: 2
-        x: 9
-        y: 216
-        width: 60
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e3270643930fa14886d63059a47e254
-      internalID: 2011223743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_4
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 216
-        width: 60
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9011e87cd114b4c4c9f67d8f9adf054b
-      internalID: -1401890067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_5
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 216
-        width: 60
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b5a54a4e40d3724bb6998bb5320a0f5
-      internalID: -1145655348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_6
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 108
-        width: 60
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b4b8ddeb3f3d454eb738682af9cc151
-      internalID: -563082573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_7
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 108
-        width: 60
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc7a89bb78a0b134da902df843287a4f
-      internalID: -803572149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_8
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 108
-        width: 60
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e94b0a95b7ea7f6499946afcfa6b2bee
-      internalID: 530862831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_9
-      rect:
-        serializedVersion: 2
-        x: 6
+        x: 111
         y: 0
         width: 63
-        height: 99
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,50 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c279ba54cbeb054f83187e1c1449287
-      internalID: -287836683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_10
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 63
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89b5c8c964a5b5e408ca5a6d8585c006
-      internalID: 1307154294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: witch2_3_11
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 0
-        width: 63
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2538483df1257bc4a924f06d0db881fe
-      internalID: -304290049
+      spriteID: dc01d6e0d864c644a99b32b32a3afd15
+      internalID: 312094868
       vertices: []
       indices: 
       edges: []
@@ -385,18 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      witch2_3_0: -989903875
-      witch2_3_1: 1814829546
-      witch2_3_10: 1307154294
-      witch2_3_11: -304290049
-      witch2_3_2: 133337708
-      witch2_3_3: 2011223743
-      witch2_3_4: -1401890067
-      witch2_3_5: -1145655348
-      witch2_3_6: -563082573
-      witch2_3_7: -803572149
-      witch2_3_8: 530862831
-      witch2_3_9: -287836683
+      witch2_cauldron_3_0: 1229429955
+      witch2_cauldron_3_1: 850929233
+      witch2_cauldron_3_2: -800980705
+      witch2_cauldron_3_3: 913166896
+      witch2_cauldron_3_4: 2027178549
+      witch2_cauldron_3_5: 312094868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
