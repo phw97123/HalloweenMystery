@@ -42,10 +42,9 @@ namespace Managers
 
 
         //todo refactor name -> createInteractableWeaponByName
-        public void CreateInteractableWeapon(string weaponName, Vector2 position)
+        public void CreateInteractableWeapon(WeaponType weaponType, Vector2 position)
         {
-            //todo by ResourcesManager
-            GameObject obj = Resources.Load<GameObject>($"Prefabs/Weapons/{weaponName}");
+            GameObject obj = ResourceManager.Instance.LoadPrefab(weaponType.ToString());
             GameObject go = Instantiate(obj, position, Quaternion.identity);
 
             go.AddComponent<InteractController>();

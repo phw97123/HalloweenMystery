@@ -6,11 +6,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public interface IReward { }
-
-public class WeaponTypeReward : IReward
+public class RewardData
 {
-    public WeaponType weaponType { get; set; }
+    public WeaponType? weaponType { get; set; }
 }
 
 public enum Achievement
@@ -27,7 +25,7 @@ public enum Achievement
 public class AchievementData
 {
     public Achievement achivement;
-    public IReward reward;
+    public RewardData reward;
     public bool isAchive;
 }
 
@@ -56,13 +54,13 @@ public class AchiveManager : MonoBehaviour
     private Achievement[] achievements;
     private AchievementData[] achievementDataArray;
 
-    private Dictionary<Achievement, IReward> rewardMappings = new Dictionary<Achievement, IReward>
+    private Dictionary<Achievement, RewardData> rewardMappings = new Dictionary<Achievement, RewardData>
     {
-        {Achievement.StageClear1, new WeaponTypeReward { weaponType = WeaponType.Axe} },
-        {Achievement.StageClear2, new WeaponTypeReward { weaponType = WeaponType.Dagger} },
-        {Achievement.LastBossClear, new WeaponTypeReward { weaponType = WeaponType.Rifle} },
-        {Achievement.MonsterKiller, new WeaponTypeReward { weaponType = WeaponType.Pistol} },
-        {Achievement.WallShooter, new WeaponTypeReward { weaponType = WeaponType.Shotgun} },
+        {Achievement.StageClear1, new RewardData { weaponType = WeaponType.Axe} },
+        {Achievement.StageClear2, new RewardData { weaponType = WeaponType.Dagger} },
+        {Achievement.LastBossClear, new RewardData { weaponType = WeaponType.Rifle} },
+        {Achievement.MonsterKiller, new RewardData { weaponType = WeaponType.Pistol} },
+        {Achievement.WallShooter, new RewardData { weaponType = WeaponType.Shotgun} },
     };
 
     private void Awake()

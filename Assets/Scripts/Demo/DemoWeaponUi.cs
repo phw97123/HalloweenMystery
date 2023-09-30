@@ -34,12 +34,12 @@ namespace Managers
 
             backButton.onClick.AddListener(_demoUi.BackPressed);
             deleteButton.onClick.AddListener(DeleteAllWeapons);
-            shotgunButton.onClick.AddListener(() => { CreateWeapon("Shotgun"); });
-            rifleButton.onClick.AddListener(() => { CreateWeapon("Rifle"); });
-            pistolButton.onClick.AddListener(() => { CreateWeapon("Pistol"); });
-            swordButton.onClick.AddListener(() => { CreateWeapon("Sword"); });
-            daggerButton.onClick.AddListener(() => { CreateWeapon("Dagger"); });
-            axeButton.onClick.AddListener(() => { CreateWeapon("Axe"); });
+            shotgunButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Shotgun); });
+            rifleButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Rifle); });
+            pistolButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Pistol); });
+            swordButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Sword); });
+            daggerButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Dagger); });
+            axeButton.onClick.AddListener(() => { CreateWeapon(WeaponType.Axe); });
 
             //todo get bool array
             //ableWeaponsButton.onClick.AddListener();
@@ -73,9 +73,9 @@ namespace Managers
             gameObject.SetActive(state == DemoState.CreateWeapon);
         }
 
-        private void CreateWeapon(string weaponName)
+        private void CreateWeapon(WeaponType weaponType)
         {
-            WeaponManager.Singleton.CreateInteractableWeapon(weaponName, new Vector2(-1, 1));
+            WeaponManager.Singleton.CreateInteractableWeapon(weaponType, new Vector2(-1, 1));
         }
     }
 }
