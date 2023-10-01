@@ -249,6 +249,7 @@ MonoBehaviour:
   price: 0
   isEquiped: 0
   descriptionText: {fileID: 3286043410129226367}
+  partsClip: {fileID: 8300000, guid: 7ba59d0beee51aa4c8edd11dcdc0f9a5, type: 3}
 --- !u!58 &1793569383573741143
 CircleCollider2D:
   m_ObjectHideFlags: 0

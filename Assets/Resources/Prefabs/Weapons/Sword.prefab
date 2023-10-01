@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fd3d3f66787904fab060feca79ec7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponType: 0
   attackPosition: {fileID: 7380538478095391250}
+  meleeClip1: {fileID: 8300000, guid: 7c5c5df6959f0d04ab8695d30000edd2, type: 3}
+  meleeClip2: {fileID: 8300000, guid: e5fd5cb077cb17f4d9c501c755c23003, type: 3}
 --- !u!114 &7632408277249093384
 MonoBehaviour:
   m_ObjectHideFlags: 0
