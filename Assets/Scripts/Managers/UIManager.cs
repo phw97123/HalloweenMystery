@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
@@ -60,6 +61,23 @@ namespace Managers
         public void ClosePopup(string name)
         {
             _popUpList[name]?.gameObject.SetActive(false);
+        }
+
+        public void CloseAllPopups()
+        {
+            foreach ((string _, UIPopup popup) in _popUpList)
+            {
+                if (popup != null)
+                {
+                    popup.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        [CanBeNull]
+        public UIPopup FindPopup(string name)
+        {
+            return _popUpList.TryGetValue(name, out UIPopup popup) ? popup : null;
         }
     }
 }
