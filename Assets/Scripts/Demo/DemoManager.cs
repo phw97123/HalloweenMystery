@@ -42,6 +42,7 @@ namespace Managers
 
             _singleton = this;
             uiManager = UIManager.Singleton;
+            gameManager = GameManager.Instance;
         }
 
         private void Start()
@@ -60,8 +61,7 @@ namespace Managers
         {
             if (IsPlayerExists) { return; }
 
-            Object go = Resources.Load("Prefabs/Character/BlueMan");
-            Instantiate(go);
+            gameManager.CreatePlayer();
             IsPlayerExists = true;
         }
 
@@ -75,12 +75,13 @@ namespace Managers
         {
             Object go = Resources.Load("Prefabs/Enemies/Ghost_White");
             Instantiate(go);
+            //todo make 
         }
 
         public void EnterDungeon()
         {
-            UIPopup popup = uiManager.ShowUIPopupByName("DungeonUi");
-            popup.transform.Find("Container").localScale = new Vector3(0.5f, 1f);
+            gameManager.ShowDungeonUI();
+            GameObject.Find("Container").transform.localScale = new Vector3(0.5f, 1f);
         }
 
         public void CreateWeaponParts()

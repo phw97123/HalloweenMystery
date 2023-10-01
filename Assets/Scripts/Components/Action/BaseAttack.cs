@@ -1,9 +1,11 @@
+using Managers;
 using UnityEngine;
 
 namespace Components.Action
 {
-    public class BaseAttack:MonoBehaviour
+    public class BaseAttack : MonoBehaviour
     {
-        //todo abstraction of child classes
+        [SerializeField] private WeaponType weaponType;
+        public WeaponType WeaponType => weaponType;
     }
 }

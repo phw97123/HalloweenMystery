@@ -18,7 +18,6 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(ResourceManager.Instance.LoadPrefab("BlueMan"));
         WeaponType[] types = (WeaponType[])Enum.GetValues(typeof(WeaponType));
         WeaponManager.Singleton.CreateInteractableWeapons(types, spawnPostions[0].position, new Vector2(2, 0));
     }

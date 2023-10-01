@@ -1,6 +1,11 @@
+using Components;
+using Components.Stats;
+using Components.Weapon;
 using Managers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -10,11 +15,18 @@ public enum Scenes { RoomScene, StageScene, RoomContent }
 
 public class GameManager : MonoBehaviour
 {
-    private Scenes _curScenes = Scenes.RoomScene;
-
-    private bool _change = true;
-
     private static GameManager _instance;
+
+    private Scenes _curScenes = Scenes.RoomScene;
+    private bool _isChanged;
+    public Transform Player { get; private set; }
+    private UIManager _uiManager;
+    private WeaponManager _weaponManager;
+
+
+    public CharacterStats PlayerStats { get; private set; }
+    public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
+    public event Action<WeaponInfo?> OnEquipped;
 
     public static GameManager Instance
     {
@@ -23,28 +35,51 @@ public class GameManager : MonoBehaviour
             if (_instance != null) { return _instance; }
 
             _instance = FindObjectOfType<GameManager>();
-            if (_instance != null) { return _instance; }
+            if (_instance != null)
+            {
+                return _instance;
+            }
 
-            _instance = new GameObject(nameof(GameManager) + "-singleton").AddComponent<GameManager>();
+            _instance = new GameObject(nameof(GameManager) + " - singleton").AddComponent<GameManager>();
             return _instance;
         }
     }
 
-    public void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
     {
-        if (_instance == null)
+        _instance = null;
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
         {
-            _instance = this;
+            Destroy(this);
+            return;
         }
-        
-        DontDestroyOnLoad(gameObject);
+
+        _instance = this;
+        _uiManager = UIManager.Singleton;
+        _weaponManager = WeaponManager.Singleton;
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        _weaponManager.OnWeaponEquipped += CallEquippedEvent;
+    }
+
+    private void CallEquippedEvent(WeaponInfo? weaponInfo)
+    {
+        OnEquipped?.Invoke(weaponInfo);
     }
 
     public void Update()
     {
-        if (_change)
+        if (_isChanged)
         {
-            _change = false;
+            _isChanged = false;
             switch (_curScenes)
             {
                 case Scenes.RoomScene:
@@ -60,10 +95,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(Scenes sceneName)
+    private void SetStats(CharacterStats stat)
     {
-        _change = true;
-        _curScenes = sceneName;
+        PlayerStats = stat;
     }
 
+    public void CreatePlayer()
+    {
+        CreatePlayerAtPosition(Vector2.zero, Quaternion.identity);
+    }
+
+    public void CreatePlayerAtPosition(Vector2 startPosition, Quaternion rotation)
+    {
+        if (Player == null)
+        {
+            //todo load data of playerQuaternion rotation = Quaternion.identity
+            GameObject playerPrefab = ResourceManager.Instance.LoadPrefab("BlueMan");
+            Player = Instantiate(playerPrefab, startPosition, rotation).transform;
+            if (Player == null)
+            {
+                Debug.LogWarning("Player GameObject doesn't exists");
+            }
+        }
+
+        Player.GetComponent<StatsHandler>().OnStatsChanged += SetStats;
+    }
+
+    public void ShowDungeonUI()
+    {
+        _uiManager.ShowUIPopupByName(nameof(DungeonUI));
+    }
+
+
+    public void ChangeScene(Scenes sceneName)
+    {
+        _isChanged = true;
+        _curScenes = sceneName;
+    }
 }
