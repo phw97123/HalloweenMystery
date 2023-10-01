@@ -157,6 +157,8 @@ GameObject:
   - component: {fileID: 7809786514729528393}
   - component: {fileID: 7600634490745887463}
   - component: {fileID: 1545459867603260089}
+  - component: {fileID: 5183674815349881579}
+  - component: {fileID: 6974789025928175827}
   m_Layer: 0
   m_Name: BlueMan
   m_TagString: Player
@@ -380,3 +382,28 @@ MonoBehaviour:
   healthChangeDelay: 0.5
   MaxShieldCount: 3
   ShieldCount: 0
+  damageClip: {fileID: 8300000, guid: 685312f81d068d34aa7c62029fdf4f62, type: 3}
+--- !u!114 &5183674815349881579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208740728094762288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba544b263cc315946a6f1c2cd84ad73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6974789025928175827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208740728094762288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0339e0f019207364eb788bb466fff823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

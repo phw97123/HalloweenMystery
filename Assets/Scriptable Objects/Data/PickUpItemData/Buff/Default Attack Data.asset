@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     serializedVersion: 2
-    m_Bits: 0
-  damage: 0
+    m_Bits: 128
+  prefabTag: 
+  damage: 1
   delay: 0
   speed: 0
   range: 0

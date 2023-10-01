@@ -15,9 +15,9 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 64
-  prefabTag: 
+  prefabTag: Enemy
   damage: 1
-  delay: 0.1
+  delay: 1
   speed: 1
   range: 1
   isKnockBackOn: 0

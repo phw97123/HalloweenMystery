@@ -13,7 +13,6 @@ public class MeleeEnemyController : EnemyController
 
     private HealthSystem healthSystem;
     private HealthSystem _collidingTargetHealthSystem;
-    private Movement _collidingMovement;
 
     protected override void Start()
     {
@@ -71,8 +70,6 @@ public class MeleeEnemyController : EnemyController
         {
             _isCollidingWithTarget = true;
         }
-
-        _collidingMovement = receiver.GetComponent<Movement>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
