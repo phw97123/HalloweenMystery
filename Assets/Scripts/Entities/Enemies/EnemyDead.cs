@@ -33,7 +33,6 @@ public class EnemyDead : MonoBehaviour
             component.enabled = false;
         }
 
-        // 랜덤한 확률 값을 생성
         float randomValue = Random.value;
 
         float cumulativeChance = 0;
@@ -41,7 +40,6 @@ public class EnemyDead : MonoBehaviour
         for (int i = 0; i < itemPrefabs.Length; i++)
         {
             cumulativeChance += itemDropChances[i];
-
             if (randomValue <= cumulativeChance)
             {
                 Instantiate(itemPrefabs[i], transform.position, Quaternion.identity);
