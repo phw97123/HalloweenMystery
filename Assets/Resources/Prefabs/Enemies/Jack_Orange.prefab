@@ -195,11 +195,10 @@ MonoBehaviour:
   - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
   - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
   itemDropChances:
-  - 0.2
+  - 0.6
   - 0.2
   - 0.1
   - 0.1
-  noDropChance: 0.4
 --- !u!1 &5401766492945342256
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class MeleeEnemyController : EnemyController
 
     private HealthSystem healthSystem;
     private HealthSystem _collidingTargetHealthSystem;
-    private Movement _collidingMovement;
 
     protected override void Start()
     {
@@ -24,7 +23,11 @@ public class MeleeEnemyController : EnemyController
 
     private void OnDamage()
     {
-        followRange = 100f;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            SetTarget(playerObject.transform);
+        }
     }
 
     protected override void FixedUpdate()
@@ -34,7 +37,6 @@ public class MeleeEnemyController : EnemyController
         if (_isCollidingWithTarget)
         {
             ApplyHealthChange();
-            Debug.Log("attacking");
         }
 
         Vector2 direction = Vector2.zero;
@@ -67,8 +69,6 @@ public class MeleeEnemyController : EnemyController
         {
             _isCollidingWithTarget = true;
         }
-
-        _collidingMovement = receiver.GetComponent<Movement>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)

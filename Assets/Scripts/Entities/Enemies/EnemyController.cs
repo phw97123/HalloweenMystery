@@ -15,35 +15,46 @@ public class EnemyController : EntityController
 
     protected virtual void Start()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (playerObject != null)
-        {
-            Target = playerObject.transform;
+        Target = null;
 
-            float distance = DistanceToTarget();
-            Vector2 direction = DirectionToTarget();
-        }
-        else
-        {
-            Target = null;
-        }
-
-        Stats = GetComponent<StatsHandler>();      
+        Stats = GetComponent<StatsHandler>();
     }
 
     protected virtual void FixedUpdate()
     {
-        
+        if (Target != null)
+        {
+            Vector2 direction = DirectionToTarget();
+            CallMove(direction);
+        }
     }
-
 
     protected float DistanceToTarget()
     {
-        return Vector3.Distance(transform.position, Target.position);
+        if (Target != null)
+        {
+            return Vector3.Distance(transform.position, Target.position);
+        }
+        else
+        {
+            return float.MaxValue;
+        }
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (Target.position - transform.position).normalized;
+        if (Target != null)
+        {
+            return (Target.position - transform.position).normalized;
+        }
+        else
+        {
+            return Vector2.zero;
+        }
+    }
+
+    public void SetTarget(Transform target)
+    {
+        Target = target;
     }
 }

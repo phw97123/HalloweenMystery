@@ -17,9 +17,7 @@ public class RangedEnemyController : EnemyController
     private EnemyObjectPool _objectPoolManager;
     private StatsHandler _statsHandler;
 
-    private HealthSystem _healthSystem;
     private HealthSystem _collidingTargetHealthSystem;
-    private Movement _collidingMovement;
 
     protected override void Start()
     {
@@ -43,6 +41,7 @@ public class RangedEnemyController : EnemyController
 
     private void Update()
     {
+        InitializePlayer();
         HandleMovement();
         HandleAttack();
     }
@@ -54,22 +53,24 @@ public class RangedEnemyController : EnemyController
         if (_isCollidingWithTarget)
         {
             ApplyHealthChange();
-            Debug.Log("attacking");
         }
     }
 
     private void HandleMovement()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
-        float speed = _statsHandler.CurrentStats.speed;
+        if (_player != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
+            float speed = _statsHandler.CurrentStats.speed;
 
-        if (distanceToPlayer > stoppingDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, -speed * Time.deltaTime);
+            if (distanceToPlayer > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _player.position, -speed * Time.deltaTime);
+            }
         }
     }
 
