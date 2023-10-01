@@ -225,6 +225,7 @@ MonoBehaviour:
   attackInterval: 1
   numProjectiles: 5
   targetTag: Player
+  spawnParticlePrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
 --- !u!114 &5762867882582063021
 MonoBehaviour:
   m_ObjectHideFlags: 0

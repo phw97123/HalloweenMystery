@@ -1,4 +1,3 @@
-using Components.Action;
 using Components.Stats;
 using UnityEngine;
 
@@ -12,18 +11,28 @@ public class RangedEnemyController : EnemyController
     [SerializeField] private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
+    [SerializeField] private GameObject spawnParticlePrefab; // 등장 파티클 프리팹을 Inspector에서 할당합니다.
+
     private Transform _player;
     private float _timeUntilNextAttack;
     private EnemyObjectPool _objectPoolManager;
     private StatsHandler _statsHandler;
 
     private HealthSystem _collidingTargetHealthSystem;
+    private GameObject spawnParticleInstance; // 파티클 오브젝트에 대한 참조를 유지합니다.
 
     protected override void Start()
     {
         base.Start();
         InitializePlayer();
         InitializeAttackParams();
+
+        // 몬스터 등장 시 파티클 효과 생성
+        if (spawnParticlePrefab != null)
+        {
+            spawnParticleInstance = Instantiate(spawnParticlePrefab, transform.position, Quaternion.identity);
+            Destroy(spawnParticleInstance, 10f); // 10초 후에 파티클 삭제
+        }
     }
 
     private void InitializePlayer()
