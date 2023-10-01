@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 public class WitchAttack : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class WitchAttack : MonoBehaviour
 
     [SerializeField] private float SpawnInterval = 0.2f;
 
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private AudioClip attackSound;
 
     private enum ShotState
     {
@@ -33,10 +34,10 @@ public class WitchAttack : MonoBehaviour
 
     private ShotState currentState = ShotState.CircleShot;
 
+
     private void Start()
     {
         _currentTurnSpeed = initialTurnSpeed;
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -63,12 +64,11 @@ public class WitchAttack : MonoBehaviour
 
                 if (_timeSinceLastSpinShot >= spinShotInterval)
                 {
-                    _spriteRenderer.color = Color.white;
                     currentState = ShotState.CircleShot;
                     _timeSinceLastSpinShot = 0f;
                     _circleShotsFired = 0;
 
-                    _currentTurnSpeed = Mathf.Min(_currentTurnSpeed + 2.0f, maxTurnSpeed);
+                    _currentTurnSpeed = Mathf.Min(_currentTurnSpeed + 2.0f, maxTurnSpeed);    
                 }
                 else
                 {
@@ -78,6 +78,10 @@ public class WitchAttack : MonoBehaviour
                     if (_spawnTimer >= SpawnInterval)
                     {
                         GameObject temp = Instantiate(Bullet);
+                        if (attackSound != null)
+                        {
+                            SoundManager.PlayClip(attackSound);
+                        }
 
                         Destroy(temp, 2f);
 
@@ -85,12 +89,6 @@ public class WitchAttack : MonoBehaviour
                         temp.transform.rotation = transform.rotation;
 
                         _spawnTimer = 0f;
-                    }
-
-
-                    if (_spriteRenderer != null)
-                    {
-                        _spriteRenderer.color = Color.red;
                     }
                 }
                 break;
@@ -114,6 +112,11 @@ public class WitchAttack : MonoBehaviour
             Destroy(temp, 2f);
             temp.transform.position = Vector2.zero;
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
+        }
+
+        if (attackSound != null)
+        {
+            SoundManager.PlayClip(attackSound);
         }
 
         _circleShotsFired++;

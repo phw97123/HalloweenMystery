@@ -145,7 +145,7 @@ Transform:
   m_Children:
   - {fileID: 5232586040167593854}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &4890394163853639389
 CapsuleCollider2D:
@@ -270,8 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followRange: 0
   targetTag: Player
-  characterRendere: {fileID: 0}
+  characterRendere: {fileID: 7189309915281218295}
   spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &3460915836767273974
 MonoBehaviour:
   m_ObjectHideFlags: 0

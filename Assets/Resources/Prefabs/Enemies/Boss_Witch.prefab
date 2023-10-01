@@ -144,7 +144,7 @@ Transform:
   m_Children:
   - {fileID: 449072151574491136}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5089884242549555349
 MonoBehaviour:
@@ -165,6 +165,7 @@ MonoBehaviour:
   initialTurnSpeed: 1
   maxTurnSpeed: 50
   SpawnInterval: 0.2
+  attackSound: {fileID: 8300000, guid: 64812ce461e53c64895344f8aba679b5, type: 3}
 --- !u!114 &1332620515560983588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +182,7 @@ MonoBehaviour:
   targetTag: Player
   characterRendere: {fileID: 6296796121901133222}
   spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &1906061782276815196
 MonoBehaviour:
   m_ObjectHideFlags: 0
