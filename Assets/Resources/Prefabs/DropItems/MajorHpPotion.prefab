@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healDataSO: {fileID: 11400000, guid: 62dac35fb651a9b46bd0991448332a4f, type: 2}
+  healClip: {fileID: 8300000, guid: 441cb5eb4b88be84eb215f83d3bc1d4c, type: 3}
 --- !u!58 &-2375611536788286112
 CircleCollider2D:
   m_ObjectHideFlags: 0

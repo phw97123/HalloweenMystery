@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldDataSO: {fileID: 11400000, guid: 40afbeec8b6fe4e44b366b6a631acc69, type: 2}
+  pickUpClip: {fileID: 8300000, guid: 2ad77c04416770f48828df8083901876, type: 3}
 --- !u!58 &-4314850644305367146
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -271,6 +271,7 @@ MonoBehaviour:
   healthChangeDelay: 0.5
   MaxShieldCount: 3
   ShieldCount: 0
+  damageClip: {fileID: 8300000, guid: e9893c02f892d1742b8ebc605bda98f8, type: 3}
 --- !u!114 &8367397320362089657
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class PickupGold : PickupItem
     [SerializeField] private GoldDataSO goldDataSO;
     private float _goldPercentage;
 
+    public AudioClip pickUpClip; 
     protected override void OnPickedUp(GameObject receiver)
     {
         StatsHandler statsHandler = receiver.GetComponent<StatsHandler>();
@@ -15,6 +16,9 @@ public class PickupGold : PickupItem
         _goldPercentage = statsHandler.CurrentStats.goldPercentage;
 
         goldSystem.ChangeOwnedGold(Mathf.CeilToInt(goldDataSO.Gold * (1 + _goldPercentage)));
+
+        if (pickUpClip)
+            SoundManager.PlayClip(pickUpClip); 
 
         Destroy(gameObject);
     }
