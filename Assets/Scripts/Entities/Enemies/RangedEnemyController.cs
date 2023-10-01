@@ -1,4 +1,3 @@
-using Components.Action;
 using Components.Stats;
 using UnityEngine;
 
@@ -12,6 +11,8 @@ public class RangedEnemyController : EnemyController
     [SerializeField] private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
+    [SerializeField] private GameObject spawnParticlePrefab;
+
     private Transform _player;
     private float _timeUntilNextAttack;
     private EnemyObjectPool _objectPoolManager;
@@ -19,11 +20,25 @@ public class RangedEnemyController : EnemyController
 
     private HealthSystem _collidingTargetHealthSystem;
 
+    [SerializeField] private AudioClip shootingClip;
+    [SerializeField] private AudioClip appearingClip;
+    private GameObject spawnParticleInstance;
+
     protected override void Start()
     {
         base.Start();
         InitializePlayer();
         InitializeAttackParams();
+
+        if (spawnParticlePrefab != null)
+        {
+            spawnParticleInstance = Instantiate(spawnParticlePrefab, transform.position, Quaternion.identity);
+            if (appearingClip != null)
+            {
+                SoundManager.PlayClip(appearingClip);
+            }
+            Destroy(spawnParticleInstance, 10f);
+        }
     }
 
     private void InitializePlayer()
@@ -86,6 +101,11 @@ public class RangedEnemyController : EnemyController
                 {
                     bullet.transform.position = transform.position;
                     bullet.SetActive(true);
+
+                    if (shootingClip != null)
+                    {
+                        SoundManager.PlayClip(shootingClip);
+                    }
                 }
             }
             _timeUntilNextAttack = attackInterval;

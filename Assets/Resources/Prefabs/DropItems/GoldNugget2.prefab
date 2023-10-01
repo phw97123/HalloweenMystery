@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldDataSO: {fileID: 11400000, guid: 6215a341b60fd3c4aa00d636b77e9ede, type: 2}
+  pickUpClip: {fileID: 8300000, guid: 2ad77c04416770f48828df8083901876, type: 3}
 --- !u!61 &-1167931685591042658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.11, y: 0.06}
+    oldSize: {x: 0.6875, y: 0.375}
     newSize: {x: 0.11, y: 0.06}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

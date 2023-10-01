@@ -150,6 +150,8 @@ MonoBehaviour:
   followRange: 10
   targetTag: Player
   characterRendere: {fileID: 2038820499716762599}
+  spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &4846820334066203320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   healthChangeDelay: 0.5
   MaxShieldCount: 3
   ShieldCount: 0
+  damageClip: {fileID: 8300000, guid: e9893c02f892d1742b8ebc605bda98f8, type: 3}
 --- !u!114 &2630934924307555918
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class TeleportingEnemyController : EnemyController
 
     private StatsHandler statsHandler;
 
+    [SerializeField]
+    private GameObject teleportParticlePrefab; // 파티클 프리팹을 Inspector에서 할당합니다.
+
     protected override void Start()
     {
         base.Start();
@@ -29,8 +32,10 @@ public class TeleportingEnemyController : EnemyController
 
     private void UpdatePlayerPosition()
     {
-        _playerPosition = Target.position;
-
+        if (Target != null)
+        {
+            _playerPosition = Target.position;
+        }
     }
 
     private void MoveTowardPlayer()
@@ -41,6 +46,14 @@ public class TeleportingEnemyController : EnemyController
         {
             Vector2 directionToPlayer = _playerPosition - (Vector2)transform.position;
             directionToPlayer.Normalize();
+
+            // 순간이동하기 전에 파티클 효과 생성
+            if (teleportParticlePrefab != null)
+            {
+                GameObject teleportParticle = Instantiate(teleportParticlePrefab, transform.position, Quaternion.identity);
+                // 일정 시간 후에 파티클 효과 삭제
+                Destroy(teleportParticle, 2f); // 2초 후에 파티클 삭제 (원하는 시간으로 수정 가능)
+            }
 
             transform.Translate(directionToPlayer * speed * Time.deltaTime);
 
