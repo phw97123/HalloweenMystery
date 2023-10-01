@@ -119,10 +119,10 @@ GameObject:
   - component: {fileID: 1332620515560983588}
   - component: {fileID: 1906061782276815196}
   - component: {fileID: 1332453400397628940}
-  - component: {fileID: 1210086099417607617}
   - component: {fileID: 5680267254209197567}
   - component: {fileID: 2944362589227285527}
   - component: {fileID: 1347935827405167705}
+  - component: {fileID: 4281787874292126966}
   m_Layer: 7
   m_Name: Boss_Witch
   m_TagString: Enemy
@@ -144,7 +144,7 @@ Transform:
   m_Children:
   - {fileID: 449072151574491136}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5089884242549555349
 MonoBehaviour:
@@ -216,18 +216,6 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 11400000, guid: 62a28e74a03fe4b49ae6e207c6793d7a, type: 2}
---- !u!114 &1210086099417607617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6919751218763940192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5680267254209197567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,3 +290,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &4281787874292126966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919751218763940192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 188018269067311034, guid: d6a675cc9ef6b47858a4b08bbe1e565c, type: 3}
+  - {fileID: 81145134409633420, guid: aa0e15bbf7f734836a9b97deabbd4194, type: 3}
+  - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
+  - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
+  itemDropChances:
+  - 0.2
+  - 0.2
+  - 0.1
+  - 0.1
+  noDropChance: 0.4
