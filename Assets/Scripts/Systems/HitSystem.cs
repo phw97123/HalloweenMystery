@@ -43,6 +43,11 @@ namespace Systems
             }
         }
 
+        private void OnEnable()
+        {
+            _hitInstanceIdSet.Clear();
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (levelCollision.value == (levelCollision.value | (1 << other.gameObject.layer)))

@@ -1,3 +1,4 @@
+using Components.Weapon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Components.Stats
 
         [SerializeField] private CharacterStats baseStats;
         private List<CharacterStats> _statsModifiers = new List<CharacterStats>();
+        public event Action<CharacterStats> OnStatsChanged;
 
         private void Awake()
         {
@@ -44,8 +46,7 @@ namespace Components.Stats
 
             CurrentStats = new CharacterStats
             {
-                attackData = attackSO,
-                changeType = baseStats?.changeType ?? StatsChangeType.Override
+                attackData = attackSO, changeType = baseStats?.changeType ?? StatsChangeType.Override
             };
 
             UpdateStats((a, b) => b, baseStats);
@@ -71,6 +72,7 @@ namespace Components.Stats
             }
 
             LimitAllStats();
+            OnStatsChanged?.Invoke(CurrentStats);
         }
 
         private void UpdateStats(Func<float, float, float> operation, CharacterStats newModifier)

@@ -2816,7 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 0
+  m_VerticalFit: 1
 --- !u!1 &5006658746415817091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +2909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backButton: {fileID: 4862972616829153733}
   content: {fileID: 3416456877149581870}
+  buttonPrefab: {fileID: 6829802708038193731, guid: 5dfc968084f0245adb8560fc7df0c9b0, type: 3}
 --- !u!1 &5218392321475812100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,7 +4500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 0
+  m_VerticalFit: 1
 --- !u!1 &7706625105032350339
 GameObject:
   m_ObjectHideFlags: 0

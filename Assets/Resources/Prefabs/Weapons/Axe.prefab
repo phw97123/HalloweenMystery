@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fd3d3f66787904fab060feca79ec7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponType: 2
   attackPosition: {fileID: 8568355015470415172}
 --- !u!114 &4805714392671509676
 MonoBehaviour:

@@ -18,19 +18,20 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(ResourceManager.Instance.LoadPrefab("BlueMan"));
-        
+        GameManager.Instance.CreatePlayer();
+
+        WeaponType[] types = (WeaponType[])Enum.GetValues(typeof(WeaponType));
         WeaponManager.Singleton.CreateInteractableWeapon(WeaponType.Sword, spawnPostions[0].position);
 
         AchievementData[] achievementDatas = AchiveManager.Instance.GetAchievementData();
 
         for (int i = 0; i < achievementDatas.Length; i++)
         {
-            if (achievementDatas[i].reward is RewardData waponTypeReward)
+            if (achievementDatas[i].reward is RewardData weaponTypeReward)
             {
                 if (achievementDatas[i].isAchive)
                 {
-                    WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)waponTypeReward.weaponType, spawnPostions[i + 1].position);
+                    WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)weaponTypeReward.weaponType, spawnPostions[i + 1].position);
                 }
             }
         }

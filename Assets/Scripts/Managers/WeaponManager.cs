@@ -4,6 +4,7 @@ using Components.Attacks;
 using Components.Stats;
 using Components.Weapon;
 using Entities;
+using System;
 using System.Linq;
 using UnityEngine;
 using Utils;
@@ -20,10 +21,19 @@ namespace Managers
         Shotgun,
     }
 
+    /// <summary>
+    /// WeaponManager responsible for do equip, createWeapons,
+    /// has status of currentEquippedWeapon
+    /// 상태 : 현재 장착중인 무기 정보
+    /// 동작 : 무기 장착, 무기 생성
+    /// </summary>
     public class WeaponManager : MonoBehaviour
     {
         private ResourceManager _resourceManager;
         private static WeaponManager _singleton;
+
+        public WeaponInfo? CurrentEquippedWeapon { get; private set; } = null;
+        public event Action<WeaponInfo?> OnWeaponEquipped;
 
         public static WeaponManager Singleton
         {
@@ -75,9 +85,16 @@ namespace Managers
 
         public void EquipWeapon(GameObject weapon, GameObject character)
         {
+            if (CurrentEquippedWeapon != null)
+            {
+                //todo 장착중인 무기 원상복구 
+            }
+
+
             //todo remove to 
             StatsHandler playerStats = character.GetComponent<StatsHandler>();
             BaseAttack prevAttack = character.GetComponentInChildren<BaseAttack>();
+
             if (prevAttack != null)
             {
                 StatsHandler prevWeaponStats = prevAttack.GetComponent<StatsHandler>();
@@ -97,9 +114,16 @@ namespace Managers
             Instantiate(weapon, pivot.transform, false);
 
             //update information
-            CharacterStats stats = weapon.GetComponent<StatsHandler>().CurrentStats;
-            playerStats.AddStatModifier(stats);
+            BaseAttack newAttack = weapon.GetComponent<BaseAttack>();
+            CharacterStats weaponStats = weapon.GetComponent<StatsHandler>().CurrentStats;
+            playerStats.AddStatModifier(weaponStats);
 
+            CurrentEquippedWeapon = new WeaponInfo
+            {
+                Type = newAttack.WeaponType, AttackData = weaponStats.attackData,
+            };
+            OnWeaponEquipped?.Invoke(CurrentEquippedWeapon);
+            
             //destroy equipped item
             Destroy(weapon.gameObject);
         }

@@ -9,6 +9,8 @@ namespace Managers
 {
     public class DemoManager : MonoBehaviour
     {
+        private Camera _camera;
+
         private static DemoManager _singleton;
         public UIManager uiManager;
         public GameManager gameManager;
@@ -42,11 +44,23 @@ namespace Managers
 
             _singleton = this;
             uiManager = UIManager.Singleton;
+            gameManager = GameManager.Instance;
         }
 
         private void Start()
         {
+            _camera = Camera.main;
             LoadDemoUI();
+            CreatePlayer();
+            EnterDungeon();
+            IsPlayerExists = true;
+        }
+
+        private void Update()
+        {
+            Vector3 position = gameManager.Player.position;
+            _camera.transform.position =
+                new Vector3(position.x, position.y, -10f);
         }
 
         private void LoadDemoUI()
@@ -60,27 +74,14 @@ namespace Managers
         {
             if (IsPlayerExists) { return; }
 
-            Object go = Resources.Load("Prefabs/Character/BlueMan");
-            Instantiate(go);
+            gameManager.CreatePlayer();
             IsPlayerExists = true;
-        }
-
-        public void CreateWeapons(bool[] isAble)
-        {
-            Vector2 position = new Vector2(-3, -3);
-            Vector2 spacing = new Vector2(2, 0);
-        }
-
-        public void CreateMonsters()
-        {
-            Object go = Resources.Load("Prefabs/Enemies/Ghost_White");
-            Instantiate(go);
         }
 
         public void EnterDungeon()
         {
-            UIPopup popup = uiManager.ShowUIPopupByName("DungeonUi");
-            popup.transform.Find("Container").localScale = new Vector3(0.5f, 1f);
+            gameManager.ShowDungeonUI();
+            GameObject.Find("Container").transform.localScale = new Vector3(0.5f, 1f);
         }
 
         public void CreateWeaponParts()
