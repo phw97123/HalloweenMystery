@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 6280830186271216996}
   - component: {fileID: 769931444158323639}
   - component: {fileID: 6846654593874578992}
-  - component: {fileID: 7124260467052084466}
   - component: {fileID: 2501168455770908642}
+  - component: {fileID: 5169551340053883333}
   m_Layer: 7
   m_Name: Ghost_Green
   m_TagString: Enemy
@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 8576531521172743766}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &7897480679753286288
 CapsuleCollider2D:
@@ -179,18 +179,6 @@ MonoBehaviour:
   healthChangeDelay: 0.5
   MaxShieldCount: 3
   ShieldCount: 0
---- !u!114 &7124260467052084466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598296402358194975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2501168455770908642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +191,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5169551340053883333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598296402358194975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 188018269067311034, guid: d6a675cc9ef6b47858a4b08bbe1e565c, type: 3}
+  - {fileID: 81145134409633420, guid: aa0e15bbf7f734836a9b97deabbd4194, type: 3}
+  - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
+  - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
+  itemDropChances:
+  - 0.2
+  - 0.2
+  - 0.1
+  - 0.1
+  noDropChance: 0.4
 --- !u!1 &796382784013580796
 GameObject:
   m_ObjectHideFlags: 0

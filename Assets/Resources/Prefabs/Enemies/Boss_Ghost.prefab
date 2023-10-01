@@ -152,8 +152,8 @@ GameObject:
   - component: {fileID: 1857263690758686869}
   - component: {fileID: 7844856230996071584}
   - component: {fileID: 2806570219253191361}
-  - component: {fileID: 6516061384477866036}
   - component: {fileID: 4208121059295767729}
+  - component: {fileID: 1303456865017268088}
   m_Layer: 7
   m_Name: Boss_Ghost
   m_TagString: Enemy
@@ -309,18 +309,6 @@ MonoBehaviour:
   healthChangeDelay: 0.5
   MaxShieldCount: 3
   ShieldCount: 0
---- !u!114 &6516061384477866036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6048326705312168329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4208121059295767729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,3 +321,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1303456865017268088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048326705312168329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 188018269067311034, guid: d6a675cc9ef6b47858a4b08bbe1e565c, type: 3}
+  - {fileID: 81145134409633420, guid: aa0e15bbf7f734836a9b97deabbd4194, type: 3}
+  - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
+  - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
+  itemDropChances:
+  - 0.2
+  - 0.2
+  - 0.1
+  - 0.1
+  noDropChance: 0.4

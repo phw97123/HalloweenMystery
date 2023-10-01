@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5671245761455161734}
   - component: {fileID: 8385270567286628739}
   - component: {fileID: 4491052268926860570}
-  - component: {fileID: 3374843163948213576}
   - component: {fileID: 7909575418781321786}
+  - component: {fileID: 922619067499636712}
   m_Layer: 7
   m_Name: Vam_M
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 395001048313188314}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &3416594276843699323
 CapsuleCollider2D:
@@ -169,18 +169,6 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 11400000, guid: 62a28e74a03fe4b49ae6e207c6793d7a, type: 2}
---- !u!114 &3374843163948213576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3168323879367061025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7909575418781321786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +181,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &922619067499636712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168323879367061025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 188018269067311034, guid: d6a675cc9ef6b47858a4b08bbe1e565c, type: 3}
+  - {fileID: 81145134409633420, guid: aa0e15bbf7f734836a9b97deabbd4194, type: 3}
+  - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
+  - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
+  itemDropChances:
+  - 0.2
+  - 0.2
+  - 0.1
+  - 0.1
+  noDropChance: 0.4
 --- !u!1 &3490909432044924131
 GameObject:
   m_ObjectHideFlags: 0
