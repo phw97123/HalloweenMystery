@@ -18,6 +18,8 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.CreatePlayer();
+
         WeaponType[] types = (WeaponType[])Enum.GetValues(typeof(WeaponType));
         WeaponManager.Singleton.CreateInteractableWeapon(WeaponType.Sword, spawnPostions[0].position);
 
