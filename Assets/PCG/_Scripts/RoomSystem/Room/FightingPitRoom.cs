@@ -12,13 +12,14 @@ public class FightingPitRoom : RoomGenerator
     public List<EnemyPlacementData> enemyPlacementData;
     public List<ItemPlacementData> itemData;
 
-    public override List<GameObject> ProcessRoom(Vector2Int roomCenter, HashSet<Vector2Int> roomFloor, HashSet<Vector2Int> roomFloorNoCorridors)
+    public override List<GameObject> ProcessRoom(Vector2Int roomCenter, DungeonData dungeonData)
     {
         ItemPlacementHelper itemPlacementHelper =
-            new ItemPlacementHelper(roomFloor, roomFloorNoCorridors);
+            new ItemPlacementHelper(dungeonData.roomsDictionary[roomCenter], dungeonData.GetRoomFloorWithoutCorridors(roomCenter));
 
         List<GameObject> placedObjects = prefabPlacer.PlaceAllItems(itemData, itemPlacementHelper);
-        placedObjects.AddRange(prefabPlacer.PlaceEnemies(enemyPlacementData, itemPlacementHelper));
+        //placedObjects.AddRange(prefabPlacer.PlaceEnemies(enemyPlacementData, itemPlacementHelper));
+        dungeonData.roomsEnemy.Add(roomCenter, enemyPlacementData);
 
         return placedObjects;
     }

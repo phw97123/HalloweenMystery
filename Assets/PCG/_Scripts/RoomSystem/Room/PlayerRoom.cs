@@ -15,12 +15,11 @@ public class PlayerRoom : RoomGenerator
 
     public override List<GameObject> ProcessRoom(
         Vector2Int roomCenter, 
-        HashSet<Vector2Int> roomFloor, 
-        HashSet<Vector2Int> roomFloorNoCorridors)
+        DungeonData dungeonData)
     {
 
         ItemPlacementHelper itemPlacementHelper = 
-            new ItemPlacementHelper(roomFloor, roomFloorNoCorridors);
+            new ItemPlacementHelper(dungeonData.roomsDictionary[roomCenter], dungeonData.GetRoomFloorWithoutCorridors(roomCenter));
 
         List<GameObject> placedObjects = 
             prefabPlacer.PlaceAllItems(itemData, itemPlacementHelper);

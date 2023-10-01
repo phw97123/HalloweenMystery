@@ -63,15 +63,14 @@ public class RoomContentGenerator : MonoBehaviour
 
         List<GameObject> placedPrefabs = playerRoom.ProcessRoom(
             playerSpawnPoint,
-            dungeonData.roomsDictionary.Values.ElementAt(randomRoomIndex),
-            dungeonData.GetRoomFloorWithoutCorridors(roomIndex)
+            dungeonData
             );
 
         //FocusCameraOnThePlayer(placedPrefabs[placedPrefabs.Count - 1].transform);
 
-        //spawnedObjects.AddRange(placedPrefabs);
+        spawnedObjects.AddRange(placedPrefabs);
 
-        GameManager.Instance.CreatePlayerAtPosition(playerSpawnPoint, Quaternion.identity);
+        RoomContentManager.Instance.CreatePlayerInRoom(playerSpawnPoint);
 
         FocusCameraOnThePlayer(GameManager.Instance.Player);
 
@@ -91,8 +90,7 @@ public class RoomContentGenerator : MonoBehaviour
             spawnedObjects.AddRange(
                 defaultRoom.ProcessRoom(
                     roomData.Key,
-                    roomData.Value, 
-                    dungeonData.GetRoomFloorWithoutCorridors(roomData.Key)
+                    dungeonData
                     )
             );
 
