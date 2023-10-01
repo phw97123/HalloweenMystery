@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveCooldown: 2
+  teleportParticlePrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
 --- !u!114 &769931444158323639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +165,8 @@ MonoBehaviour:
   followRange: 9.5
   targetTag: Player
   characterRendere: {fileID: 7108913945377762860}
+  spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &6846654593874578992
 MonoBehaviour:
   m_ObjectHideFlags: 0

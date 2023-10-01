@@ -1,18 +1,24 @@
-using Components.Action;
+using Components.Stats;
 using UnityEngine;
 
 public class MeleeEnemyController : EnemyController
 {
     [SerializeField]
     [Range(0f, 100f)] private float followRange;
-    [SerializeField] 
+    [SerializeField]
     private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
     [SerializeField] private SpriteRenderer characterRendere;
 
+    [SerializeField]
+    private GameObject spawnParticlePrefab;
+
     private HealthSystem healthSystem;
     private HealthSystem _collidingTargetHealthSystem;
+
+    private GameObject spawnParticleInstance;
+    [SerializeField] private AudioClip appearingClip;
 
     protected override void Start()
     {
@@ -20,6 +26,17 @@ public class MeleeEnemyController : EnemyController
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDamage += OnDamage;
         followRange = 10f;
+
+        if (spawnParticlePrefab != null)
+        {
+            spawnParticleInstance = Instantiate(spawnParticlePrefab, transform.position, Quaternion.identity);
+            if (appearingClip != null)
+            {
+                SoundManager.PlayClip(appearingClip);
+            }
+
+            Destroy(spawnParticleInstance, 5f);
+        }
     }
 
     private void OnDamage()

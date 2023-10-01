@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 3087840828958747134}
   - component: {fileID: 5813650150935853819}
   - component: {fileID: 3839703930230323055}
+  - component: {fileID: 8355787585342914508}
   - component: {fileID: 3460915836767273974}
   - component: {fileID: 2420830293315728463}
   - component: {fileID: 6168388777811916710}
@@ -144,7 +145,7 @@ Transform:
   m_Children:
   - {fileID: 5232586040167593854}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &4890394163853639389
 CapsuleCollider2D:
@@ -255,6 +256,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 60
   movementSpeed: 2
+--- !u!114 &8355787585342914508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3651637054455585558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e307809dd567342905afdb555dec8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followRange: 0
+  targetTag: Player
+  characterRendere: {fileID: 7189309915281218295}
+  spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &3460915836767273974
 MonoBehaviour:
   m_ObjectHideFlags: 0
