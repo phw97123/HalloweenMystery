@@ -2,8 +2,10 @@
 
 
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Text = TMPro.TextMeshProUGUI;
 
 namespace Managers
 {
@@ -33,8 +35,16 @@ namespace Managers
             {
                 _prefabDict[enemy.name] = enemy;
                 GameObject go = Instantiate(buttonPrefab, content, true);
+                go.GetComponentInChildren<Text>().text = enemy.name;
                 go.name = enemy.name;
+                go.GetComponent<Button>().onClick.AddListener(() => { CreateMonster(enemy.name); });
             }
+        }
+
+        private void CreateMonster(string monsterName)
+        {
+            Object go = _prefabDict[monsterName];
+            Instantiate(go);
         }
 
         private void OnDestroy()
