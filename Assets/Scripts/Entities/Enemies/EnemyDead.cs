@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemyDead : MonoBehaviour
 {
-    [SerializeField] private GameObject[] itemPrefabs; // 아이템 프리팹 배열
-    [SerializeField] private float[] itemDropChances; // 아이템 드랍 확률 배열
-    [SerializeField] private float noDropChance = 0.2f; // 아무것도 드랍하지 않을 확률
+    [SerializeField] private GameObject[] itemPrefabs;
+    [SerializeField] private float[] itemDropChances;
 
     private HealthSystem _healthSystem;
     private Rigidbody2D _rigidbody;
@@ -34,21 +33,17 @@ public class EnemyDead : MonoBehaviour
             component.enabled = false;
         }
 
-        // 무작위로 아이템을 선택하고 드랍 확률을 고려하여 생성
         float randomValue = Random.value;
-        if (randomValue <= noDropChance)
+
+        float cumulativeChance = 0;
+
+        for (int i = 0; i < itemPrefabs.Length; i++)
         {
-            // 아무것도 드랍하지 않음
-        }
-        else
-        {
-            for (int i = 0; i < itemPrefabs.Length; i++)
+            cumulativeChance += itemDropChances[i];
+            if (randomValue <= cumulativeChance)
             {
-                if (randomValue <= noDropChance + itemDropChances[i])
-                {
-                    Instantiate(itemPrefabs[i], transform.position, Quaternion.identity);
-                    break; // 아이템을 한 번만 드랍하도록 처리
-                }
+                Instantiate(itemPrefabs[i], transform.position, Quaternion.identity);
+                break;
             }
         }
 
