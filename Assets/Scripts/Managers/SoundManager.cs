@@ -39,7 +39,8 @@ public class SoundManager : MonoBehaviour
     private const string INTRO_SCENE = "TownScene";
     private const string STAGE_SCENE = "RoomContent";
     private const string DEMO_SCENE = "DemoScene";
-    private const string GAMEENDIN_SCENE = ""; 
+    private const string ROOM_SCENE = "RoomScene";
+    private const string GAMEENDING_SCENE = ""; 
 
     private AudioClip _musicClip;
 
@@ -73,13 +74,26 @@ public class SoundManager : MonoBehaviour
             Debug.Log(p.Prefab); 
             _prefabs.Add(p);
         }
-        Instance._objectPool.Initialize(_prefabs); 
+        Instance._objectPool.Initialize(_prefabs);
+
+        SceneManager.sceneLoaded += OnSceneLoaded; 
     }
-  
+
     private void Start()
     {
         string sceneName = SceneManager.GetActiveScene().name;
+        SetBGMByScene(sceneName);
+    }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 로드된 씬의 이름을 가져와 BGM 설정
+        string sceneName = scene.name;
+        SetBGMByScene(sceneName);
+    }
+
+    private void SetBGMByScene(string sceneName)
+    {
         _musicClip = null;
 
         if (sceneName == START_SCENE)
@@ -107,19 +121,18 @@ public class SoundManager : MonoBehaviour
             //    _musicClip = Resources.Load<AudioClip>("Sound/Stage3");
             //}
         }
-        else if (sceneName == DEMO_SCENE) 
+        else if (sceneName == DEMO_SCENE)
         {
             _musicClip = Resources.Load<AudioClip>("Sound/Stage1");
         }
-        else if(sceneName == GAMEENDIN_SCENE)
+        else if (sceneName == GAMEENDING_SCENE)
         {
             //TODO:EndingScene, bgm add
-            _musicClip = Resources.Load<AudioClip>("Sound/IntroBGM");
         }
 
         ChangeBGM(_musicClip);
     }
-
+ 
     private static void ChangeBGM(AudioClip music)
     {
         Instance._musicAudioSource.Stop();
