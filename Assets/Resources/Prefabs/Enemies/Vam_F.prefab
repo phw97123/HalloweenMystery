@@ -121,8 +121,8 @@ GameObject:
   - component: {fileID: 4300856174502379031}
   - component: {fileID: 8919659572796782264}
   - component: {fileID: 4384837471524256216}
-  - component: {fileID: 1810820197746732516}
   - component: {fileID: 6487379307606557144}
+  - component: {fileID: 7102175690399663333}
   m_Layer: 7
   m_Name: Vam_F
   m_TagString: Enemy
@@ -144,7 +144,7 @@ Transform:
   m_Children:
   - {fileID: 632739546431379547}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &9040928980312257874
 CapsuleCollider2D:
@@ -275,18 +275,6 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 11400000, guid: 62a28e74a03fe4b49ae6e207c6793d7a, type: 2}
---- !u!114 &1810820197746732516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6276503894123375991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6487379307606557144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +287,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7480154247e054ab34708ceb4089b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7102175690399663333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276503894123375991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5a42a9179ff04a823aed0c898e96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 188018269067311034, guid: d6a675cc9ef6b47858a4b08bbe1e565c, type: 3}
+  - {fileID: 81145134409633420, guid: aa0e15bbf7f734836a9b97deabbd4194, type: 3}
+  - {fileID: 4351468559453568592, guid: aed1546072ef543429cc5ffb436705df, type: 3}
+  - {fileID: 697394945554932090, guid: 88af4d512ace045769857c9ec3e1cf3f, type: 3}
+  itemDropChances:
+  - 0.2
+  - 0.2
+  - 0.1
+  - 0.1
+  noDropChance: 0.4

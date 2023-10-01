@@ -20,6 +20,18 @@ public class RoomManager : MonoBehaviour
     {
         WeaponType[] types = (WeaponType[])Enum.GetValues(typeof(WeaponType));
         WeaponManager.Singleton.CreateInteractableWeapons(types, spawnPostions[0].position, new Vector2(2, 0));
+        AchievementData[] achievementDatas = AchiveManager.Instance.GetAchievementData();
+
+        for (int i = 0; i < achievementDatas.Length; i++)
+            if (achievementDatas[i].reward is RewardData waponTypeReward)
+        {
+        }
+            {
+                if (achievementDatas[i].isAchive)
+                    WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)waponTypeReward.weaponType, spawnPostions[i + 1].position);
+                {
+                }
+            }
     }
 
     public void ChangeScene()
