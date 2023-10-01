@@ -71,7 +71,7 @@ public class RoomContentGenerator : MonoBehaviour
 
         //spawnedObjects.AddRange(placedPrefabs);
 
-        GameManager.Instance.CreatePlayerAtPosition(playerSpawnPoint, Quaternion.identity);
+        RoomContentManager.Instance.CreatePlayerInRoom(playerSpawnPoint);
 
         FocusCameraOnThePlayer(GameManager.Instance.Player);
 

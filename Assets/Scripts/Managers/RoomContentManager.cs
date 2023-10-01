@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine;
 using Components.Weapon;
 using Utils;
+using UnityEngine.Events;
 
 public class RoomContentManager : MonoBehaviour
 {
@@ -17,9 +18,21 @@ public class RoomContentManager : MonoBehaviour
     {
         Instance = this;
     }
-    private void Start()
+
+
+    public UnityEvent OnStart;
+
+
+
+    // Start is called before the first frame update
+    void Start()
     {
-        GameManager.Instance.CreatePlayer();
+        OnStart?.Invoke();
+    }
+
+    public void CreatePlayerInRoom(Vector2Int position)
+    {
+        GameManager.Instance.CreatePlayerAtPosition(position, Quaternion.identity);
         if (GameManager.Instance.WeaponInfo != null && FindObjectOfType<PlayerCharacterController>() != null)
         {
             GameObject player = FindObjectOfType<PlayerCharacterController>().gameObject;
