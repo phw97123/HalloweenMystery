@@ -166,6 +166,7 @@ MonoBehaviour:
   maxTurnSpeed: 50
   SpawnInterval: 0.2
   attackSound: {fileID: 8300000, guid: 64812ce461e53c64895344f8aba679b5, type: 3}
+  restSound: {fileID: 8300000, guid: bfce0143c2f232343a666e3c9adf94b2, type: 3}
 --- !u!114 &1332620515560983588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ MonoBehaviour:
   followRange: 0
   targetTag: Player
   characterRendere: {fileID: 6296796121901133222}
-  spawnParticlePrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  spawnParticlePrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   appearingClip: {fileID: 8300000, guid: f2b3ad973fc943f4c85f2c80c10c673a, type: 3}
 --- !u!114 &1906061782276815196
 MonoBehaviour:
