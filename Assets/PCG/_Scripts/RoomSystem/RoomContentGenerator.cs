@@ -67,9 +67,13 @@ public class RoomContentGenerator : MonoBehaviour
             dungeonData.GetRoomFloorWithoutCorridors(roomIndex)
             );
 
-        FocusCameraOnThePlayer(placedPrefabs[placedPrefabs.Count - 1].transform);
+        //FocusCameraOnThePlayer(placedPrefabs[placedPrefabs.Count - 1].transform);
 
-        spawnedObjects.AddRange(placedPrefabs);
+        //spawnedObjects.AddRange(placedPrefabs);
+
+        GameManager.Instance.CreatePlayerAtPosition(playerSpawnPoint, Quaternion.identity);
+
+        FocusCameraOnThePlayer(GameManager.Instance.Player);
 
         dungeonData.roomsDictionary.Remove(playerSpawnPoint);
     }
