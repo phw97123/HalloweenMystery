@@ -59,8 +59,8 @@ namespace Managers
         {
             createPlayerButton.onClick.AddListener(DemoManager.Singleton.CreatePlayer);
             createWeaponsButton.onClick.AddListener(() => { _stack.Push(DemoState.CreateWeapon); });
-            createMonsterButton.onClick.AddListener(DemoManager.Singleton.CreateMonsters);
-            enterDungeonButton.onClick.AddListener(DemoManager.Singleton.EnterDungeon);
+            createMonsterButton.onClick.AddListener(() => { _stack.Push(DemoState.CreateMonsters); });
+            enterDungeonButton.onClick.AddListener(() => { });
             partsButton.onClick.AddListener((() => { _stack.Push(DemoState.CreateParts); }));
         }
 
@@ -76,7 +76,7 @@ namespace Managers
         {
             if (_stack.Count <= 0) { return; }
 
-            _currentState = NewState;  
+            _currentState = NewState;
             OnStateChanged?.Invoke(_currentState);
         }
 
