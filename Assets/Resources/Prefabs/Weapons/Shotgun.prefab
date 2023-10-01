@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 5
   spawnPosition: {fileID: 3168002016381801751}
+  projectileClip: {fileID: 8300000, guid: ab44327cc31fe4d46a70393609f526c7, type: 3}
 --- !u!1 &6447695933172984038
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffDataSO: {fileID: 11400000, guid: ef0b9dc18521a3b4eb02d94f9d98cb58, type: 2}
+  buffClip: {fileID: 8300000, guid: ce31311aece76484283d258b6aea79c8, type: 3}
 --- !u!61 &1588206956194521436
 BoxCollider2D:
   m_ObjectHideFlags: 0

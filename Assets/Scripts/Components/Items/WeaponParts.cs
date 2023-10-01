@@ -25,6 +25,8 @@ public class WeaponParts : MonoBehaviour
     private StatsHandler _statsHandler;
     private PlayerCharacterController _controller;
 
+    public AudioClip partsClip; 
+
     private void Start()
     {
         _notifyCanvas = transform.GetChild(0).gameObject;
@@ -43,6 +45,8 @@ public class WeaponParts : MonoBehaviour
             _notifyCanvas.SetActive(true);
 
             _controller.OnInteractionItemPartsEvent += InteractItemParts;
+
+           
         }
     }
 
@@ -55,6 +59,9 @@ public class WeaponParts : MonoBehaviour
 
             isEquiped = true;
             _notifyCanvas.SetActive(false);
+
+            if (partsClip)
+                SoundManager.PlayClip(partsClip);
 
             Debug.Log("딜레이 "+_statsHandler.CurrentStats.attackData.delay);
         }

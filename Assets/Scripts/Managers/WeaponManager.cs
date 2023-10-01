@@ -35,6 +35,13 @@ namespace Managers
         public WeaponInfo? CurrentEquippedWeapon { get; private set; } = null;
         public event Action<WeaponInfo?> OnWeaponEquipped;
 
+        public AudioClip equipClip;
+
+        private void Start()
+        {
+            equipClip = Resources.Load<AudioClip>("Sound/WeaponEquip"); 
+        }
+
         public static WeaponManager Singleton
         {
             get
@@ -90,7 +97,6 @@ namespace Managers
                 //todo 장착중인 무기 원상복구 
             }
 
-
             //todo remove to 
             StatsHandler playerStats = character.GetComponent<StatsHandler>();
             BaseAttack prevAttack = character.GetComponentInChildren<BaseAttack>();
@@ -123,6 +129,9 @@ namespace Managers
                 Type = newAttack.WeaponType, AttackData = weaponStats.attackData,
             };
             OnWeaponEquipped?.Invoke(CurrentEquippedWeapon);
+
+            if (equipClip)
+                SoundManager.PlayClip(equipClip); 
             
             //destroy equipped item
             Destroy(weapon.gameObject);

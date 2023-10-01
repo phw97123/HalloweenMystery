@@ -134,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 1
   attackPosition: {fileID: 9185401007191735201}
+  meleeClip1: {fileID: 8300000, guid: e4d469d45e384704aa1e75d78c31950f, type: 3}
+  meleeClip2: {fileID: 8300000, guid: 7c5c5df6959f0d04ab8695d30000edd2, type: 3}
 --- !u!114 &7919983717245350
 MonoBehaviour:
   m_ObjectHideFlags: 0
