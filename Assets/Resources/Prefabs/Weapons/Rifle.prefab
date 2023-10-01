@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc498ce6d787ee4e893c60575984f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponType: 4
   spawnPosition: {fileID: 2884158547975989021}
 --- !u!61 &6556226673322102664
 BoxCollider2D:

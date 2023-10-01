@@ -1,3 +1,6 @@
+using Components;
+using Components.Stats;
+using Components.Weapon;
 using Managers;
 using System;
 using System.Collections;
@@ -12,66 +15,71 @@ public enum Scenes { RoomScene, StageScene, RoomContent }
 
 public class GameManager : MonoBehaviour
 {
-    private Scenes _curScenes = Scenes.RoomScene;
-    private bool _change = true;
-    public Transform Player { get; private set; }
-
-    private UIManager _uiManager;
-
-    private static object _lock = new object();
     private static GameManager _instance;
+
+    private Scenes _curScenes = Scenes.RoomScene;
+    private bool _isChanged;
+    public Transform Player { get; private set; }
+    private UIManager _uiManager;
+    private WeaponManager _weaponManager;
+
+
+    public CharacterStats PlayerStats { get; private set; }
+    public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
+    public event Action<WeaponInfo?> OnEquipped;
 
     public static GameManager Instance
     {
         get
         {
-            lock (_lock)
+            if (_instance != null) { return _instance; }
+
+            _instance = FindObjectOfType<GameManager>();
+            if (_instance != null)
             {
-                if (_instance != null) { return _instance; }
-
-                _instance = FindObjectOfType<GameManager>();
-                if (_instance != null)
-                {
-                    return _instance;
-                }
-
-                _instance = new GameObject(nameof(GameManager) + "-singleton").AddComponent<GameManager>();
                 return _instance;
             }
+
+            _instance = new GameObject(nameof(GameManager) + " - singleton").AddComponent<GameManager>();
+            return _instance;
         }
     }
 
-    public void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Init()
     {
-        if (Instance != null && Instance != this)
+        _instance = null;
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
         {
-            Destroy(gameObject);
+            Destroy(this);
             return;
         }
-        
+
+        _instance = this;
         _uiManager = UIManager.Singleton;
+        _weaponManager = WeaponManager.Singleton;
         DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
-        if (Player == null)
-        {
-            Player = GameObject.FindWithTag("Player")?.transform;
-            if (Player == null)
-            {
-                Debug.LogWarning("Player GameObject doesn't exists");
-            }
-        }
+        _weaponManager.OnWeaponEquipped += CallEquippedEvent;
+    }
 
-        _uiManager.ShowUIPopupByName(nameof(DungeonUI));
+    private void CallEquippedEvent(WeaponInfo? weaponInfo)
+    {
+        OnEquipped?.Invoke(weaponInfo);
     }
 
     public void Update()
     {
-        if (_change)
+        if (_isChanged)
         {
-            _change = false;
+            _isChanged = false;
             switch (_curScenes)
             {
                 case Scenes.RoomScene:
@@ -87,9 +95,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetStats(CharacterStats stat)
+    {
+        PlayerStats = stat;
+    }
+
+    public void CreatePlayer()
+    {
+        CreatePlayerAtPosition(Vector2.zero, Quaternion.identity);
+    }
+
+    public void CreatePlayerAtPosition(Vector2 startPosition, Quaternion rotation)
+    {
+        if (Player == null)
+        {
+            //todo load data of playerQuaternion rotation = Quaternion.identity
+            GameObject playerPrefab = ResourceManager.Instance.LoadPrefab("BlueMan");
+            Player = Instantiate(playerPrefab, startPosition, rotation).transform;
+            if (Player == null)
+            {
+                Debug.LogWarning("Player GameObject doesn't exists");
+            }
+        }
+
+        Player.GetComponent<StatsHandler>().OnStatsChanged += SetStats;
+    }
+
+    public void ShowDungeonUI()
+    {
+        _uiManager.ShowUIPopupByName(nameof(DungeonUI));
+    }
+
+
     public void ChangeScene(Scenes sceneName)
     {
-        _change = true;
+        _isChanged = true;
         _curScenes = sceneName;
     }
 }
