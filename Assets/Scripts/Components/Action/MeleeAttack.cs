@@ -22,6 +22,10 @@ namespace Components.Action
 
         private AttackManager _attackManager;
 
+        public AudioClip meleeClip1;
+        public AudioClip meleeClip2;
+
+
         private void Awake()
         {
             _attackManager = AttackManager.Instance;
@@ -64,11 +68,18 @@ namespace Components.Action
             {
                 _currentAttackCount = 1;
                 _isAttacking = true;
+
+                if (meleeClip1)
+                    SoundManager.PlayClip(meleeClip1); 
+               
             }
             else if (_currentAttackCount < meleeAttack.attackCount)
             {
                 _isAttacking = true;
                 _currentAttackCount++;
+
+                if (meleeClip2)
+                    SoundManager.PlayClip(meleeClip2);
             }
         }
 

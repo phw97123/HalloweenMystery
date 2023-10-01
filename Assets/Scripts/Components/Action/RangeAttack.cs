@@ -19,6 +19,8 @@ namespace Components.Action
 
         private AttackManager _attackManager;
 
+        public AudioClip projectileClip; 
+
         //todo animation 
         private void Awake()
         {
@@ -81,6 +83,8 @@ namespace Components.Action
         private void CreateProjectile(Vector2 startPosition, Vector2 direction, RangeAttackDataSO rangeAttackData)
         {
             _attackManager.RangeAttack(startPosition, direction, rangeAttackData);
+            if (projectileClip)
+                SoundManager.PlayClip(projectileClip);
         }
     }
 }

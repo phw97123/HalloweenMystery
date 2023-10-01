@@ -25,6 +25,8 @@ public class HealthSystem : MonoBehaviour
     public event Action OnInvincibilityEnd;
     public event Action OnChangeShieldCount;
 
+    public AudioClip damageClip; 
+
     private void Awake()
     {
         _statsHandler = GetComponent<StatsHandler>();
@@ -70,7 +72,11 @@ public class HealthSystem : MonoBehaviour
         if (change > 0)
             OnHeal?.Invoke();
         else
+        {
             OnDamage?.Invoke();
+            if (damageClip)
+                SoundManager.PlayClip(damageClip); 
+        }
 
         if (CurrentHealth <= 0f)
             CallDeath();
