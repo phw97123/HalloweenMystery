@@ -649,10 +649,10 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 2072839850}
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
-  minRoomWidth: 15
-  minRoomHeight: 15
-  dungeonWidth: 100
-  dungeonHeight: 100
+  minRoomWidth: 10
+  minRoomHeight: 10
+  dungeonWidth: 50
+  dungeonHeight: 50
   offset: 2
   randomWalkRooms: 0
   OnDungeonFloorReady:
