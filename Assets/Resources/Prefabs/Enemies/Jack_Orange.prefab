@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     changeType: 0
-    maxHealth: 9
+    maxHealth: 12
     speed: 0.2
     criticalPercentage: 0
     goldPercentage: 0
