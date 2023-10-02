@@ -94,7 +94,7 @@ public class RoomContentManager : MonoBehaviour
                                                          new ItemPlacementHelper(dungoenData.roomsDictionary[key], 
                                                          dungoenData.GetRoomFloorWithoutCorridors(key)));
 
-                corridorWallParent.gameObject.SetActive(true);
+                
                 dungoenData.roomsDictionary.Remove(key);
                 break;
             }
@@ -110,12 +110,18 @@ public class RoomContentManager : MonoBehaviour
                     prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
                 }
             }
+            if (roomEnemiesParent.childCount >= 2) corridorWallParent.gameObject.SetActive(true);
         }
     }
 
     private void CheckInBattle()
     {
-        if(roomEnemiesParent.childCount == 0)
+        Invoke("Check", 1.0f);
+    }
+    
+    private void Check()
+    {
+        if (roomEnemiesParent.childCount <= 1)
         {
             corridorWallParent.gameObject.SetActive(false);
             portal.SetActive(true);
