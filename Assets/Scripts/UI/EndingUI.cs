@@ -85,7 +85,7 @@ public class EndingUI : UIPopup
 
     public void OnClickHomeButton()
     {
-        //GameManager.Instance.ChangeScene(Scenes.StartScene);
+        GameManager.Instance.ChangeScene(Scenes.StartScene);
     }
 
     public void OnClickQuitButton()
