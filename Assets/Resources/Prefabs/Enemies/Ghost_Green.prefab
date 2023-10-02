@@ -118,7 +118,7 @@ MonoBehaviour:
   baseStats:
     changeType: 0
     maxHealth: 3
-    speed: 5
+    speed: 3
     criticalPercentage: 0
     goldPercentage: 0
     itemDropPercentage: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0806c568a62c93b45b633f8b25a49e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveCooldown: 2
+  moveCooldown: 3
   teleportParticlePrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
 --- !u!114 &769931444158323639
 MonoBehaviour:
