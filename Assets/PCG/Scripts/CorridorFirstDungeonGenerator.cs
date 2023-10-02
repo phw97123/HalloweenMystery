@@ -68,6 +68,10 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
+
+        var basicWallPositions = WallGenerator.FindWallsInDirections(floorPositions, Direction2D.cardinalDirectionsList);
+        var cornerWallPositions = WallGenerator.FindWallsInDirections(floorPositions, Direction2D.diagonalDirectionsList);
+        
     }
 
     private IEnumerator GenerateRoomsCoroutine(HashSet<Vector2Int> potentialRoomPositions)

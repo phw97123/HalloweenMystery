@@ -113,11 +113,12 @@ public class RoomContentGenerator : MonoBehaviour
                 
         }
 
-        int randomRoomIndex = UnityEngine.Random.Range(0, dungeonData.roomsDictionary.Count);
+        
         Vector2Int weaponPartsRoomKey = new Vector2Int();
 
         do
         {
+            int randomRoomIndex = UnityEngine.Random.Range(0, dungeonData.roomsDictionary.Count);
             weaponPartsRoomKey = dungeonData.roomsDictionary.Keys.ElementAt(randomRoomIndex);
         } while (weaponPartsRoomKey == farthestRoomKey);
 
