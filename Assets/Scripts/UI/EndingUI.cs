@@ -14,7 +14,6 @@ public class EndingUI : UIPopup
     [SerializeField] private TMP_FontAsset gameOverFont;
 
     [SerializeField] private Image endingImage;
-    [SerializeField] private Sprite[] endingImages;
 
     public enum ButtonType { RedoButton, HomeButton, QuitButton }
     public Button[] ButtonArr;
@@ -54,10 +53,10 @@ public class EndingUI : UIPopup
     public void GameOver() 
     {
         gameOverText.gameObject.GetComponent<Animator>().SetTrigger(Animator.StringToHash("GameOver"));
+        endingImage.gameObject.GetComponent<Animator>().SetTrigger(Animator.StringToHash("GameOver"));
 
         gameOverText.font = gameOverFont;
         gameOverText.text = "GAME OVER";
-        endingImage.sprite = endingImages[(int)Ending.GameOver];
 
         ButtonCheck[(int)ButtonType.RedoButton] = true;
         ButtonCheck[(int)ButtonType.QuitButton] = true;
@@ -67,15 +66,12 @@ public class EndingUI : UIPopup
     public void GameClear()
     {
         gameOverText.gameObject.GetComponent<Animator>().SetTrigger(Animator.StringToHash("GameClear"));
-
-        gameOverText.font = gameClearFont;
-        gameOverText.text = "당신은 친구들을 구해냈습니다";
-        endingImage.sprite = endingImages[(int)Ending.GameClear];
+        endingImage.gameObject.GetComponent<Animator>().SetTrigger(Animator.StringToHash("GameClear"));
 
         ButtonCheck[(int)ButtonType.HomeButton] = true;
         ButtonCheck[(int)ButtonType.QuitButton] = true;
 
-        Invoke("DisplayButton", 4.0f);
+        Invoke("DisplayButton", 10.0f);
     }
 
     public void DisplayButton()
