@@ -24,6 +24,7 @@ public class WitchAttack : MonoBehaviour
     [SerializeField] private float SpawnInterval = 0.2f;
 
     [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip restSound;
 
     private enum ShotState
     {
@@ -56,6 +57,11 @@ public class WitchAttack : MonoBehaviour
                 if (_circleShotsFired >= _maxCircleShots)
                 {
                     currentState = ShotState.Rest;
+
+                    if (restSound != null)
+                    {
+                        SoundManager.PlayClip(restSound);
+                    }
                 }
                 break;
 
@@ -95,6 +101,7 @@ public class WitchAttack : MonoBehaviour
 
             case ShotState.Rest:
                 _restTimer += Time.deltaTime;
+                
                 if (_restTimer >= restDuration)
                 {
                     currentState = ShotState.SpinShot;
