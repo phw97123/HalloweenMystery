@@ -27,6 +27,12 @@ public class RoomContentManager : MonoBehaviour
 
     [SerializeField]
     private PrefabPlacer prefabPlacer;
+    [SerializeField]
+    private Transform roomEnemiesParent;
+    [SerializeField]
+    private GameObject corridorWall;
+    [SerializeField]
+    private Transform corridorWallParent;
 
     public UnityEvent OnStart;
 
@@ -37,22 +43,50 @@ public class RoomContentManager : MonoBehaviour
 
         _controller = player.GetComponent<EntityController>();
         _controller.OnMoveEvent += SpawnEnemy;
+
+        if(corridorWall != null)
+        {
+            foreach (var value in dungoenData.GetCorridorsWithoutRoomFloor())
+            {
+                Instantiate(corridorWall, value + new Vector2(0.5f, 0.5f), Quaternion.identity, corridorWallParent);
+            }
+            corridorWallParent.gameObject.SetActive(false);
+        }
     }
 
     private void SpawnEnemy(Vector2 vector)
     {
+        List<GameObject> placedPrefab = null;
         foreach (var key in dungoenData.roomsDictionary.Keys)
         {
             if (dungoenData.roomsDictionary[key].Contains(new Vector2Int((int)player.transform.position.x, (int)player.transform.position.y)))
             {
-                prefabPlacer.PlaceEnemies(dungoenData.roomsEnemy[key], 
-                                          new ItemPlacementHelper(dungoenData.roomsDictionary[key], 
-                                          dungoenData.GetRoomFloorWithoutCorridors(key)));
+                placedPrefab = prefabPlacer.PlaceEnemies(dungoenData.roomsEnemy[key], 
+                                                         new ItemPlacementHelper(dungoenData.roomsDictionary[key], 
+                                                         dungoenData.GetRoomFloorWithoutCorridors(key)));
 
+                corridorWallParent.gameObject.SetActive(true);
                 dungoenData.roomsDictionary.Remove(key);
                 Debug.Log("spawn");
                 break;
             }
+        }
+        if(placedPrefab != null)
+        {
+            foreach (GameObject enemies in placedPrefab)
+            {
+                enemies.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
+                if (enemies != null)
+                    enemies.transform.SetParent(roomEnemiesParent, false);
+            }
+        }
+    }
+
+    private void CheckInBattle()
+    {
+        if(roomEnemiesParent.childCount == 0)
+        {
+            corridorWallParent.gameObject.SetActive(false);
         }
     }
 
