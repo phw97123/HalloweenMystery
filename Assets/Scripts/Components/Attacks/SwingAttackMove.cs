@@ -64,7 +64,8 @@ namespace Components.Attacks
             _handler.attackStatus.degree = _currentDegree;
             float rad = _currentDegree * Mathf.Deg2Rad;
             pivot.transform.position = _startPosition + new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-
+            pivot.transform.rotation = Quaternion.Euler(0, 0, _currentDegree);
+            
             if (_elapsedTime >= _endTime)
             {
                 _controller.Inactivate(_handler.attackStatus.attackTag, false);
