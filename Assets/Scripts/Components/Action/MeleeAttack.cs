@@ -97,7 +97,7 @@ namespace Components.Action
             }
         }
 
-        private void Aim(Vector2 direction) => _direction = direction;
+        private void Aim(Vector2 direction) => _direction = direction.normalized;
 
         private void HandleAttack(MeleeAttackDataSO meleeAttack, Vector2 spawnPosition, Vector2 direction)
         {

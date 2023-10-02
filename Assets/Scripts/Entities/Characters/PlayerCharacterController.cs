@@ -1,5 +1,7 @@
 using Entites;
 using System;
+using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -19,6 +21,7 @@ namespace Entities
     {
         private Camera _camera;
 
+        private Vector2 _screenPoint;
         public event Action OnInteractionEvent;
         public event Action OnInteractionItemPartsEvent;
 
@@ -46,14 +49,15 @@ namespace Entities
         public void OnLook(InputValue input)
         {
             Vector2 screenPoint = input.Get<Vector2>();
+            _screenPoint = screenPoint;
             Vector3 worldPoint = _camera.ScreenToWorldPoint(screenPoint);
-            Vector2 dir = (worldPoint - transform.position).normalized;
-            CallLook(dir.normalized);
+            Vector2 dir = (worldPoint - transform.position);
+            CallLook(dir);
         }
 
         public void OnFire(InputValue value)
         {
-            if (value.isPressed && !IsMouseOverUI())
+            if (value.isPressed && !IsMouseOverUIWithIgnores())
             {
                 CallAttack();
             }
@@ -62,6 +66,24 @@ namespace Entities
         private bool IsMouseOverUI()
         {
             return EventSystem.current.IsPointerOverGameObject();
+        }
+
+        private bool IsMouseOverUIWithIgnores()
+        {
+            PointerEventData eventData = new PointerEventData(EventSystem.current);
+            eventData.position = _screenPoint;
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, raycastResults);
+            for (int i = 0; i < raycastResults.Count; i++)
+            {
+                if (raycastResults[i].gameObject.GetComponent<IgnoreEventSystemPointerOverUI>() != null)
+                {
+                    raycastResults.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            return raycastResults.Count > 0;
         }
 
         public void OnInteract(InputValue value)

@@ -39,7 +39,7 @@ namespace Managers
 
         private void Start()
         {
-            equipClip = Resources.Load<AudioClip>("Sound/WeaponEquip"); 
+            equipClip = Resources.Load<AudioClip>("Sound/WeaponEquip");
         }
 
         public static WeaponManager Singleton
@@ -103,8 +103,7 @@ namespace Managers
 
             if (prevAttack != null)
             {
-                StatsHandler prevWeaponStats = prevAttack.GetComponent<StatsHandler>();
-                playerStats.RemoveStatModifier(prevWeaponStats.CurrentStats);
+                playerStats.RemoveTopModifier();
                 DestroyImmediate(prevAttack.gameObject);
             }
 
@@ -128,11 +127,11 @@ namespace Managers
             {
                 Type = newAttack.WeaponType, AttackData = weaponStats.attackData,
             };
-            
+
 
             if (equipClip)
-                SoundManager.PlayClip(equipClip); 
-            
+                SoundManager.PlayClip(equipClip);
+
             //destroy equipped item
             Destroy(weapon.gameObject);
             OnWeaponEquipped?.Invoke(CurrentEquippedWeapon);

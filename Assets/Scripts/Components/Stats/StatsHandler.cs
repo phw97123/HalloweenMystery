@@ -36,6 +36,11 @@ namespace Components.Stats
             UpdateCharacterStats();
         }
 
+        public void RemoveTopModifier()
+        {
+            _statsModifiers.RemoveAt(_statsModifiers.Count - 1);
+        }
+
         private void UpdateCharacterStats()
         {
             AttackDataSO attackSO = null;
@@ -105,6 +110,10 @@ namespace Components.Stats
                 case RangeAttackDataSO _:
                     ApplyRangeStats(operation, newModifier);
                     break;
+                default:
+                    baseStats = newModifier;
+                    ApplyAttackStats(operation, newModifier);
+                    break;
             }
         }
 
@@ -157,6 +166,19 @@ namespace Components.Stats
                 operation(currentRangedAttacks.anglePerShot, rangedAttacksModifier.anglePerShot);
             currentRangedAttacks.piercingCount =
                 operation(currentRangedAttacks.piercingCount, rangedAttacksModifier.piercingCount);
+        }
+
+        private void ApplyAttackStats(Func<float, float, float> operation, CharacterStats newModifier)
+        {
+            switch (newModifier.attackData)
+            {
+                case RangeAttackDataSO:
+                    ApplyRangeStats(operation, newModifier);
+                    break;
+                case MeleeAttackDataSO:
+                    ApplyMeleeStats(operation, newModifier);
+                    break;
+            }
         }
 
         private void LimitStats(ref float stat, float minVal)
