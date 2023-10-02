@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class RoomContentGenerator : MonoBehaviour
 {
     [SerializeField]
-    private RoomGenerator playerRoom, defaultRoom;
+    private RoomGenerator playerRoom, bossRoom, weaponPartsRoom, defaultRoom;
 
     List<GameObject> spawnedObjects = new List<GameObject>();
 
@@ -44,6 +44,8 @@ public class RoomContentGenerator : MonoBehaviour
 
         SelectPlayerSpawnPoint(dungeonData);
         SelectEnemySpawnPoints(dungeonData);
+        SelectWeaponPartsSpawnPoints(dungeonData);
+        SelectBossSpawnPoints(dungeonData);
 
         foreach (GameObject item in spawnedObjects)
         {
@@ -83,6 +85,61 @@ public class RoomContentGenerator : MonoBehaviour
         cinemachineCamera.Follow = playerTransform;
     }
 
+
+    private void SelectBossSpawnPoints(DungeonData dungeonData)
+    {
+        Vector2Int farthestRoomKey = new Vector2Int();
+        int max = 0;
+
+        foreach (var key in dungeonData.roomsDictionary.Keys)
+        {
+            if (max < graphTest.dijkstraResult[key])
+            {
+                max = graphTest.dijkstraResult[key];
+                farthestRoomKey = key;
+            }
+                
+        }
+
+        spawnedObjects.AddRange(
+            bossRoom.ProcessRoom(
+                farthestRoomKey,
+                dungeonData
+                )
+        );
+    }
+    
+    private void SelectWeaponPartsSpawnPoints(DungeonData dungeonData)
+    {
+        Vector2Int farthestRoomKey = new Vector2Int();
+        int max = 0;
+
+        foreach (var key in dungeonData.roomsDictionary.Keys)
+        {
+            if (max < graphTest.dijkstraResult[key])
+            {
+                max = graphTest.dijkstraResult[key];
+                farthestRoomKey = key;
+            }
+                
+        }
+
+        int randomRoomIndex = UnityEngine.Random.Range(0, dungeonData.roomsDictionary.Count);
+        Vector2Int weaponPartsRoomKey = new Vector2Int();
+
+        do
+        {
+            weaponPartsRoomKey = dungeonData.roomsDictionary.Keys.ElementAt(randomRoomIndex);
+        } while (weaponPartsRoomKey == farthestRoomKey);
+
+        spawnedObjects.AddRange(
+            weaponPartsRoom.ProcessRoom(
+                weaponPartsRoomKey,
+                dungeonData
+                )
+        );
+    }
+
     private void SelectEnemySpawnPoints(DungeonData dungeonData)
     {
         foreach (KeyValuePair<Vector2Int,HashSet<Vector2Int>> roomData in dungeonData.roomsDictionary)
@@ -96,5 +153,6 @@ public class RoomContentGenerator : MonoBehaviour
 
         }
     }
+    
 
 }

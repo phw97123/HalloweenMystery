@@ -32,6 +32,7 @@ public class PrefabPlacer : MonoBehaviour
         }
         return placedObjects;
     }
+    
 
     public List<GameObject> PlaceAllItems(List<ItemPlacementData> itemPlacementData, ItemPlacementHelper itemPlacementHelper)
     {

@@ -1,8 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum RoomType
+{
+    start = 0,
+    weaponParts,
+    boss,
+    normal
+}
 public class DungeonData
 {
+    public Dictionary<Vector2Int, int> roomsType;
     public Dictionary<Vector2Int, HashSet<Vector2Int>> roomsDictionary;
     public Dictionary<Vector2Int, List<EnemyPlacementData>> roomsEnemy = new Dictionary<Vector2Int, List<EnemyPlacementData>>();
     public HashSet<Vector2Int> floorPositions;

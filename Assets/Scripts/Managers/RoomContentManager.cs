@@ -42,7 +42,7 @@ public class RoomContentManager : MonoBehaviour
         OnStart?.Invoke();
 
         _controller = player.GetComponent<EntityController>();
-        _controller.OnMoveEvent += SpawnEnemy;
+        _controller.OnMoveEvent += SpawnPrefab;
 
         if(corridorWall != null)
         {
@@ -54,7 +54,7 @@ public class RoomContentManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy(Vector2 vector)
+    private void SpawnPrefab(Vector2 vector)
     {
         List<GameObject> placedPrefab = null;
         foreach (var key in dungoenData.roomsDictionary.Keys)
