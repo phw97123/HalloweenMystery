@@ -39,11 +39,9 @@ public class RoomContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.ShowDungeonUI();
         AchievementCheck();
         OnStart?.Invoke();
-        _controller = player.GetComponent<EntityController>();
-        _controller.OnMoveEvent += SpawnPrefab;
+        
 
         if (corridorWall != null)
         {
@@ -137,6 +135,7 @@ public class RoomContentManager : MonoBehaviour
         else
         {
             GameManager.Instance.CreatePlayerAtPosition(position, Quaternion.identity);
+            GameManager.Instance.ShowDungeonUI();
             player = GameManager.Instance.Player.gameObject;
             if (GameManager.Instance.WeaponInfo != null && GameManager.Instance.Player != null)
             {
@@ -145,6 +144,8 @@ public class RoomContentManager : MonoBehaviour
                 WeaponManager.Singleton.EquipWeapon(Instantiate(weapon), player);
             }
         }
+        _controller = player.GetComponent<EntityController>();
+        _controller.OnMoveEvent += SpawnPrefab;
         
     }
 }

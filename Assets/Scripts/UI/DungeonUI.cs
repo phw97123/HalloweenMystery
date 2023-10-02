@@ -42,20 +42,13 @@ namespace UI
             _healthSystem.OnChangeShieldCount += UpdateShieldUi;
             _goldSystem = _gameManager.Player.GetComponent<GoldSystem>();
             _goldSystem.OnChangeOwnedGold += UpdateGoldUI;
-            UpdateWeaponUI(GameManager.Instance.WeaponInfo);
+            _attack = _gameManager.Player.GetComponentInChildren<BaseAttack>();
+            _attack.OnAttackDelayChanged += UpdateDelayUI;
         }
 
         private void UpdateGoldUI()
         {
             coinText.text = _goldSystem.OwnedGold.ToString("N0");
-        }
-
-        private void UpdateWeaponUI(WeaponInfo? weaponInfo)
-        {
-            if (weaponInfo == null) { return; }
-
-            _attack = _gameManager.Player.GetComponentInChildren<BaseAttack>();
-            _attack.OnAttackDelayChanged += UpdateDelayUI;
         }
 
 
@@ -78,18 +71,6 @@ namespace UI
         {
             _playTime += Time.deltaTime;
             elapsedTimeText.text = $"{(int)_playTime / 60:D2}:{(int)_playTime % 60:D2}";
-        }
-
-        private void ToggleInfoButton()
-        {
-            _isInfoOpened = !_isInfoOpened;
-            if (_isInfoOpened)
-            {
-                if (_gameManager.WeaponInfo.HasValue)
-                {
-                    UpdateWeaponUI(_gameManager.WeaponInfo.Value);
-                }
-            }
         }
     }
 }
