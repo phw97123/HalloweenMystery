@@ -11,7 +11,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum Scenes { RoomScene, StageScene, RoomContent, StartScene }
+public enum Scenes { RoomScene, StageScene, RoomContent, StartScene, EndingScene }
 
 public enum Ending { GameOver, GameClear }
 
@@ -91,18 +91,7 @@ public class GameManager : MonoBehaviour
         if (_isChanged)
         {
             _isChanged = false;
-            switch (_curScenes)
-            {
-                case Scenes.RoomScene:
-                    SceneManager.LoadScene(_curScenes.ToString());
-                    break;
-                case Scenes.StageScene:
-                    SceneManager.LoadScene(_curScenes.ToString());
-                    break;
-                case Scenes.RoomContent:
-                    SceneManager.LoadScene(_curScenes.ToString());
-                    break;
-            }
+            SceneManager.LoadScene(_curScenes.ToString());
         }
     }
 
