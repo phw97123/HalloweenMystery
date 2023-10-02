@@ -16,6 +16,7 @@ using UnityEngine.SceneManagement;
 public class RoomContentManager : MonoBehaviour
 {
     public static RoomContentManager Instance;
+
     private void Awake()
     {
         Instance = this;
@@ -26,14 +27,10 @@ public class RoomContentManager : MonoBehaviour
 
     public DungeonData dungoenData = null;
 
-    [SerializeField]
-    private PrefabPlacer prefabPlacer;
-    [SerializeField]
-    public Transform roomEnemiesParent;
-    [SerializeField]
-    private GameObject corridorWall;
-    [SerializeField]
-    private Transform corridorWallParent;
+    [SerializeField] private PrefabPlacer prefabPlacer;
+    [SerializeField] public Transform roomEnemiesParent;
+    [SerializeField] private GameObject corridorWall;
+    [SerializeField] private Transform corridorWallParent;
 
     public GameObject portal;
 
@@ -41,6 +38,7 @@ public class RoomContentManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
         GameManager.Instance.ShowDungeonUI();
         AchievementCheck();
         OnStart?.Invoke();
@@ -53,17 +51,18 @@ public class RoomContentManager : MonoBehaviour
             {
                 Instantiate(corridorWall, value + new Vector2(0.5f, 0.5f), Quaternion.identity, corridorWallParent);
             }
+
             corridorWallParent.gameObject.SetActive(false);
         }
     }
 
     public void AchievementCheck()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 5)
+        if (SceneManager.GetActiveScene().buildIndex == 5)
         {
             //1스테이지 끝내고 2스테이지 넘어갈시 호출
         }
-        else if(SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
         {
             //2스테이지 끝내고 3스테이지 넘어갈시 호출
         }
@@ -87,11 +86,12 @@ public class RoomContentManager : MonoBehaviour
         List<GameObject> placedPrefab = null;
         foreach (var key in dungoenData.roomsDictionary.Keys)
         {
-            if (dungoenData.roomsDictionary[key].Contains(new Vector2Int((int)player.transform.position.x, (int)player.transform.position.y)))
+            if (dungoenData.roomsDictionary[key]
+                .Contains(new Vector2Int((int)player.transform.position.x, (int)player.transform.position.y)))
             {
-                placedPrefab = prefabPlacer.PlaceEnemies(dungoenData.roomsEnemy[key], 
-                                                         new ItemPlacementHelper(dungoenData.roomsDictionary[key], 
-                                                         dungoenData.GetRoomFloorWithoutCorridors(key)));
+                placedPrefab = prefabPlacer.PlaceEnemies(dungoenData.roomsEnemy[key],
+                    new ItemPlacementHelper(dungoenData.roomsDictionary[key],
+                        dungoenData.GetRoomFloorWithoutCorridors(key)));
 
                 corridorWallParent.gameObject.SetActive(true);
                 dungoenData.roomsDictionary.Remove(key);
@@ -99,14 +99,14 @@ public class RoomContentManager : MonoBehaviour
                 break;
             }
         }
-        if(placedPrefab != null)
+
+        if (placedPrefab != null)
         {
             foreach (GameObject prefab in placedPrefab)
             {
                 Debug.Log(prefab.layer);
                 if (prefab.layer == 7)
                 {
-                    
                     prefab.transform.SetParent(roomEnemiesParent, false);
                     prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
                 }
@@ -116,7 +116,7 @@ public class RoomContentManager : MonoBehaviour
 
     private void CheckInBattle()
     {
-        if(roomEnemiesParent.childCount == 0)
+        if (roomEnemiesParent.childCount == 0)
         {
             corridorWallParent.gameObject.SetActive(false);
             portal.SetActive(true);
@@ -125,7 +125,6 @@ public class RoomContentManager : MonoBehaviour
 
     public void CreatePlayerInRoom(Vector2Int position)
     {
-       
         if (player != null)
         {
             player.transform.position = new Vector3Int(position.x, position.y, 0);
@@ -142,7 +141,7 @@ public class RoomContentManager : MonoBehaviour
                 Transform pivot = player.GetComponentsInChildren<Transform>().First(t => t.name == Constants.ARM_PIVOT);
                 weapon.transform.position = Vector3.zero;
                 Instantiate(weapon, pivot.transform, false);
-                
+
 
                 CharacterStats stats = weapon.GetComponent<StatsHandler>().CurrentStats;
             }
