@@ -21,9 +21,6 @@ namespace UI
         [SerializeField] private Text elapsedTimeText;
         [SerializeField] private Text coinText;
 
-        [SerializeField] private PlayerInfoUI playerInfo;
-        [SerializeField] private Button openInfoButton;
-        [SerializeField] private Button closeInfoButton;
         [SerializeField] private Image healthBar;
         [SerializeField] private Image atkDelayBar;
 
@@ -37,30 +34,22 @@ namespace UI
         }
 
         private void Start()
-        { 
-            openInfoButton.onClick.AddListener(ToggleInfoButton);
-            closeInfoButton.onClick.AddListener(ToggleInfoButton);
-            
+        {
             _healthSystem = _gameManager.Player.gameObject.GetComponent<HealthSystem>();
             _healthSystem.OnDamage += UpdateHealthUi;
             _healthSystem.OnHeal += UpdateHealthUi;
             _healthSystem.OnChangeShieldCount += UpdateShieldUi;
-            StatsHandler statsHandler = _gameManager.Player.gameObject.GetComponent<StatsHandler>();
-            UpdateStatsUI(statsHandler.CurrentStats);
-            statsHandler.OnStatsChanged += UpdateStatsUI;
-            _gameManager.OnEquipped += UpdateWeaponUI;
+            UpdateWeaponUI(GameManager.Instance.WeaponInfo);
         }
 
         private void UpdateWeaponUI(WeaponInfo? weaponInfo)
         {
             if (weaponInfo == null) { return; }
+
             _attack = _gameManager.Player.GetComponentInChildren<BaseAttack>();
             _attack.OnAttackDelayChanged += UpdateDelayUI;
-            playerInfo.UpdateWeaponInfoUI(weaponInfo.Value);
         }
 
-        private void UpdateStatsUI(CharacterStats stats) =>
-            playerInfo.UpdateStatsUI(stats);
 
         private void UpdateShieldUi()
         {
@@ -83,21 +72,11 @@ namespace UI
             elapsedTimeText.text = $"{(int)_playTime / 60:D2}:{(int)_playTime % 60:D2}";
         }
 
-        private void OnDestroy()
-        {
-            openInfoButton.onClick.RemoveAllListeners();
-            closeInfoButton.onClick.RemoveAllListeners();
-        }
-
         private void ToggleInfoButton()
         {
             _isInfoOpened = !_isInfoOpened;
-            openInfoButton.gameObject.SetActive(!_isInfoOpened);
-            closeInfoButton.gameObject.SetActive(_isInfoOpened);
-            playerInfo.gameObject.SetActive(_isInfoOpened);
             if (_isInfoOpened)
             {
-                UpdateStatsUI(_gameManager.PlayerStats);
                 if (_gameManager.WeaponInfo.HasValue)
                 {
                     UpdateWeaponUI(_gameManager.WeaponInfo.Value);

@@ -127,11 +127,11 @@ namespace Managers
             Transform pivot = character.GetComponentsInChildren<Transform>()
                 .First(t => t.name == Constants.ARM_PIVOT);
             weapon.transform.position = Vector3.zero;
-            Instantiate(weapon, pivot.transform, false);
+            GameObject newWeapon = Instantiate(weapon, pivot.transform, false);
 
             //update information
-            BaseAttack newAttack = weapon.GetComponent<BaseAttack>();
-            CharacterStats weaponStats = weapon.GetComponent<StatsHandler>().CurrentStats;
+            BaseAttack newAttack = newWeapon.GetComponent<BaseAttack>();
+            CharacterStats weaponStats = newWeapon.GetComponentInChildren<StatsHandler>().CurrentStats;
             playerStats.AddStatModifier(weaponStats);
 
             CurrentEquippedWeapon = new WeaponInfo
