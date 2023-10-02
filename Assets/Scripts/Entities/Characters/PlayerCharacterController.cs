@@ -1,6 +1,7 @@
 using Entites;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Entities
@@ -52,10 +53,15 @@ namespace Entities
 
         public void OnFire(InputValue value)
         {
-            if (value.isPressed)
+            if (value.isPressed && !IsMouseOverUI())
             {
                 CallAttack();
             }
+        }
+
+        private bool IsMouseOverUI()
+        {
+            return EventSystem.current.IsPointerOverGameObject();
         }
 
         public void OnInteract(InputValue value)
