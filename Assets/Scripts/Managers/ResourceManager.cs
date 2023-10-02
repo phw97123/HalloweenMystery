@@ -53,7 +53,8 @@ public class ResourceManager : MonoBehaviour
         {
             if (Path.GetExtension(file) == ".meta") { continue; }
 
-            _prefabsFolder[Path.GetFileNameWithoutExtension(file)] = currentDirectory.Replace("Assets/Resources/", "");
+            _prefabsFolder[Path.GetFileNameWithoutExtension(file)] =
+                currentDirectory.Replace(Path.Combine("Assets", "Resources") + Path.DirectorySeparatorChar, "");
         }
     }
 
