@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class CollisionDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            RoomManager.Instance.ChangeScene();
+            //RoomManager.Instance.ChangeScene();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
