@@ -378,7 +378,6 @@ MonoBehaviour:
   soundEffectVolume: 0.05
   soundEffectPitchVariance: 0.05
   musicVolume: 0.05
-  musicClip: {fileID: 8300000, guid: 470ffb194ee832448993633858572d16, type: 3}
 --- !u!4 &1903206609
 Transform:
   m_ObjectHideFlags: 0
