@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8fe75f2f7831949a4ee96d7ec9e2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundChangedClip: {fileID: 8300000, guid: 540afdb63ca76374ea196b1980a4381c, type: 3}
   soundEffectVolume: 0.05
   soundEffectPitchVariance: 0.05
   musicVolume: 0.05

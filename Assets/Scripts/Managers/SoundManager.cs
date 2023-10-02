@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils;
@@ -13,25 +14,27 @@ public class SoundManager : MonoBehaviour
     {
         get
         {
-            if(_instance == null)
+            if (_instance == null)
             {
-                _instance = FindObjectOfType<SoundManager>(); 
-                if(_instance == null)
+                _instance = FindObjectOfType<SoundManager>();
+                if (_instance == null)
                 {
                     GameObject soundManagerObject = new GameObject("SoundManager");
-                    _instance = soundManagerObject.AddComponent<SoundManager>(); 
+                    _instance = soundManagerObject.AddComponent<SoundManager>();
                 }
             }
-            return _instance; 
+
+            return _instance;
         }
     }
 
-    [SerializeField][Range(0f, 1f)] private float soundEffectVolume;
-    [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance;
-    [SerializeField][Range(0f, 1f)] private float musicVolume;
+    private AudioClip _soundChangedClip;
+    [SerializeField] [Range(0f, 1f)] private float soundEffectVolume;
+    [SerializeField] [Range(0f, 1f)] private float soundEffectPitchVariance;
+    [SerializeField] [Range(0f, 1f)] private float musicVolume;
 
     private ObjectPool _objectPool;
-    private List<Poolable> _prefabs; 
+    private List<Poolable> _prefabs;
 
     private AudioSource _musicAudioSource;
 
@@ -40,20 +43,20 @@ public class SoundManager : MonoBehaviour
     private const string STAGE_SCENE = "RoomContent";
     private const string DEMO_SCENE = "DemoScene";
     private const string ROOM_SCENE = "RoomScene";
-    private const string GAMEENDING_SCENE = ""; 
+    private const string GAMEENDING_SCENE = "";
 
     private AudioClip _musicClip;
 
     private void Awake()
     {
-        if(_instance == null)
+        if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
 
         _musicAudioSource = GetComponent<AudioSource>();
@@ -71,17 +74,19 @@ public class SoundManager : MonoBehaviour
             p.Prefab = o;
             p.Size = 5;
             p.Tag = o.name;
-            Debug.Log(p.Prefab); 
+            Debug.Log(p.Prefab);
             _prefabs.Add(p);
         }
+
         //_objectPool.Initialize(_prefabs); 
-        SceneManager.sceneLoaded += OnSceneLoaded; 
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Start()
     {
         string sceneName = SceneManager.GetActiveScene().name;
         SetBGMByScene(sceneName);
+        _soundChangedClip = ResourceManager.Instance.Load<AudioClip>("WeaponEquip");
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -131,21 +136,41 @@ public class SoundManager : MonoBehaviour
 
         ChangeBGM(_musicClip);
     }
- 
+
     private static void ChangeBGM(AudioClip music)
     {
         Instance._musicAudioSource.Stop();
         Instance._musicAudioSource.clip = music;
-        Instance._musicAudioSource.Play(); 
+        Instance._musicAudioSource.Play();
     }
 
-    public static  void PlayClip(AudioClip clip)
+    public static void PlayClip(AudioClip clip)
     {
         GameObject obj = Instance._objectPool.Pop("SoundSource");
         Instance._objectPool.Push("SoundSource", obj);
 
         obj.SetActive(true);
         SoundSource soundSource = obj.GetComponent<SoundSource>();
-        soundSource.Play(clip, Instance.soundEffectVolume, Instance.soundEffectPitchVariance); 
+        soundSource.Play(clip, Instance.soundEffectVolume, Instance.soundEffectPitchVariance);
+    }
+
+    public void SubscribeSettingsUI(SettingUI settingUI)
+    {
+        settingUI.OnMusicVolumeChanged += ChangeMusicVolume;
+        settingUI.OnSoundVolumeChanged += ChangeSoundVolume;
+    }
+
+    private void ChangeSoundVolume(float value)
+    {
+        soundEffectVolume = value;
+        PlayClip(_soundChangedClip);
+    }
+
+    private void ChangeMusicVolume(float value)
+    {
+        Instance._musicAudioSource.Stop();
+        musicVolume = value;
+        _musicAudioSource.volume = musicVolume;
+        Instance._musicAudioSource.Play();
     }
 }
