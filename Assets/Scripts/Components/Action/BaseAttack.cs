@@ -1,5 +1,6 @@
 using Managers;
 using System;
+using UI;
 using UnityEngine;
 
 namespace Components.Action
@@ -10,6 +11,7 @@ namespace Components.Action
         public WeaponType WeaponType => weaponType;
 
         public event Action<float> OnAttackDelayChanged;
+
 
         protected void CallAttackDelayChange(float percent)
         {
