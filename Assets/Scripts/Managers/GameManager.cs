@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public Transform Player { get; private set; }
     private UIManager _uiManager;
     private WeaponManager _weaponManager;
-
+     
 
     public CharacterStats PlayerStats { get; private set; }
     public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
