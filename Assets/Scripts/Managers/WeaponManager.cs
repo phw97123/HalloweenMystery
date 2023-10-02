@@ -57,6 +57,17 @@ namespace Managers
             }
         }
 
+        private void Awake()
+        {
+            if (_singleton != null && _singleton != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            _singleton = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         //todo refactor name -> createInteractableWeaponByName
         public void CreateInteractableWeapon(WeaponType weaponType, Vector2 position)
