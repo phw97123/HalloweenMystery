@@ -79,7 +79,7 @@ namespace Components.Action
             }
         }
 
-        private void Aim(Vector2 direction) => _direction = direction;
+        private void Aim(Vector2 direction) => _direction = direction.normalized;
 
         private void Attack()
         {
