@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapon
   - Enemy
+  - LastBoss
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - Enemy
   - Level
   - Wall
-  - 
-  - 
+  - Minimap
+  - MapObject
   - 
   - 
   - 
