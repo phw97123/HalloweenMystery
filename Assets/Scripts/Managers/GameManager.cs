@@ -11,7 +11,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum Scenes { RoomScene, StageScene, RoomContent }
+public enum Scenes { RoomScene, StageScene, RoomContent, StartScene }
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private Scenes _curScenes = Scenes.RoomScene;
     private bool _isChanged;
+    private bool _isIntroShown;
     public Transform Player { get; private set; }
     private UIManager _uiManager;
     private WeaponManager _weaponManager;
@@ -77,6 +78,12 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        if (SceneManager.GetActiveScene().name == Scenes.StartScene.ToString())
+        {
+            ShowIntroUI();
+            return;
+        }
+
         if (_isChanged)
         {
             _isChanged = false;
@@ -126,6 +133,13 @@ public class GameManager : MonoBehaviour
         _uiManager.ShowUIPopupByName(nameof(DungeonUI));
     }
 
+    private void ShowIntroUI()
+    {
+        if (_isIntroShown) { return; }
+
+        _isIntroShown = true;
+        _uiManager.ShowUIPopupByName(nameof(IntroUI));
+    }
 
     public void ChangeScene(Scenes sceneName)
     {
