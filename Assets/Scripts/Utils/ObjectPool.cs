@@ -51,6 +51,11 @@ namespace Utils
             if (ContainsKey(prefabTag))
             {
                 go = _pool[prefabTag].Count > 0 ? _pool[prefabTag].Dequeue() : Instantiate(_prefabs[prefabTag]);
+                if (go == null )
+                {
+                    go = Instantiate(_prefabs[prefabTag]);
+                }
+
                 go.SetActive(true);
             }
             else

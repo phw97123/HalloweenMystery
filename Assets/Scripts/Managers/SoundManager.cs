@@ -78,7 +78,7 @@ public class SoundManager : MonoBehaviour
             _prefabs.Add(p);
         }
 
-        //_objectPool.Initialize(_prefabs); 
+        _objectPool.Initialize(_prefabs); 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
