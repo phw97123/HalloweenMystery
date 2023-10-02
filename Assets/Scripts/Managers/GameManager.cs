@@ -13,6 +13,8 @@ using UnityEngine.SceneManagement;
 
 public enum Scenes { RoomScene, StageScene, RoomContent, StartScene }
 
+public enum Ending { GameOver, GameClear }
+
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
     public CharacterStats PlayerStats { get; private set; }
     public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
     public event Action<WeaponInfo?> OnEquipped;
+
+    public Ending _ending = Ending.GameClear;
 
     public static GameManager Instance
     {
