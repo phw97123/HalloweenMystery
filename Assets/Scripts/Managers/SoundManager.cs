@@ -74,7 +74,6 @@ public class SoundManager : MonoBehaviour
             p.Prefab = o;
             p.Size = 5;
             p.Tag = o.name;
-            Debug.Log(p.Prefab);
             _prefabs.Add(p);
         }
 

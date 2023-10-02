@@ -96,7 +96,6 @@ public class RoomContentManager : MonoBehaviour
 
                 corridorWallParent.gameObject.SetActive(true);
                 dungoenData.roomsDictionary.Remove(key);
-                Debug.Log("spawn");
                 break;
             }
         }
@@ -104,7 +103,6 @@ public class RoomContentManager : MonoBehaviour
         {
             foreach (GameObject prefab in placedPrefab)
             {
-                Debug.Log(prefab.layer);
                 if (prefab.layer == 7)
                 {
                     
