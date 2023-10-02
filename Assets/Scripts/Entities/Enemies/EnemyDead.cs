@@ -49,7 +49,7 @@ public class EnemyDead : MonoBehaviour
 
         GameManager.Instance.Monsterkilled(); 
 
-        if(gameObject.CompareTag("LastBoss"))
+        if(gameObject.tag == "LastBoss")
         {
             GameManager.Instance.LastBossDied(); 
         }
