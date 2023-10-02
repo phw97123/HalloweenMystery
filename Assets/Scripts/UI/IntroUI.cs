@@ -55,7 +55,7 @@ public class IntroUI : UIPopup
             alert.SubmitButton.onClick.AddListener(CloseAlertDialog);
             return;
         }
-        
+
         StartCoroutine(LoadRoomSceneAsync());
     }
 
@@ -100,7 +100,7 @@ public class IntroUI : UIPopup
     private IEnumerator LoadRoomSceneAsync()
     {
         OnPlayGame?.Invoke(_characterData);
-        AsyncOperation operation = SceneManager.LoadSceneAsync("RoomScene");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("TownScene");
         while (!operation.isDone)
         {
             yield return null;
