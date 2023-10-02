@@ -599,6 +599,12 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider,visualstudio,macos,windows
 
+<<<<<<< HEAD
 Assets/data_AchievementData\[\].json.meta
 
 Assets/data_AchievementData\[\].json
+=======
+Assets/data_AchievementData\[\].json
+
+Assets/data_AchievementData\[\].json.meta
+>>>>>>> kdy_settings

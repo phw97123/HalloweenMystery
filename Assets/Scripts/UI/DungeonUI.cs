@@ -42,8 +42,6 @@ namespace UI
             _healthSystem.OnChangeShieldCount += UpdateShieldUi;
             _goldSystem = _gameManager.Player.GetComponent<GoldSystem>();
             _goldSystem.OnChangeOwnedGold += UpdateGoldUI;
-            _attack = _gameManager.Player.GetComponentInChildren<BaseAttack>();
-            _attack.OnAttackDelayChanged += UpdateDelayUI;
         }
 
         private void UpdateGoldUI()
@@ -62,7 +60,7 @@ namespace UI
             healthBar.transform.localScale = new Vector3(1, healthPercent);
         }
 
-        private void UpdateDelayUI(float percent)
+        public void UpdateDelayUI(float percent)
         {
             atkDelayBar.transform.localScale = new Vector3(1, percent);
         }
