@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 7664918685862249291}
   m_Layer: 7
   m_Name: Boss_Witch
-  m_TagString: Enemy
+  m_TagString: LastBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ Transform:
   - {fileID: 449072151574491136}
   - {fileID: 8434282659198081557}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5089884242549555349
 MonoBehaviour:

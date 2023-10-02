@@ -47,6 +47,13 @@ public class EnemyDead : MonoBehaviour
             }
         }
 
+        GameManager.Instance.Monsterkilled(); 
+
+        if(gameObject.CompareTag("LastBoss"))
+        {
+            GameManager.Instance.LastBossDied(); 
+        }
+
         Destroy(gameObject, 2f);
     }
 }
