@@ -90,11 +90,7 @@ public class IntroUI : UIPopup
 
     private void Quit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+        GameManager.Instance.QuitGame();
     }
 
     private IEnumerator LoadRoomSceneAsync()

@@ -81,7 +81,7 @@ namespace Managers
         public void EnterDungeon()
         {
             gameManager.ShowDungeonUI();
-            GameObject.Find("Container").transform.localScale = new Vector3(0.5f, 1f);
+            GameObject.Find("Container").transform.localScale = new Vector3(0.3f, 1f);
         }
 
         public void CreateWeaponParts()
