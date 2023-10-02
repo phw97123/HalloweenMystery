@@ -25,13 +25,11 @@ namespace UI
         private void Awake()
         {
             _camera = Camera.main;
-            _aimController = GameManager.Instance.Player.GetComponent<EntityController>();
-            _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
-            _range = _statsHandler.CurrentStats.attackData.range;
         }
 
         private void Start()
         {
+            _range = _statsHandler.CurrentStats.attackData.range;
             _startScale = transform.localScale;
         }
 
@@ -52,6 +50,8 @@ namespace UI
 
         private void OnEnable()
         {
+            _aimController = GameManager.Instance.Player.GetComponent<EntityController>();
+            _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
             _aimController.OnLookEvent += Aim;
             _statsHandler.OnStatsChanged += ChangeRange;
         }

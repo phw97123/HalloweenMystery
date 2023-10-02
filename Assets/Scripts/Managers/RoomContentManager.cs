@@ -41,10 +41,9 @@ public class RoomContentManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+        GameManager.Instance.ShowDungeonUI();
         AchievementCheck();
         OnStart?.Invoke();
-
         _controller = player.GetComponent<EntityController>();
         _controller.OnMoveEvent += SpawnPrefab;
 
