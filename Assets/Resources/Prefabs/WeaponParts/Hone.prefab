@@ -246,7 +246,7 @@ MonoBehaviour:
   interactTag: Player
   partsName: "\uC22B\uB3CC"
   partsDescription: "\uBC94\uC704\uB97C 5 \uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4"
-  price: 0
+  price: 10
   isEquiped: 0
   descriptionText: {fileID: 3286043410129226367}
   partsClip: {fileID: 8300000, guid: 7ba59d0beee51aa4c8edd11dcdc0f9a5, type: 3}
