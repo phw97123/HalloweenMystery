@@ -21,7 +21,7 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public enum PrefabFolder { Attacks, Character, DropItems, Enemies, UI, VFX, WeaponParts, Weapons }
+    public enum PrefabFolder { Attacks, Character, DropItems, Enemies, UI, VFX, WeaponParts, Weapons, Sound}
 
     private Dictionary<string, int> _prefabsFolder = new Dictionary<string, int>();
     private string _folderPath = "Assets/Resources/Prefabs";
