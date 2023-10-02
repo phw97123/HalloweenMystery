@@ -11,6 +11,7 @@ using Components.Weapon;
 using Utils;
 using UnityEngine.Events;
 using Entites;
+using UnityEngine.SceneManagement;
 
 public class RoomContentManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class RoomContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AchievementCheck();
         OnStart?.Invoke();
 
         _controller = player.GetComponent<EntityController>();
@@ -53,6 +55,18 @@ public class RoomContentManager : MonoBehaviour
                 Instantiate(corridorWall, value + new Vector2(0.5f, 0.5f), Quaternion.identity, corridorWallParent);
             }
             corridorWallParent.gameObject.SetActive(false);
+        }
+    }
+
+    public void AchievementCheck()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            //1스테이지 끝내고 2스테이지 넘어갈시 호출
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            //2스테이지 끝내고 3스테이지 넘어갈시 호출
         }
     }
 
