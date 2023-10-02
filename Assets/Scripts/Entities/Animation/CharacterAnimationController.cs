@@ -34,24 +34,23 @@ public class CharacterAnimationController : CharacterAnimations
     private void Death()
     {
         animator.SetBool(Dead, true);
-        Debug.Log("Dead"); 
+        //Debug.Log("Dead"); 
     }
 
     private void Hit()
     {
         animator.SetBool(IsHit, true);
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
     }
 
     private void InvincibilityEnd()
     {
         animator.SetBool(IsHit, false);
-        Debug.Log("InvincibilityEnd");
+        //Debug.Log("InvincibilityEnd");
     }
 
     private void Move(Vector2 obj)
     {
         animator.SetBool(IsWalking, obj.magnitude > .5f);
-        Debug.Log("Move");
     }
 }

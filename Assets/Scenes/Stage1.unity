@@ -15905,8 +15905,8 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
   corridorLength: 10
-  corridorCount: 80
-  roomPercent: 0.8
+  corridorCount: 20
+  roomPercent: 0.3
   showRoomGizmo: 0
   showCorridorsGizmo: 0
   OnDungeonFloorReady:

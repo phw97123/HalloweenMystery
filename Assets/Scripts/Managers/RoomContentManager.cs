@@ -11,6 +11,7 @@ using Components.Weapon;
 using Utils;
 using UnityEngine.Events;
 using Entites;
+using UnityEngine.SceneManagement;
 
 public class RoomContentManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class RoomContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AchievementCheck();
         OnStart?.Invoke();
 
         _controller = player.GetComponent<EntityController>();
@@ -53,6 +55,18 @@ public class RoomContentManager : MonoBehaviour
                 Instantiate(corridorWall, value + new Vector2(0.5f, 0.5f), Quaternion.identity, corridorWallParent);
             }
             corridorWallParent.gameObject.SetActive(false);
+        }
+    }
+
+    public void AchievementCheck()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear1); 
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear2);
         }
     }
 
@@ -80,9 +94,8 @@ public class RoomContentManager : MonoBehaviour
                                                          new ItemPlacementHelper(dungoenData.roomsDictionary[key], 
                                                          dungoenData.GetRoomFloorWithoutCorridors(key)));
 
-                corridorWallParent.gameObject.SetActive(true);
+                
                 dungoenData.roomsDictionary.Remove(key);
-                Debug.Log("spawn");
                 break;
             }
         }
@@ -90,7 +103,6 @@ public class RoomContentManager : MonoBehaviour
         {
             foreach (GameObject prefab in placedPrefab)
             {
-                Debug.Log(prefab.layer);
                 if (prefab.layer == 7)
                 {
                     
@@ -98,12 +110,18 @@ public class RoomContentManager : MonoBehaviour
                     prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
                 }
             }
+            if (roomEnemiesParent.childCount >= 2) corridorWallParent.gameObject.SetActive(true);
         }
     }
 
     private void CheckInBattle()
     {
-        if(roomEnemiesParent.childCount == 0)
+        Invoke("Check", 1.0f);
+    }
+    
+    private void Check()
+    {
+        if (roomEnemiesParent.childCount <= 1)
         {
             corridorWallParent.gameObject.SetActive(false);
             portal.SetActive(true);

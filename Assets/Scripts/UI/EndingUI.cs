@@ -18,8 +18,6 @@ public class EndingUI : UIPopup
     public enum ButtonType { RedoButton, HomeButton, QuitButton }
     public Button[] ButtonArr;
     public bool[] ButtonCheck;
-    public enum Ending { GameOver, GameClear }
-    private Ending _ending;
 
     private void Awake()
     {
@@ -38,8 +36,7 @@ public class EndingUI : UIPopup
             SetActiveButton(ButtonArr[i], false);
         }
 
-        //_ending값 게임매니저한테서 받아오기
-        switch (_ending)
+        switch (GameManager.Instance._ending)
         {
             case Ending.GameOver:
                 GameOver();

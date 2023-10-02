@@ -28,7 +28,7 @@ namespace Components.Action
             if (currentInteract == null) { return; }
             
             //todo compare tag to switch interact logic
-            Debug.Log($"interact with {currentInteract.name}");
+            //Debug.Log($"interact with {currentInteract.name}");
             _weaponManager.EquipWeapon(currentInteract, gameObject);
         }
     }

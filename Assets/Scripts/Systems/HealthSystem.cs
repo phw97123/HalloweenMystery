@@ -93,5 +93,11 @@ public class HealthSystem : MonoBehaviour
     private void CallDeath()
     {
         OnDeath?.Invoke();
+        if (this.CompareTag("Player"))
+        {
+            GameManager.Instance._ending = Ending.GameOver;
+            GameManager.Instance.ChangeScene(Scenes.EndingScene);
+        }
+            
     }
 }
