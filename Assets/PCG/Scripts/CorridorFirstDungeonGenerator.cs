@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +38,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             corridorPositions = this.corridorPositions,
             floorPositions = this.floorPositions
         };
+        RoomContentManager.Instance.dungoenData = data;
         OnDungeonFloorReady?.Invoke(data);
     }
 

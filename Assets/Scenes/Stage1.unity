@@ -651,9 +651,9 @@ MonoBehaviour:
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
   minRoomWidth: 10
   minRoomHeight: 10
-  dungeonWidth: 50
-  dungeonHeight: 50
-  offset: 1
+  dungeonWidth: 100
+  dungeonHeight: 100
+  offset: 0
   randomWalkRooms: 1
   OnDungeonFloorReady:
     m_PersistentCalls:
@@ -15904,9 +15904,9 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 2072839850}
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
-  corridorLength: 20
-  corridorCount: 10
-  roomPercent: 0.5
+  corridorLength: 10
+  corridorCount: 80
+  roomPercent: 0.8
   showRoomGizmo: 0
   showCorridorsGizmo: 0
   OnDungeonFloorReady:
@@ -15973,10 +15973,11 @@ MonoBehaviour:
   roomEnemiesParent: {fileID: 1740613498}
   corridorWall: {fileID: 6771951305090458140, guid: a624aeb09e5eb014e935d1423b8d8141, type: 3}
   corridorWallParent: {fileID: 1285624493}
+  portal: {fileID: 0}
   OnStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 590687517}
+      - m_Target: {fileID: 1671293750}
         m_TargetAssemblyTypeName: AbstractDungeonGenerator, Assembly-CSharp
         m_MethodName: GenerateDungeon
         m_Mode: 1

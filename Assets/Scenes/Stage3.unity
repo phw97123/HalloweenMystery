@@ -304,10 +304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6b5f46c8d246b4ea3c5d7aa2c4c835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRoom: {fileID: 378666303130500032, guid: afdc382d653128043b97c6bfaffe7852, type: 3}
-  bossRoom: {fileID: 6562166243645761389, guid: a82d0be9405a2db47b65a4376dbf6e15, type: 3}
-  weaponPartsRoom: {fileID: -7589291489768298249, guid: 924ff818a7d814d4c9b91af415c4e485, type: 3}
-  defaultRoom: {fileID: 7777476307801422254, guid: 377fa56baa708c045ab0ed6a3b4e6926, type: 3}
+  playerRoom: {fileID: 378666303130500032, guid: f6c266454d66e614385a45f2c50d74b2, type: 3}
+  bossRoom: {fileID: 6562166243645761389, guid: b649184922cc60f4a809f2f3bdf28527, type: 3}
+  weaponPartsRoom: {fileID: -7589291489768298249, guid: 77c2c9224dbfb8f49be6765d928e2c3a, type: 3}
+  defaultRoom: {fileID: 7777476307801422254, guid: 2ee786bfaccde864b98d013bd643917e, type: 3}
   graphTest: {fileID: 1062642705}
   itemParent: {fileID: 1607766029}
   cinemachineCamera: {fileID: 3999038}
@@ -649,11 +649,11 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 2072839850}
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
-  minRoomWidth: 10
-  minRoomHeight: 10
-  dungeonWidth: 50
-  dungeonHeight: 50
-  offset: 1
+  minRoomWidth: 15
+  minRoomHeight: 15
+  dungeonWidth: 100
+  dungeonHeight: 100
+  offset: 3
   randomWalkRooms: 1
   OnDungeonFloorReady:
     m_PersistentCalls:
@@ -15973,6 +15973,7 @@ MonoBehaviour:
   roomEnemiesParent: {fileID: 1740613498}
   corridorWall: {fileID: 6771951305090458140, guid: a624aeb09e5eb014e935d1423b8d8141, type: 3}
   corridorWallParent: {fileID: 1285624493}
+  portal: {fileID: 0}
   OnStart:
     m_PersistentCalls:
       m_Calls:

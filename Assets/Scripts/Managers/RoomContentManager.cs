@@ -46,7 +46,7 @@ public class RoomContentManager : MonoBehaviour
         _controller = player.GetComponent<EntityController>();
         _controller.OnMoveEvent += SpawnPrefab;
 
-        if(corridorWall != null)
+        if (corridorWall != null)
         {
             foreach (var value in dungoenData.GetCorridorsWithoutRoomFloor())
             {

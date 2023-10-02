@@ -186,16 +186,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
     {
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        
         foreach (var room in roomsList)
         {
+            HashSet<Vector2Int> roomFloor = new HashSet<Vector2Int>();
             for (int col = offset; col < room.size.x - offset; col++)
             {
                 for (int row = offset; row < room.size.y - offset; row++)
                 {
                     Vector2Int position = (Vector2Int)room.min + new Vector2Int(col, row);
                     floor.Add(position);
+                    roomFloor.Add(position);
                 }
             }
+            SaveRoomData(new Vector2Int((int)room.center.x, (int)room.center.y), roomFloor);
         }
         return floor;
     }
