@@ -5,6 +5,15 @@ using UnityEngine.InputSystem;
 
 namespace Entities
 {
+    public enum CharacterType
+    {
+        BlueMan,
+        BlueGirl,
+        RedMan,
+        RedGirl,
+        Ghost,
+    }
+
     public class PlayerCharacterController : EntityController
     {
         private Camera _camera;

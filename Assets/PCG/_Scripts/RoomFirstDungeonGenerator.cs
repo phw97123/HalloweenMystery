@@ -38,6 +38,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             floorPositions = this.floorPositions
         };
 
+        RoomContentManager.Instance.dungoenData = data;
         OnDungeonFloorReady?.Invoke(data);
     }
 

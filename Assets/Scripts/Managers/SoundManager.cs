@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 
 public class SoundManager : MonoBehaviour
@@ -33,7 +34,15 @@ public class SoundManager : MonoBehaviour
     private List<Poolable> _prefabs; 
 
     private AudioSource _musicAudioSource;
-    public AudioClip musicClip;
+
+    private const string START_SCENE = "StartScene";
+    private const string INTRO_SCENE = "TownScene";
+    private const string STAGE_SCENE = "RoomContent";
+    private const string DEMO_SCENE = "DemoScene";
+    private const string ROOM_SCENE = "RoomScene";
+    private const string GAMEENDING_SCENE = ""; 
+
+    private AudioClip _musicClip;
 
     private void Awake()
     {
@@ -65,14 +74,65 @@ public class SoundManager : MonoBehaviour
             Debug.Log(p.Prefab); 
             _prefabs.Add(p);
         }
-        Instance._objectPool.Initialize(_prefabs); 
+        Instance._objectPool.Initialize(_prefabs);
+
+        SceneManager.sceneLoaded += OnSceneLoaded; 
     }
 
     private void Start()
     {
-        ChangeBGM(musicClip); 
+        string sceneName = SceneManager.GetActiveScene().name;
+        SetBGMByScene(sceneName);
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 로드된 씬의 이름을 가져와 BGM 설정
+        string sceneName = scene.name;
+        SetBGMByScene(sceneName);
+    }
+
+    private void SetBGMByScene(string sceneName)
+    {
+        _musicClip = null;
+
+        if (sceneName == START_SCENE)
+        {
+            _musicClip = Resources.Load<AudioClip>("Sound/TitleBGM");
+        }
+        else if (sceneName == INTRO_SCENE)
+        {
+            _musicClip = Resources.Load<AudioClip>("Sound/IntroBGM");
+        }
+        else if (sceneName == STAGE_SCENE)
+        {
+            //TODO
+
+            //if (stage == 1)
+            //{
+            //    _musicClip = Resources.Load<AudioClip>("Sound/Stage1");
+            //}
+            //else if (stage == 2)
+            //{
+            //    _musicClip = Resources.Load<AudioClip>("Sound/Stage2");
+            //}
+            //else
+            //{
+            //    _musicClip = Resources.Load<AudioClip>("Sound/Stage3");
+            //}
+        }
+        else if (sceneName == DEMO_SCENE)
+        {
+            _musicClip = Resources.Load<AudioClip>("Sound/Stage1");
+        }
+        else if (sceneName == GAMEENDING_SCENE)
+        {
+            //TODO:EndingScene, bgm add
+        }
+
+        ChangeBGM(_musicClip);
+    }
+ 
     private static void ChangeBGM(AudioClip music)
     {
         Instance._musicAudioSource.Stop();
