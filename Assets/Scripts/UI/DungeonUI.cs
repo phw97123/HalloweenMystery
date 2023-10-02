@@ -14,6 +14,7 @@ namespace UI
     public class DungeonUI : UIPopup
     {
         private GameManager _gameManager;
+        private GoldSystem _goldSystem;
         private HealthSystem _healthSystem;
         private BaseAttack _attack;
 
@@ -39,7 +40,14 @@ namespace UI
             _healthSystem.OnDamage += UpdateHealthUi;
             _healthSystem.OnHeal += UpdateHealthUi;
             _healthSystem.OnChangeShieldCount += UpdateShieldUi;
+            _goldSystem = _gameManager.Player.GetComponent<GoldSystem>();
+            _goldSystem.OnChangeOwnedGold += UpdateGoldUI;
             UpdateWeaponUI(GameManager.Instance.WeaponInfo);
+        }
+
+        private void UpdateGoldUI()
+        {
+            coinText.text = _goldSystem.OwnedGold.ToString("N0");
         }
 
         private void UpdateWeaponUI(WeaponInfo? weaponInfo)
