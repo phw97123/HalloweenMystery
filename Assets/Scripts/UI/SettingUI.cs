@@ -27,16 +27,19 @@ namespace UI
 
         public event Action<float> OnSoundVolumeChanged;
         public event Action<float> OnMusicVolumeChanged;
-
+        public event Action OnDisabled;
         private void Awake()
         {
             _soundManager = SoundManager.Instance;
+
             _uiManager = UIManager.Singleton;
             _gameManager = GameManager.Instance;
         }
 
         private void Start()
         {
+            _soundManager.SubscribeSettingsUI(this);
+
             closeButton.onClick.AddListener(() => { gameObject.SetActive(false); });
             soundOnButton.onClick.AddListener(SoundOff);
             soundOffButton.onClick.AddListener(SoundOn);
@@ -76,6 +79,7 @@ namespace UI
         private void OnDisable()
         {
             Time.timeScale = 1f;
+            OnDisabled?.Invoke();
         }
 
         private void ShowQuitDialog()
