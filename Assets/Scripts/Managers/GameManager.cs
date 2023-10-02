@@ -125,7 +125,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        Player.GetComponent<StatsHandler>().OnStatsChanged += SetStats;
+        StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
+        SetStats(statsHandler.CurrentStats);
+        statsHandler.OnStatsChanged += SetStats;
     }
 
     public void ShowDungeonUI()

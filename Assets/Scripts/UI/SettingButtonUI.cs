@@ -6,14 +6,14 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingButtonUI : MonoBehaviour
+public class SettingButtonUI : UIPopup
 {
     private Button _button;
     private UIManager _uiManager;
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
+        _button = GetComponentInChildren<Button>();
         _uiManager = UIManager.Singleton;
     }
 
