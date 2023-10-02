@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 1623153518359625189}
   - component: {fileID: 9143305781135311872}
   - component: {fileID: 3170060236146201782}
-  - component: {fileID: 3322338871488301281}
+  - component: {fileID: 1818790454260306524}
   - component: {fileID: 3326392134189338871}
   - component: {fileID: 9153787695896047032}
   - component: {fileID: 777259147897586880}
@@ -646,7 +646,7 @@ MonoBehaviour:
   baseStats:
     changeType: 0
     maxHealth: 50
-    speed: 1
+    speed: 5
     criticalPercentage: 0
     goldPercentage: 0
     itemDropPercentage: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f3102704696644984fbc636ae665c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3322338871488301281
+--- !u!114 &1818790454260306524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -673,11 +673,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7062618266539057270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85b7f1563b6ffd45854fce10b72a111, type: 3}
+  m_Script: {fileID: 11500000, guid: 0806c568a62c93b45b633f8b25a49e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 60
-  movementSpeed: 2
+  moveCooldown: 2
+  teleportParticlePrefab: {fileID: 5318118474938795680, guid: 69d8f05fda8421849a84b27b8c0d773d, type: 3}
 --- !u!114 &3326392134189338871
 MonoBehaviour:
   m_ObjectHideFlags: 0
