@@ -29,8 +29,12 @@ namespace UI
 
         private void Start()
         {
-            _range = _statsHandler.CurrentStats.attackData.range;
             _startScale = transform.localScale;
+            _aimController = GameManager.Instance.Player.GetComponent<EntityController>();
+            _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
+            _range = _statsHandler.CurrentStats.attackData.range;
+            _aimController.OnLookEvent += Aim;
+            _statsHandler.OnStatsChanged += ChangeRange;
         }
 
         private void Update()
@@ -46,14 +50,6 @@ namespace UI
 
             Vector3 currentScale = Vector3.Lerp(_startScale, _startScale + maxScale, _timeForLerp / maxLerpTime);
             transform.localScale = currentScale;
-        }
-
-        private void OnEnable()
-        {
-            _aimController = GameManager.Instance.Player.GetComponent<EntityController>();
-            _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
-            _aimController.OnLookEvent += Aim;
-            _statsHandler.OnStatsChanged += ChangeRange;
         }
 
         private void OnDestroy()

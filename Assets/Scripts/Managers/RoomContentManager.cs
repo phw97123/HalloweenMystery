@@ -125,6 +125,7 @@ public class RoomContentManager : MonoBehaviour
 
     public void CreatePlayerInRoom(Vector2Int position)
     {
+        
         if (player != null)
         {
             player.transform.position = new Vector3Int(position.x, position.y, 0);
@@ -132,19 +133,14 @@ public class RoomContentManager : MonoBehaviour
         else
         {
             GameManager.Instance.CreatePlayerAtPosition(position, Quaternion.identity);
-            player = FindObjectOfType<PlayerCharacterController>().gameObject;
-            if (GameManager.Instance.WeaponInfo != null && FindObjectOfType<PlayerCharacterController>() != null)
+            player = GameManager.Instance.Player.gameObject;
+            if (GameManager.Instance.WeaponInfo != null && GameManager.Instance.Player != null)
             {
                 GameObject weapon = ResourceManager.Instance.LoadPrefab(
                     GameManager.Instance.WeaponInfo?.Type.ToString() ?? "Sword");
-
-                Transform pivot = player.GetComponentsInChildren<Transform>().First(t => t.name == Constants.ARM_PIVOT);
-                weapon.transform.position = Vector3.zero;
-                Instantiate(weapon, pivot.transform, false);
-
-
-                CharacterStats stats = weapon.GetComponent<StatsHandler>().CurrentStats;
+                WeaponManager.Singleton.EquipWeapon(Instantiate(weapon), player);
             }
         }
+        
     }
 }
