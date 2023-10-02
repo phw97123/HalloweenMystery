@@ -62,11 +62,11 @@ public class RoomContentManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex == 5)
         {
-            //1스테이지 끝내고 2스테이지 넘어갈시 호출
+            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear1); 
         }
         else if(SceneManager.GetActiveScene().buildIndex == 6)
         {
-            //2스테이지 끝내고 3스테이지 넘어갈시 호출
+            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear2);
         }
     }
 
