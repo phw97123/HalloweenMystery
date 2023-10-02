@@ -15,7 +15,7 @@ public class WeaponParts : MonoBehaviour
     [SerializeField] private string interactTag = "Player";
     [SerializeField] private string partsName;
     [SerializeField] private string partsDescription;
-    [SerializeField] private float price;
+    [SerializeField] private int price;
     [SerializeField] private bool isEquiped = false;
 
     [SerializeField] private TextMeshProUGUI descriptionText;
@@ -24,6 +24,7 @@ public class WeaponParts : MonoBehaviour
 
     private StatsHandler _statsHandler;
     private PlayerCharacterController _controller;
+    private GoldSystem _goldSystem;
 
     public AudioClip partsClip; 
 
@@ -38,8 +39,11 @@ public class WeaponParts : MonoBehaviour
     {
         if (other.CompareTag(interactTag) && !isEquiped)
         {
+            descriptionText.text = $"이름 : {partsName}\n설명 : {partsDescription}\n가격 : {price}";
+
             _controller = other.gameObject.GetComponent<PlayerCharacterController>();
             _statsHandler = other.gameObject.GetComponentInChildren<BaseAttack>().GetComponent<StatsHandler>();
+            _goldSystem = other.gameObject.GetComponent<GoldSystem>();
 
             _curCollider = other.gameObject;
             _notifyCanvas.SetActive(true);
@@ -52,18 +56,23 @@ public class WeaponParts : MonoBehaviour
 
     private void InteractItemParts()
     {
-        if (_curCollider && !isEquiped)
+        if (_curCollider && !isEquiped && _goldSystem.OwnedGold >= price)
         {
             CharacterStats weaponPartsStats= new CharacterStats { attackData = stats.attackData , changeType = StatsChangeType.Add }; //
             _statsHandler.AddStatModifier(weaponPartsStats);
 
             isEquiped = true;
             _notifyCanvas.SetActive(false);
+            _goldSystem.ChangeOwnedGold(-price);
 
             if (partsClip)
                 SoundManager.PlayClip(partsClip);
 
             Debug.Log("딜레이 "+_statsHandler.CurrentStats.attackData.delay);
+        }
+        else if(_goldSystem.OwnedGold < price)
+        {
+            descriptionText.text = $"골드가 부족해 구매할 수 없습니다";
         }
     }
 
