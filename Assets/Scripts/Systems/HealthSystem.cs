@@ -13,6 +13,9 @@ public class HealthSystem : MonoBehaviour
 
     private StatsHandler _statsHandler;
 
+    private bool isNoDamage = false;
+    public bool IsNoDamage => isNoDamage; 
+
     private float _timeSinceLastChange = float.MaxValue;
 
     public float CurrentHealth { get; private set; }
@@ -73,6 +76,8 @@ public class HealthSystem : MonoBehaviour
             OnHeal?.Invoke();
         else
         {
+             isNoDamage = false;
+
             OnDamage?.Invoke();
             if (damageClip)
                 SoundManager.PlayClip(damageClip); 
@@ -80,6 +85,10 @@ public class HealthSystem : MonoBehaviour
 
         if (CurrentHealth <= 0f)
             CallDeath();
+
+        //플레이어의 체력이 가득 차 있고 데미지를 입지 않았을 때 도전과제 클리어
+        if (CurrentHealth == MaxHealth && change >= 0)
+            isNoDamage  = true;
 
         return true;
     }
@@ -98,6 +107,5 @@ public class HealthSystem : MonoBehaviour
             GameManager.Instance._ending = Ending.GameOver;
             GameManager.Instance.ChangeScene(Scenes.EndingScene);
         }
-            
     }
 }

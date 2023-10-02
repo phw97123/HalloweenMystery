@@ -25,13 +25,20 @@ public class GameManager : MonoBehaviour
     public Transform Player { get; private set; }
     private UIManager _uiManager;
     private WeaponManager _weaponManager;
-     
 
     public CharacterStats PlayerStats { get; private set; }
     public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
     public event Action<WeaponInfo?> OnEquipped;
 
     public Ending _ending = Ending.GameClear;
+
+    private int monsterKilled = 0;
+    public int MonstersKilled => monsterKilled; 
+
+    public void Monsterkilled()
+    {
+        monsterKilled++; 
+    }
 
     public static GameManager Instance
     {
@@ -149,5 +156,28 @@ public class GameManager : MonoBehaviour
 #else
             Application.Quit();
 #endif
+    }
+
+    public void LastBossDied()
+    {
+        AchiveManager achiveManager = AchiveManager.Instance;
+
+        achiveManager.UnlockAchieve(Achievement.LastBossClear);
+        Debug.Log("LastBossClear"); 
+
+        HealthSystem healthSystem = Player.GetComponent<HealthSystem>(); 
+
+        if(healthSystem.IsNoDamage)
+        {
+            achiveManager.UnlockAchieve(Achievement.NoDamageClear);
+            Debug.Log("NoDamageClear");
+
+        }
+
+        if (monsterKilled >= 20)
+        {
+            achiveManager.UnlockAchieve(Achievement.MonsterKiller);
+            Debug.Log("MonsterKiller");
+        }
     }
 }

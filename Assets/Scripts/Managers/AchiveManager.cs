@@ -16,10 +16,9 @@ public enum Achievement
     StageClear1,
     StageClear2,
     LastBossClear,
+    NoSkipGoing,
     MonsterKiller,
-    NoDamageClear,
-    WallShooter,
-    NoItemClear
+    NoDamageClear, // x
 }
 
 public class AchievementData
@@ -59,8 +58,8 @@ public class AchiveManager : MonoBehaviour
         {Achievement.StageClear1, new RewardData { weaponType = WeaponType.Axe} },
         {Achievement.StageClear2, new RewardData { weaponType = WeaponType.Dagger} },
         {Achievement.LastBossClear, new RewardData { weaponType = WeaponType.Rifle} },
-        {Achievement.MonsterKiller, new RewardData { weaponType = WeaponType.Pistol} },
-        {Achievement.WallShooter, new RewardData { weaponType = WeaponType.Shotgun} },
+        {Achievement.NoSkipGoing, new RewardData { weaponType = WeaponType.Pistol} },
+        {Achievement.MonsterKiller, new RewardData { weaponType = WeaponType.Shotgun} },
     };
 
     private void Awake()
