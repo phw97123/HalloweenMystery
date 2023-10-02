@@ -9,6 +9,8 @@ public class MinimapVisualizer : MonoBehaviour
     [SerializeField] private GameObject wall;
     [SerializeField] private GameObject enemy;
 
+    [SerializeField] private TilemapVisualizer tilemap;
+
     public void Awake()
     {
         
