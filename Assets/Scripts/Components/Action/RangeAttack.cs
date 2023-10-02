@@ -19,7 +19,7 @@ namespace Components.Action
 
         private AttackManager _attackManager;
 
-        public AudioClip projectileClip; 
+        public AudioClip projectileClip;
 
         //todo animation 
         private void Awake()
@@ -40,6 +40,12 @@ namespace Components.Action
         private void Update()
         {
             _timeSinceLastAttack += Time.deltaTime;
+            float percent = 1f;
+            if (_timeSinceLastAttack < _stats.CurrentStats.attackData.delay)
+            {
+                percent = _timeSinceLastAttack / _stats.CurrentStats.attackData.delay;
+            }
+            CallAttackDelayChange(percent);
 
             if (_timeSinceLastAttack <= _stats.CurrentStats.attackData.delay)
             {

@@ -105,7 +105,7 @@ namespace Managers
             {
                 StatsHandler prevWeaponStats = prevAttack.GetComponent<StatsHandler>();
                 playerStats.RemoveStatModifier(prevWeaponStats.CurrentStats);
-                Destroy(prevAttack.gameObject);
+                DestroyImmediate(prevAttack.gameObject);
             }
 
             InteractController controller = weapon.GetComponent<InteractController>();
@@ -128,13 +128,14 @@ namespace Managers
             {
                 Type = newAttack.WeaponType, AttackData = weaponStats.attackData,
             };
-            OnWeaponEquipped?.Invoke(CurrentEquippedWeapon);
+            
 
             if (equipClip)
                 SoundManager.PlayClip(equipClip); 
             
             //destroy equipped item
             Destroy(weapon.gameObject);
+            OnWeaponEquipped?.Invoke(CurrentEquippedWeapon);
         }
     }
 }

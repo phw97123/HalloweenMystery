@@ -9,7 +9,7 @@ namespace UI
 {
     public class CharacterCardUI : UIPopup
     {
-        [SerializeField] private Image borderImage;
+        [SerializeField] private Image selectedImage;
         [SerializeField] private Text nameText;
         [SerializeField] private Text hpText;
         [SerializeField] private Text spdText;
@@ -21,6 +21,7 @@ namespace UI
         [SerializeField] private Image lockImage;
 
 
+        private bool _isLocked = false;
         private bool _isSelected = false;
         private int _index;
         public event Action<int> OnItemClicked;
@@ -32,6 +33,8 @@ namespace UI
 
         private void SelectCard()
         {
+            if (_isLocked) { return; }
+
             OnItemClicked?.Invoke(_index);
             UpdateBorderUI();
         }
@@ -47,10 +50,11 @@ namespace UI
             goldText.text = (data.stats.goldPercentage * 100 % 101).ToString("N0");
             dropText.text = (data.stats.itemDropPercentage * 100 % 101).ToString("N0");
             lockImage.gameObject.SetActive(!data.canPlay);
+            _isLocked = !data.canPlay;
             Instantiate(data.imagePrefab, imageContainer.transform);
         }
 
-        public void SubscribeListItemSelectEvent(int index)
+        public void SubscribeListCharacterItemSelectEvent(CharacterDataSO _, int index)
         {
             _isSelected = _index == index;
             UpdateBorderUI();
@@ -58,7 +62,7 @@ namespace UI
 
         private void UpdateBorderUI()
         {
-            borderImage.gameObject.SetActive(_isSelected);
+            selectedImage.gameObject.SetActive(_isSelected);
         }
     }
 }

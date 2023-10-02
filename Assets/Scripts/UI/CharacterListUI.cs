@@ -13,7 +13,7 @@ namespace UI
         [SerializeField] private GameObject cardItemPrefab;
         [SerializeField] private List<CharacterDataSO> characterDataList;
 
-        public event Action<int> OnItemSelected;
+        public event Action<CharacterDataSO,int> OnCharacterItemSelected;
 
         private void Start()
         {
@@ -27,7 +27,7 @@ namespace UI
         {
             GameObject go = Instantiate(cardItemPrefab, content.transform);
             CharacterCardUI card = go.GetComponent<CharacterCardUI>();
-            OnItemSelected += card.SubscribeListItemSelectEvent;
+            OnCharacterItemSelected += card.SubscribeListCharacterItemSelectEvent;
             card.OnItemClicked += SelectItem;
             card.SetData(item, index);
             return go;
@@ -35,7 +35,7 @@ namespace UI
 
         private void SelectItem(int index)
         {
-            OnItemSelected?.Invoke(index);
+            OnCharacterItemSelected?.Invoke(characterDataList[index],index);
         }
     }
 }
