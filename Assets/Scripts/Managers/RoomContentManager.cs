@@ -28,11 +28,13 @@ public class RoomContentManager : MonoBehaviour
     [SerializeField]
     private PrefabPlacer prefabPlacer;
     [SerializeField]
-    private Transform roomEnemiesParent;
+    public Transform roomEnemiesParent;
     [SerializeField]
     private GameObject corridorWall;
     [SerializeField]
     private Transform corridorWallParent;
+
+    public GameObject portal;
 
     public UnityEvent OnStart;
 
@@ -54,6 +56,19 @@ public class RoomContentManager : MonoBehaviour
         }
     }
 
+    //public void Update()
+    //{
+    //    if (roomEnemiesParent.childCount == 0)
+    //    {
+    //        portal.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        portal.SetActive(false);
+    //    }
+    //}
+
+
     private void SpawnPrefab(Vector2 vector)
     {
         List<GameObject> placedPrefab = null;
@@ -73,11 +88,15 @@ public class RoomContentManager : MonoBehaviour
         }
         if(placedPrefab != null)
         {
-            foreach (GameObject enemies in placedPrefab)
+            foreach (GameObject prefab in placedPrefab)
             {
-                enemies.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
-                if (enemies != null)
-                    enemies.transform.SetParent(roomEnemiesParent, false);
+                Debug.Log(prefab.layer);
+                if (prefab.layer == 7)
+                {
+                    
+                    prefab.transform.SetParent(roomEnemiesParent, false);
+                    prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
+                }
             }
         }
     }
@@ -87,6 +106,7 @@ public class RoomContentManager : MonoBehaviour
         if(roomEnemiesParent.childCount == 0)
         {
             corridorWallParent.gameObject.SetActive(false);
+            portal.SetActive(true);
         }
     }
 
