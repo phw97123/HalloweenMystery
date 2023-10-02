@@ -1,4 +1,5 @@
 using Components;
+using Components.Action;
 using Components.Stats;
 using Components.Weapon;
 using Managers;
@@ -28,9 +29,9 @@ public class GameManager : MonoBehaviour
 
     public CharacterStats PlayerStats { get; private set; }
     public WeaponInfo? WeaponInfo => _weaponManager.CurrentEquippedWeapon;
-    public event Action<WeaponInfo?> OnEquipped;
 
     public Ending _ending = Ending.GameClear;
+    private bool _isEquipped;
 
     private int monsterKilled = 0;
     public int MonstersKilled => monsterKilled; 
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     private void CallEquippedEvent(WeaponInfo? weaponInfo)
     {
-        OnEquipped?.Invoke(weaponInfo);
+        _isEquipped = true;
     }
 
     public void Update()
@@ -99,6 +100,19 @@ public class GameManager : MonoBehaviour
         {
             _isChanged = false;
             SceneManager.LoadScene(_curScenes.ToString());
+        }
+
+        if (_isEquipped)
+        {
+            _isEquipped = false;
+            UIPopup popup = UIManager.Singleton.FindPopup(nameof(DungeonUI));
+            if (popup == null) { return; }
+
+            DungeonUI dungeonUI = popup.GetComponent<DungeonUI>();
+            if (dungeonUI == null) { return; }
+
+            BaseAttack baseAttack = Player.GetComponentInChildren<BaseAttack>();
+            baseAttack.OnAttackDelayChanged += dungeonUI.UpdateDelayUI;
         }
     }
 
