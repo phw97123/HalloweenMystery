@@ -1,4 +1,5 @@
 using Managers;
+using System;
 using UnityEngine;
 
 namespace Components.Action
@@ -7,5 +8,12 @@ namespace Components.Action
     {
         [SerializeField] private WeaponType weaponType;
         public WeaponType WeaponType => weaponType;
+
+        public event Action<float> OnAttackDelayChanged;
+
+        protected void CallAttackDelayChange(float percent)
+        {
+            OnAttackDelayChanged?.Invoke(percent);
+        }
     }
 }

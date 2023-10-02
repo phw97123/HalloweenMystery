@@ -44,6 +44,9 @@ namespace Components.Action
         private void Update()
         {
             _timeSinceLastAttack += Time.deltaTime;
+            float percent = GetAttackDelayPercent();
+            CallAttackDelayChange(percent);
+
             if (_isAttacking)
             {
                 MeleeAttackDataSO meleeAttack = _stats.CurrentStats.attackData as MeleeAttackDataSO;
@@ -58,11 +61,23 @@ namespace Components.Action
             }
         }
 
+        private float GetAttackDelayPercent()
+        {
+            MeleeAttackDataSO meleeAttack = _stats.CurrentStats.attackData as MeleeAttackDataSO;
+            if (meleeAttack == null) { return 0f; }
+
+            if (_timeSinceLastAttack > meleeAttack.delay || _currentAttackCount < meleeAttack.attackCount)
+            {
+                return 1f;
+            }
+
+            return _timeSinceLastAttack / meleeAttack.delay;
+        }
+
         private void Attack()
         {
             MeleeAttackDataSO meleeAttack = _stats.CurrentStats.attackData as MeleeAttackDataSO;
             if (meleeAttack == null) return;
-
 
             if (_timeSinceLastAttack >= meleeAttack.delay)
             {
@@ -70,8 +85,7 @@ namespace Components.Action
                 _isAttacking = true;
 
                 if (meleeClip1)
-                    SoundManager.PlayClip(meleeClip1); 
-               
+                    SoundManager.PlayClip(meleeClip1);
             }
             else if (_currentAttackCount < meleeAttack.attackCount)
             {
