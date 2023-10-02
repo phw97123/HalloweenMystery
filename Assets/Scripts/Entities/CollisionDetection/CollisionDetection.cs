@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetection : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Weapon"))
         {
             //RoomManager.Instance.ChangeScene();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
