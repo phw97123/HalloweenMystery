@@ -59,10 +59,9 @@ namespace UI
 
         private void Aim(Vector2 dir)
         {
-            Vector3 newAim = dir;
-            Vector2 screenPos = _camera.WorldToScreenPoint(newAim);
+            Vector3 newAim = _aimController.transform.position + (Vector3)dir;
+            Vector3 screenPos = _camera.WorldToScreenPoint(newAim);
             transform.position = screenPos;
         }
-
     }
 }
