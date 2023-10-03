@@ -89,12 +89,16 @@ namespace Systems
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (particleEffectPrefab != null)
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
             {
-                Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
-            }
+                if (particleEffectPrefab != null)
+                {
+                    Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+                }
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
+
     }
 }
