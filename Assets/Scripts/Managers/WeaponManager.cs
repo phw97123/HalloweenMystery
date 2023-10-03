@@ -31,7 +31,7 @@ namespace Managers
     {
         private ResourceManager _resourceManager;
         private static WeaponManager _singleton;
-
+        private static float[] RotationDegrees = { -45f, 0f, -45f, 0f, 0f, 90f};
         public WeaponInfo? CurrentEquippedWeapon { get; private set; } = null;
         public event Action<WeaponInfo?> OnWeaponEquipped;
 
@@ -73,7 +73,10 @@ namespace Managers
         public void CreateInteractableWeapon(WeaponType weaponType, Vector2 position)
         {
             GameObject obj = ResourceManager.Instance.LoadPrefab(weaponType.ToString());
-            GameObject go = Instantiate(obj, position, Quaternion.identity);
+            float degree = 0f;
+            if ((int)weaponType < RotationDegrees.Length) { degree = RotationDegrees[(int)weaponType]; }
+
+            GameObject go = Instantiate(obj, position, Quaternion.Euler(0, 0, degree));
 
             go.AddComponent<InteractController>();
             go.AddComponent<EquipWeapon>();
