@@ -39,8 +39,10 @@ public class Item : MonoBehaviour
         }
 
         if (itemData.isTileLike == true)
+        {
             isTileLike = true;
             spriteRenderer.sortingOrder = 0;
+        }
 
     }
 
