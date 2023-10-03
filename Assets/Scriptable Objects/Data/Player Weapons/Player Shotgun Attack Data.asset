@@ -16,8 +16,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   prefabTag: Bullet
-  damage: 3
-  delay: 1.5
+  damage: 20
+  delay: 0.2
   speed: 10
   range: 5
   isKnockBackOn: 1
