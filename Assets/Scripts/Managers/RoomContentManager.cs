@@ -118,6 +118,8 @@ public class RoomContentManager : MonoBehaviour
     private void CheckInBattle()
     {
         Invoke("Check", 1.0f);
+        Invoke("Check", 1.0f);
+        Invoke("Check", 1.0f);
     }
     
     private void Check()
@@ -125,7 +127,8 @@ public class RoomContentManager : MonoBehaviour
         if (roomEnemiesParent.childCount <= 1)
         {
             corridorWallParent.gameObject.SetActive(false);
-            portal.SetActive(true);
+            if(portal)
+                portal.SetActive(true);
         }
     }
 
