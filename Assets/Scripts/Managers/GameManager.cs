@@ -157,6 +157,11 @@ public class GameManager : MonoBehaviour
         _uiManager.ShowUIPopupByName(nameof(IntroUI));
     }
 
+    public void InitIntroUI()
+    {
+        _isIntroShown = false;
+    }
+
     public void ChangeScene(Scenes sceneName)
     {
         _isChanged = true;
