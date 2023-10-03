@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
     private bool _isEquipped;
 
     private int monsterKilled = 0;
-    public int MonstersKilled => monsterKilled; 
+    public int MonstersKilled => monsterKilled;
+
+    public PlayerData playerData; 
 
     public void Monsterkilled()
     {
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour
         _uiManager = UIManager.Singleton;
         _weaponManager = WeaponManager.Singleton;
         DontDestroyOnLoad(this);
+
+        playerData = new PlayerData(); 
     }
 
     private void Start()
@@ -182,21 +186,33 @@ public class GameManager : MonoBehaviour
         AchiveManager achiveManager = AchiveManager.Instance;
 
         achiveManager.UnlockAchieve(Achievement.LastBossClear);
-        Debug.Log("LastBossClear"); 
 
         HealthSystem healthSystem = Player.GetComponent<HealthSystem>(); 
 
         if(healthSystem.IsNoDamage)
         {
             achiveManager.UnlockAchieve(Achievement.NoDamageClear);
-            Debug.Log("NoDamageClear");
-
         }
 
         if (monsterKilled >= 20)
         {
             achiveManager.UnlockAchieve(Achievement.MonsterKiller);
-            Debug.Log("MonsterKiller");
+        }
+    }
+
+    public void SavePlayerData()
+    {
+        if (Player != null)
+        {
+            if (playerData == null)
+            {
+                playerData = new PlayerData();
+            }
+
+            playerData.playerStats = Player.gameObject.GetComponent<StatsHandler>().CurrentStats;
+            playerData.currentHealth = Player.GetComponent<HealthSystem>().CurrentHealth;
+            playerData.weaponInfo = WeaponInfo.GetValueOrDefault(); 
+            playerData.OwnedGold = Player.GetComponent<GoldSystem>().OwnedGold;
         }
     }
 }
