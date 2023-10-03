@@ -23,13 +23,14 @@ namespace Components.Weapon
         {
             _controller.OnInteractionChangeEvent += Interact;
         }
-        
+
         private void Interact(bool isEnter)
         {
             if (isEnter)
             {
                 UIPopup popup = _uiManager.ShowUIPopupByName(nameof(WeaponSwapText));
-                popup.gameObject.GetComponentInChildren<RectTransform>().position = transform.position + new Vector3(0, 1);
+                popup.gameObject.GetComponentInChildren<RectTransform>().position =
+                    GetComponentInChildren<SpriteRenderer>().transform.position + new Vector3(0, 1);
             }
             else
             {
