@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a83f2a5bea8447489822be80764763e, type: 3}
-  m_Name: Table_Long
+  m_Name: Tree
   m_EditorClassIdentifier: 
-  sprite: {fileID: -4302411898996096202, guid: fc5028170ab84ed4bbf43948f12a52d6, type: 3}
-  size: {x: 2, y: 1}
+  sprite: {fileID: -156659100, guid: 9dc150bfcdf1af44e8a9ad9b9f0387da, type: 3}
+  size: {x: 1, y: 1}
   placementType: 0
-  addOffset: 1
-  isCollide: 1
+  addOffset: 0

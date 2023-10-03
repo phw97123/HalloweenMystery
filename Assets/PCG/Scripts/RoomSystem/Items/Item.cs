@@ -18,8 +18,15 @@ public class Item : MonoBehaviour
         spriteRenderer.sprite = itemData.sprite;
         //set sprite offset
         spriteRenderer.transform.localPosition = new Vector2(0.5f * itemData.size.x, 0.5f * itemData.size.y);
-        itemCollider.size = itemData.size;
-        itemCollider.offset = spriteRenderer.transform.localPosition;
+        if (itemData.isCollide == true)
+        {
+            itemCollider.size = itemData.size;
+            itemCollider.offset = spriteRenderer.transform.localPosition;
+        }
+        else
+        {
+            itemCollider.size = new Vector2(0, 0);
+        }
 
     }
 
