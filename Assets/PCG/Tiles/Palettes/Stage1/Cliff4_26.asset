@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cliff4_26
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 515084140, guid: fd928f8c67f684e498e7df4cb36308f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6477815, g: 0.7924528, b: 0.6384478, a: 1}
   m_Transform:
     e00: 1
     e01: 0

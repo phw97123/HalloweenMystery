@@ -65,6 +65,7 @@ public class PrefabPlacer : MonoBehaviour
         GameObject newItem = CreateObject(itemPrefab,placementPosition);
         //GameObject newItem = Instantiate(itemPrefab, placementPosition, Quaternion.identity);
         newItem.GetComponent<Item>().Initialize(item);
+        newItem.transform.GetComponentInChildren<SpriteRenderer>().sortingOrder = 100 - (int)placementPosition.y;
         return newItem;
     }
 

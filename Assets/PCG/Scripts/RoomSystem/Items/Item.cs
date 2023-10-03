@@ -11,6 +11,8 @@ public class Item : MonoBehaviour
     [SerializeField]
     private BoxCollider2D itemCollider;
 
+    public bool isTileLike = false;
+
     public void Initialize(ItemData itemData)
     {
         this.gameObject.layer = 11;
@@ -35,6 +37,10 @@ public class Item : MonoBehaviour
         {
             itemCollider.size = new Vector2(0, 0);
         }
+
+        if (itemData.isTileLike == true)
+            isTileLike = true;
+            spriteRenderer.sortingOrder = 0;
 
     }
 

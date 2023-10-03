@@ -46,16 +46,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4208740728094762288, guid: 46ce6acc47ef545848cfefd5387c361b, type: 3}
   itemData:
-  - minQuantity: 4
-    maxQuantity: 6
-    itemData: {fileID: 11400000, guid: f42e9114019933d4cbe2ee1cf58e5165, type: 2}
-  - minQuantity: 2
-    maxQuantity: 6
-    itemData: {fileID: 11400000, guid: d33f6fea7db47904a997959b7bdf3e4c, type: 2}
-  - minQuantity: 4
-    maxQuantity: 6
-    itemData: {fileID: 11400000, guid: a86781740217fdd478a31e4e6e5cba42, type: 2}
-  - minQuantity: 2
-    maxQuantity: 4
-    itemData: {fileID: 11400000, guid: 70bb79b25760ec54d8a3c2f4d30fbde2, type: 2}
+  - minQuantity: 1
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: 5a1f1e5b17d4f984b8c5f3f76063ad75, type: 2}
+  - minQuantity: 8
+    maxQuantity: 10
+    itemData: {fileID: 11400000, guid: ae6fc00d12859844aa2338f99ae82d31, type: 2}
+  - minQuantity: 0
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: d41fd7eab7099ac468a27771238f091b, type: 2}
+  - minQuantity: 0
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: e113078a93a5b2e4f80de22d51a6fca6, type: 2}
+  - minQuantity: 0
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: 32291be5f5b5d4048b505418570d7398, type: 2}
+  - minQuantity: 0
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: b0aacd34a26cfc34993657e44c9522d6, type: 2}
   prefabPlacer: {fileID: 4341242197028722173, guid: 49d1de73f44f58940a43bf538b290285, type: 3}

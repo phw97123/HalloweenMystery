@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UI;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,11 +37,11 @@ public class GameManager : MonoBehaviour
     private int monsterKilled = 0;
     public int MonstersKilled => monsterKilled;
 
-    public PlayerData playerData; 
+    public PlayerData playerData;
 
     public void Monsterkilled()
     {
-        monsterKilled++; 
+        monsterKilled++;
     }
 
     public static GameManager Instance
@@ -78,13 +79,13 @@ public class GameManager : MonoBehaviour
         _uiManager = UIManager.Singleton;
         _weaponManager = WeaponManager.Singleton;
         DontDestroyOnLoad(this);
-
-        playerData = new PlayerData(); 
     }
 
     private void Start()
     {
         _weaponManager.OnWeaponEquipped += CallEquippedEvent;
+        playerData = new PlayerData();
+        playerData.weaponInfo.PartsDataList = new List<CharacterStats>();
     }
 
     private void CallEquippedEvent(WeaponInfo? weaponInfo)
@@ -123,6 +124,7 @@ public class GameManager : MonoBehaviour
     private void SetStats(CharacterStats stat)
     {
         PlayerStats = stat;
+        SavePlayerData();
     }
 
     public void CreatePlayer()
@@ -144,9 +146,27 @@ public class GameManager : MonoBehaviour
         }
 
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
-        SetStats(statsHandler.CurrentStats);
+        HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
+        GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
+
+
+        healthSystem.OnDamage += SavePlayerData;
+        healthSystem.OnHeal += SavePlayerData;
+        goldSystem.OnChangeOwnedGold += SavePlayerData;
         statsHandler.OnStatsChanged += SetStats;
+
+
+        Debug.Log($"-------[Start]CreatePlayer--------");
+        Debug.Log($"CurrentStats : {playerData.playerStats}");
+        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
+        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
+        Debug.Log($"-------[End]CreatePlayer--------");
+
+        healthSystem.CurrentHealth = playerData.currentHealth;
+        goldSystem.ChangeOwnedGold(playerData.OwnedGold);
+        SetStats(statsHandler.CurrentStats);
     }
+
 
     public void ShowDungeonUI()
     {
@@ -187,9 +207,9 @@ public class GameManager : MonoBehaviour
 
         achiveManager.UnlockAchieve(Achievement.LastBossClear);
 
-        HealthSystem healthSystem = Player.GetComponent<HealthSystem>(); 
+        HealthSystem healthSystem = Player.GetComponent<HealthSystem>();
 
-        if(healthSystem.IsNoDamage)
+        if (healthSystem.IsNoDamage)
         {
             achiveManager.UnlockAchieve(Achievement.NoDamageClear);
         }
@@ -207,12 +227,49 @@ public class GameManager : MonoBehaviour
             if (playerData == null)
             {
                 playerData = new PlayerData();
+                playerData.weaponInfo.PartsDataList = new List<CharacterStats>();
             }
 
             playerData.playerStats = Player.gameObject.GetComponent<StatsHandler>().CurrentStats;
             playerData.currentHealth = Player.GetComponent<HealthSystem>().CurrentHealth;
-            playerData.weaponInfo = WeaponInfo.GetValueOrDefault(); 
             playerData.OwnedGold = Player.GetComponent<GoldSystem>().OwnedGold;
+        }
+
+        Debug.Log($"-------[Start]SavePlayerData--------");
+        Debug.Log($"CurrentStats : {playerData.playerStats}");
+        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
+        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
+        Debug.Log($"CurrentWeapon : {playerData.weaponInfo.ToString()}");
+
+        Debug.Log("------------parts");
+        if (playerData.weaponInfo.PartsDataList != null)
+        {
+            foreach (CharacterStats characterStats in playerData.weaponInfo.PartsDataList)
+            {
+                Debug.Log($"------------part-dmg: {characterStats.attackData.damage}");
+            }
+        }
+
+
+        Debug.Log($"-------[End]SavePlayerData--------");
+    }
+
+    public void BuyParts(CharacterStats weaponPartsStats)
+    {
+        playerData.weaponInfo.PartsDataList.Add(weaponPartsStats);
+    }
+
+    public void AddPartData()
+    {
+        BaseAttack baseAttack = Player.GetComponentInChildren<BaseAttack>();
+        if (baseAttack != null)
+        {
+            StatsHandler weaponHandler = baseAttack.GetComponent<StatsHandler>();
+
+            foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
+            {
+                weaponHandler.AddStatModifier(stats);
+            }
         }
     }
 }

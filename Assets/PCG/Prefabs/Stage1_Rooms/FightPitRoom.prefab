@@ -59,15 +59,27 @@ MonoBehaviour:
     enemyPrefab: {fileID: 8938913362805049804, guid: 41c5418d85b33e840afda5d320a78d64, type: 3}
     enemySize: {x: 1, y: 1}
   itemData:
-  - minQuantity: 1
-    maxQuantity: 3
-    itemData: {fileID: 11400000, guid: 70bb79b25760ec54d8a3c2f4d30fbde2, type: 2}
-  - minQuantity: 1
-    maxQuantity: 4
-    itemData: {fileID: 11400000, guid: d33f6fea7db47904a997959b7bdf3e4c, type: 2}
-  - minQuantity: 1
-    maxQuantity: 3
-    itemData: {fileID: 11400000, guid: 5f3d5b8de05ac3e4abb6fd4d3eab4aed, type: 2}
   - minQuantity: 0
     maxQuantity: 1
-    itemData: {fileID: 11400000, guid: f42e9114019933d4cbe2ee1cf58e5165, type: 2}
+    itemData: {fileID: 11400000, guid: 6ed872bd5ef42284db93ca074b55671a, type: 2}
+  - minQuantity: 0
+    maxQuantity: 1
+    itemData: {fileID: 11400000, guid: b5ad2fe56263b1a4cadba4961348f9f3, type: 2}
+  - minQuantity: 5
+    maxQuantity: 8
+    itemData: {fileID: 11400000, guid: bd835229f631db74994048c165d4e892, type: 2}
+  - minQuantity: 5
+    maxQuantity: 8
+    itemData: {fileID: 11400000, guid: 7669a7833b28ab84089b3e1195466bf0, type: 2}
+  - minQuantity: 1
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: c0a7dc940dae9654683959ffcc6ab62d, type: 2}
+  - minQuantity: 2
+    maxQuantity: 3
+    itemData: {fileID: 11400000, guid: 6ed9acd6d3d777142935ab76c8548ed7, type: 2}
+  - minQuantity: 0
+    maxQuantity: 1
+    itemData: {fileID: 11400000, guid: 0f0c4777c4568fd46859a0ce09f75c25, type: 2}
+  - minQuantity: 1
+    maxQuantity: 2
+    itemData: {fileID: 11400000, guid: 2418326a5acc7e741a7298099c60f5a2, type: 2}
