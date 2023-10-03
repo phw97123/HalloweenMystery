@@ -535,7 +535,7 @@ MonoBehaviour:
   minRoomHeight: 15
   dungeonWidth: 50
   dungeonHeight: 50
-  offset: 2
+  offset: 1
   randomWalkRooms: 1
   OnDungeonFloorReady:
     m_PersistentCalls:
