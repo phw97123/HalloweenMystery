@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a83f2a5bea8447489822be80764763e, type: 3}
-  m_Name: Table2
+  m_Name: Bush 1
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1536468965, guid: 68b35b4ddced1fb4385f9bd59aa6f8db, type: 3}
+  sprite: {fileID: 742838677, guid: 2813830a6b586ce4abfebf6f74ab5a4b, type: 3}
   size: {x: 1, y: 1}
-  placementType: 0
-  addOffset: 0
-  isCollide: 1
+  placementType: 1
+  addOffset: 1
+  isCollide: 0
   isPartialCollide: 0
   isTileLike: 0

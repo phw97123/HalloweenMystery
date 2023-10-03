@@ -36,6 +36,9 @@ public class Item : MonoBehaviour
             itemCollider.size = new Vector2(0, 0);
         }
 
+        if (itemData.isTileLike == true)
+            spriteRenderer.sortingOrder = 0;
+
     }
 
 }

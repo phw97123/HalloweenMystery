@@ -54,4 +54,19 @@ MonoBehaviour:
     maxQuantity: 1
     enemyPrefab: {fileID: 6727007649923854942, guid: 163598b65c7f5984c8ab62089282b49a, type: 3}
     enemySize: {x: 1, y: 1}
-  itemData: []
+  itemData:
+  - minQuantity: 4
+    maxQuantity: 5
+    itemData: {fileID: 11400000, guid: 6e017ba2769316b4ca80994d9f3e534f, type: 2}
+  - minQuantity: 1
+    maxQuantity: 3
+    itemData: {fileID: 11400000, guid: d41fd7eab7099ac468a27771238f091b, type: 2}
+  - minQuantity: 1
+    maxQuantity: 3
+    itemData: {fileID: 11400000, guid: e113078a93a5b2e4f80de22d51a6fca6, type: 2}
+  - minQuantity: 1
+    maxQuantity: 3
+    itemData: {fileID: 11400000, guid: 32291be5f5b5d4048b505418570d7398, type: 2}
+  - minQuantity: 1
+    maxQuantity: 3
+    itemData: {fileID: 11400000, guid: b0aacd34a26cfc34993657e44c9522d6, type: 2}

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Grave1
   m_EditorClassIdentifier: 
   sprite: {fileID: -1316017061, guid: dd2a104d41d70a942ad6add8113ee9d1, type: 3}
-  size: {x: 1, y: 1}
+  size: {x: 2, y: 3}
   placementType: 0
   addOffset: 0
+  isCollide: 1
+  isPartialCollide: 0

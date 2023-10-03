@@ -15,5 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 1866211493, guid: 2813830a6b586ce4abfebf6f74ab5a4b, type: 3}
   size: {x: 1, y: 1}
   placementType: 0
-  addOffset: 0
+  addOffset: 1
   isCollide: 1
+  isPartialCollide: 0

@@ -11,4 +11,5 @@ public class ItemData : ScriptableObject
     public bool addOffset;
     public bool isCollide;
     public bool isPartialCollide;
+    public bool isTileLike;
 }
