@@ -5,6 +5,7 @@ using System;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -26,6 +27,7 @@ namespace UI
         {
             Cursor.visible = false;
             _camera = Camera.main;
+            gameObject.GetComponent<Graphic>().raycastTarget = false;
         }
 
         private void Start()
