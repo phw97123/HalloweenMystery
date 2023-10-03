@@ -35,7 +35,6 @@ namespace UI
             _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
             _range = _statsHandler.CurrentStats.attackData.range;
             _aimController.OnLookEvent += Aim;
-            _statsHandler.OnStatsChanged += ChangeRange;
         }
 
         private void Update()
@@ -56,28 +55,14 @@ namespace UI
         private void OnDestroy()
         {
             _aimController.OnLookEvent -= Aim;
-            _statsHandler.OnStatsChanged -= ChangeRange;
         }
 
         private void Aim(Vector2 dir)
         {
-            Vector3 newAim = dir.magnitude <= _range ? dir : dir.normalized * _range;
-            newAim += _aimController.transform.position;
+            Vector3 newAim = dir;
             Vector2 screenPos = _camera.WorldToScreenPoint(newAim);
             transform.position = screenPos;
         }
 
-        private void ChangeRange(CharacterStats stats)
-        {
-            if (stats.attackData.range <= 0)
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-
-            if (stats.attackData.range > 0) { gameObject.SetActive(true); }
-
-            _range = stats.attackData.range;
-        }
     }
 }
