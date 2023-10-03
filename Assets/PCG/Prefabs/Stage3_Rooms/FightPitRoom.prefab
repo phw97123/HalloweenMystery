@@ -46,20 +46,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPlacer: {fileID: 4341242197028722173, guid: 49d1de73f44f58940a43bf538b290285, type: 3}
   enemyPlacementData:
-  - minQuantity: 5
-    maxQuantity: 10
-    enemyPrefab: {fileID: 598296402358194975, guid: 7fcf1c37bbb8b8948bcd11e4d2d83f80, type: 3}
+  - minQuantity: 1
+    maxQuantity: 4
+    enemyPrefab: {fileID: 3651637054455585558, guid: 696c97140dbeaf844859cbd8e786be62, type: 3}
+    enemySize: {x: 1, y: 1}
+  - minQuantity: 1
+    maxQuantity: 4
+    enemyPrefab: {fileID: 8593532721986536252, guid: 54fa4a694be90104d8a66c5575966505, type: 3}
+    enemySize: {x: 1, y: 1}
+  - minQuantity: 2
+    maxQuantity: 3
+    enemyPrefab: {fileID: 3168323879367061025, guid: e1e90b2fd9938bd49a5a83fea8d22689, type: 3}
     enemySize: {x: 1, y: 1}
   itemData:
-  - minQuantity: 3
-    maxQuantity: 6
+  - minQuantity: 1
+    maxQuantity: 3
     itemData: {fileID: 11400000, guid: 70bb79b25760ec54d8a3c2f4d30fbde2, type: 2}
-  - minQuantity: 2
-    maxQuantity: 4
+  - minQuantity: 1
+    maxQuantity: 2
     itemData: {fileID: 11400000, guid: d33f6fea7db47904a997959b7bdf3e4c, type: 2}
-  - minQuantity: 2
-    maxQuantity: 3
+  - minQuantity: 1
+    maxQuantity: 2
     itemData: {fileID: 11400000, guid: 5f3d5b8de05ac3e4abb6fd4d3eab4aed, type: 2}
-  - minQuantity: 2
-    maxQuantity: 3
+  - minQuantity: 0
+    maxQuantity: 1
     itemData: {fileID: 11400000, guid: f42e9114019933d4cbe2ee1cf58e5165, type: 2}
