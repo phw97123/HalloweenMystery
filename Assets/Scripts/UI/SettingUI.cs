@@ -98,6 +98,11 @@ namespace UI
                 musicSlider.value = _musicVolume;
         }
 
+        public void Initialize()
+        {
+            
+        }
+
         private void OnEnable()
         {
             Time.timeScale = 0f;
