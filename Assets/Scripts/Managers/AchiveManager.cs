@@ -52,7 +52,7 @@ public class AchiveManager : MonoBehaviour
     private DataManager dataManager;
 
     private Achievement[] achievements;
-    private AchievementData[] achievementDataArray;
+    public AchievementData[] achievementDataArray { get; private set; }
 
     public string[] AchievementsString { get; private set; }
     public Achievement CurAchieve;

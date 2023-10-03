@@ -38,6 +38,7 @@ public class IntroUI : UIPopup
     private void Start()
     {
         _uiManager.ShowUIPopupByName(nameof(SettingButtonUI));
+        _uiManager.ShowUIPopupByName(nameof(AchievementButtonUI));
         startButton.onClick.AddListener((() => UpdateUI(UIState.Select)));
         quitButton.onClick.AddListener(Quit);
         playButton.onClick.AddListener(PlayGame);
