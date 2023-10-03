@@ -2,6 +2,7 @@ using Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,16 +25,22 @@ public class RoomManager : MonoBehaviour
         WeaponManager.Singleton.CreateInteractableWeapon(WeaponType.Sword, spawnPostions[0].position);
 
         AchievementData[] achievementDatas = AchiveManager.Instance.GetAchievementData();
-
-        for (int i = 0; i < achievementDatas.Length; i++)
+        IEnumerable<RewardData> rewards = achievementDatas
+            .Where(data => data.isAchive )
+            .Where(data => data.reward != null)
+            .Select(data => data.reward);
+        foreach (RewardData rewardData in rewards)
         {
-            if (achievementDatas[i].reward is RewardData weaponTypeReward)
+            if (rewardData.weaponType == null) { continue; }
+
+            int index = (int)rewardData.weaponType;
+            if (spawnPostions.Length <= index)
             {
-                if (achievementDatas[i].isAchive)
-                {
-                    WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)weaponTypeReward.weaponType, spawnPostions[i + 1].position);
-                }
+                Debug.Assert(false, "Need more spawnPosition");
             }
+
+            WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)rewardData.weaponType,
+                spawnPostions[index].position);
         }
     }
 

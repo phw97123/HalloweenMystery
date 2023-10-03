@@ -6,27 +6,23 @@ namespace UI
     public class WeaponSwapText : UIPopup
     {
         private Vector2 _startPosition;
-        private float _currentY = 0f;
+        [SerializeField] private float time = 0.5f;
+        [SerializeField] private float speed = 0.5f;
+        private float _lastTime = 0f;
+        private float _dy;
         private int _dir = 1;
-
-        private void Start()
-        {
-            _startPosition = transform.position;
-        }
 
         private void Update()
         {
-            _currentY += Time.deltaTime * _dir;
-            if (_currentY >= 0.25f)
+            _dy = Time.deltaTime * speed * _dir;
+            _lastTime += Time.deltaTime;
+            if (_lastTime >= time)
             {
-                _dir = -1;
-            }
-            else if (_currentY <= -0.25f)
-            {
-                _dir = 1;
+                _dir *= -1;
+                _lastTime = 0f;
             }
 
-            transform.position = new Vector3(_startPosition.x, _startPosition.y + _currentY);
+            transform.position += new Vector3(0, _dy);
         }
     }
 }
