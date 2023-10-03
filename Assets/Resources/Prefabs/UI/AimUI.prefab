@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc83cc304674105adf41d8ab86dfef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLerpTime: 1.5
-  maxScale: {x: 0.5, y: 0.5, z: 0}
+  maxLerpTime: 1
+  maxScale: {x: 0.1, y: 0.1, z: 0}
