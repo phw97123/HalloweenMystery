@@ -69,7 +69,7 @@ public class WeaponParts : MonoBehaviour
             if (partsClip)
                 SoundManager.PlayClip(partsClip);
 
-            Debug.Log("딜레이 "+_statsHandler.CurrentStats.attackData.delay);
+            Destroy(gameObject);
         }
         else if(_goldSystem.OwnedGold < price)
         {
