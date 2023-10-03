@@ -56,6 +56,7 @@ public class IntroUI : UIPopup
             return;
         }
 
+        GameManager.Instance.InitIntroUI();
         StartCoroutine(LoadRoomSceneAsync());
     }
 
