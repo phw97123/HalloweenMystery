@@ -147,15 +147,21 @@ public class GameManager : MonoBehaviour
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
         HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
         GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
-        healthSystem.CurrentHealth = playerData.currentHealth;
-        goldSystem.ChangeOwnedGold(playerData.OwnedGold); //todo dungeon ui 생성 순서 확인 
-        
         healthSystem.OnDamage += SavePlayerData;
         healthSystem.OnHeal += SavePlayerData;
         goldSystem.OnChangeOwnedGold += SavePlayerData;
-        //todo 
-        SetStats(statsHandler.CurrentStats);
         statsHandler.OnStatsChanged += SetStats;
+
+
+        Debug.Log($"-------[Start]CreatePlayer--------");
+        Debug.Log($"CurrentStats : {playerData.playerStats}");
+        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
+        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
+        Debug.Log($"CurrentWeapon : {playerData.weaponInfo.Type}");
+        Debug.Log($"-------[End]CreatePlayer--------");
+        healthSystem.CurrentHealth = playerData.currentHealth;
+        goldSystem.ChangeOwnedGold(playerData.OwnedGold); //todo dungeon ui 생성 순서 확인
+        SetStats(statsHandler.CurrentStats);
     }
 
 
