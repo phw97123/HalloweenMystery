@@ -1,4 +1,5 @@
 using Managers;
+using System.Collections.Generic;
 
 namespace Components.Weapon
 {
@@ -6,5 +7,6 @@ namespace Components.Weapon
     {
         public WeaponType Type;
         public AttackDataSO AttackData;
+        public List<CharacterStats> PartsDataList;
     }
 }

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UI;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -147,6 +148,15 @@ public class GameManager : MonoBehaviour
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
         HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
         GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
+        StatsHandler weaponHandler = Player
+            .GetComponentInChildren<BaseAttack>()
+            .GetComponent<StatsHandler>();
+        
+        foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
+        {
+            weaponHandler.AddStatModifier(stats);
+        }
+
         healthSystem.OnDamage += SavePlayerData;
         healthSystem.OnHeal += SavePlayerData;
         goldSystem.OnChangeOwnedGold += SavePlayerData;
@@ -157,10 +167,11 @@ public class GameManager : MonoBehaviour
         Debug.Log($"CurrentStats : {playerData.playerStats}");
         Debug.Log($"CurrentHealth : {playerData.currentHealth}");
         Debug.Log($"CurrentGold : {playerData.OwnedGold}");
-        Debug.Log($"CurrentWeapon : {playerData.weaponInfo.Type}");
+        Debug.Log($"CurrentWeapon Atk: {playerData.weaponInfo.AttackData.damage}");
         Debug.Log($"-------[End]CreatePlayer--------");
+
         healthSystem.CurrentHealth = playerData.currentHealth;
-        goldSystem.ChangeOwnedGold(playerData.OwnedGold); //todo dungeon ui 생성 순서 확인
+        goldSystem.ChangeOwnedGold(playerData.OwnedGold);
         SetStats(statsHandler.CurrentStats);
     }
 
@@ -224,6 +235,7 @@ public class GameManager : MonoBehaviour
             if (playerData == null)
             {
                 playerData = new PlayerData();
+                playerData.weaponInfo.PartsDataList = new List<CharacterStats>();
             }
 
             playerData.playerStats = Player.gameObject.GetComponent<StatsHandler>().CurrentStats;
@@ -235,8 +247,20 @@ public class GameManager : MonoBehaviour
         Debug.Log($"-------[Start]SavePlayerData--------");
         Debug.Log($"CurrentStats : {playerData.playerStats}");
         Debug.Log($"CurrentHealth : {playerData.currentHealth}");
-        Debug.Log($"CurrentWeapon : {playerData.OwnedGold}");
-        Debug.Log($"CurrentGold : {playerData.weaponInfo.Type}");
+        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
+        Debug.Log($"CurrentWeapon : {playerData.weaponInfo.ToString()}");
+
+        Debug.Log("------------parts");
+        foreach (CharacterStats characterStats in playerData.weaponInfo.PartsDataList)
+        {
+            Debug.Log($"------------part: {characterStats.attackData.damage}");
+        }
+
         Debug.Log($"-------[End]SavePlayerData--------");
+    }
+
+    public void BuyParts(CharacterStats weaponPartsStats)
+    {
+        playerData.weaponInfo.PartsDataList.Add(weaponPartsStats);
     }
 }
