@@ -56,4 +56,9 @@ public class EnemyBullet : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void SetDirection(Vector2 direction)
+    {
+        moveDirection = direction;
+    }
 }
