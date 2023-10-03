@@ -148,14 +148,17 @@ public class GameManager : MonoBehaviour
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
         HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
         GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
-        StatsHandler weaponHandler = Player
-            .GetComponentInChildren<BaseAttack>()
-            .GetComponent<StatsHandler>();
-        
-        foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
+        BaseAttack baseAttack = Player.GetComponentInChildren<BaseAttack>();
+        if (baseAttack != null)
         {
-            weaponHandler.AddStatModifier(stats);
+            StatsHandler weaponHandler = baseAttack.GetComponent<StatsHandler>();
+            
+            foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
+            {
+                weaponHandler.AddStatModifier(stats);
+            }
         }
+
 
         healthSystem.OnDamage += SavePlayerData;
         healthSystem.OnHeal += SavePlayerData;
