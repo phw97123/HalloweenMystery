@@ -51,8 +51,8 @@ namespace Components.Attacks
 
             float arc = isReversed ? _meleeAttack.arc : _meleeAttack.arc * -1;
 
-            _startDegree = (_handler.attackStatus.degree + 360 - arc * 0.5f) % 360;
-            _endDegree = (_handler.attackStatus.degree + 360 + arc) % 360;
+            _startDegree = (_handler.attackStatus.degree + 360 - arc * 0.5f);
+            _endDegree = (_handler.attackStatus.degree + 360 + arc * 0.5f);
             _currentDegree = _startDegree;
             _isStarted = true;
         }
