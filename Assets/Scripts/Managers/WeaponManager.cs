@@ -31,7 +31,12 @@ namespace Managers
     {
         private ResourceManager _resourceManager;
         private static WeaponManager _singleton;
-        private static float[] RotationDegrees = { -45f, 0f, -45f, 0f, 0f, 90f};
+        private static float[] RotationDegrees = { -45f, 0f, -45f, 0f, 0f, 90f };
+
+        private Vector2[] _positions = Enum.GetNames(typeof(WeaponType))
+            .Select(_ => Vector2.zero)
+            .ToArray();
+
         public WeaponInfo? CurrentEquippedWeapon { get; private set; } = null;
         public event Action<WeaponInfo?> OnWeaponEquipped;
 
@@ -73,6 +78,7 @@ namespace Managers
         public void CreateInteractableWeapon(WeaponType weaponType, Vector2 position)
         {
             GameObject obj = ResourceManager.Instance.LoadPrefab(weaponType.ToString());
+            _positions[(int)weaponType] = position;
             float degree = 0f;
             if ((int)weaponType < RotationDegrees.Length) { degree = RotationDegrees[(int)weaponType]; }
 
@@ -93,14 +99,10 @@ namespace Managers
 
         public void CreateInteractableWeapons(WeaponType[] availWeapons, Vector2 startPosition, Vector2 spacing)
         {
-            //todo Refactor bool -> achievement 
-
-            for (int i = 0; i < availWeapons.Length; i++)
+            int repeat = 0;
+            foreach (WeaponType availWeapon in availWeapons)
             {
-                //todo refactor resourcesManager
-                Debug.Log($"Prefabs/Weapons/{availWeapons[i].ToString()}");
-                GameObject go = Resources.Load<GameObject>($"Prefabs/Weapons/{availWeapons[i].ToString()}");
-                CreateInteractableWeaponByPrefab(go, startPosition + spacing * i);
+                CreateInteractableWeapon(availWeapon, startPosition + spacing * repeat++);
             }
         }
 
@@ -108,7 +110,11 @@ namespace Managers
         {
             if (CurrentEquippedWeapon != null)
             {
-                //todo 장착중인 무기 원상복구 
+                if (GameManager.Instance.WeaponInfo.HasValue)
+                {
+                    WeaponInfo weaponInfo = GameManager.Instance.WeaponInfo.Value;
+                    CreateInteractableWeapon(weaponInfo.type, _positions[(int)weaponInfo.type]);
+                }
             }
 
             //todo remove to 
