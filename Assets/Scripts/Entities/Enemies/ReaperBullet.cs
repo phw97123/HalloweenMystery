@@ -4,8 +4,8 @@ public class ReaperBullet : MonoBehaviour
 {
     public float speed;
     public int damage;
-
     private Vector2 moveDirection;
+    private float randomAngle;
 
     private void Start()
     {
@@ -14,8 +14,23 @@ public class ReaperBullet : MonoBehaviour
 
     private void InitializeMoveDirection()
     {
-        float randomAngle = Random.Range(0f, 360f);
+        randomAngle = Random.Range(0f, 360f);
         moveDirection = Quaternion.Euler(0, 0, randomAngle) * Vector2.up;
+    }
+
+    // 발사 방향을 설정하는 메서드
+    public void SetDirection(Vector2 direction)
+    {
+        // 방향이 설정되었을 경우 랜덤 각도 대신에 주어진 방향을 사용합니다.
+        if (direction != Vector2.zero)
+        {
+            moveDirection = direction.normalized;
+        }
+        else
+        {
+            // 랜덤 각도를 유지합니다.
+            moveDirection = Quaternion.Euler(0, 0, randomAngle) * Vector2.up;
+        }
     }
 
     private void Update()
