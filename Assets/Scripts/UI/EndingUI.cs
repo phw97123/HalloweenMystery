@@ -36,7 +36,7 @@ public class EndingUI : UIPopup
             SetActiveButton(ButtonArr[i], false);
         }
 
-        switch (GameManager.Instance._ending)
+        switch (_gameManager._ending)
         {
             case Ending.GameOver:
                 GameOver();
@@ -91,7 +91,7 @@ public class EndingUI : UIPopup
 
     public void OnClickQuitButton()
     {
-        Application.Quit();
+        _gameManager.QuitGame();
     }
 
     public void SetActiveButton(Button button, bool active)
