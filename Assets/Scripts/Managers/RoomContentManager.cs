@@ -23,6 +23,7 @@ public class RoomContentManager : MonoBehaviour
     }
 
     public GameObject player = null;
+
     private EntityController _controller = null;
 
     public DungeonData dungoenData = null;
@@ -31,6 +32,8 @@ public class RoomContentManager : MonoBehaviour
     [SerializeField] public Transform roomEnemiesParent;
     [SerializeField] private GameObject corridorWall;
     [SerializeField] private Transform corridorWallParent;
+
+    [SerializeField] private MinimapCamera minimapCamera;
 
     public GameObject portal;
 
@@ -53,6 +56,7 @@ public class RoomContentManager : MonoBehaviour
             corridorWallParent.gameObject.SetActive(false);
         }
     }
+
 
     public void AchievementCheck()
     {
@@ -146,6 +150,11 @@ public class RoomContentManager : MonoBehaviour
         }
         _controller = player.GetComponent<EntityController>();
         _controller.OnMoveEvent += SpawnPrefab;
-        
+        _controller.OnMoveEvent += MoveMinimapCamera;
+    }
+
+    private void MoveMinimapCamera(Vector2 vector)
+    {
+        minimapCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, minimapCamera.transform.position.z);
     }
 }

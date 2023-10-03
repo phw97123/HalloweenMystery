@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
 
     public void Initialize(ItemData itemData)
     {
+        this.gameObject.layer = 11;
         //set sprite
         spriteRenderer.sprite = itemData.sprite;
         //set sprite offset
