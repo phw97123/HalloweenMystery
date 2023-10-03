@@ -49,11 +49,11 @@ public class TimelineController : MonoBehaviour
     private void OnTimelineFinished(PlayableDirector director)
     {
         _isTimelineFinishied = true;
-        Invoke("LoadNextScene", 0.2f); 
+        Invoke("LoadNextScene", 0.1f); 
     }
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(NEXTSCENE_NAME);
+        LoadingSceneController.LoadScene(NEXTSCENE_NAME);
     }
 }

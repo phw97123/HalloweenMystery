@@ -149,7 +149,6 @@ public class GameManager : MonoBehaviour
         HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
         GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
 
-
         healthSystem.OnDamage += SavePlayerData;
         healthSystem.OnHeal += SavePlayerData;
         goldSystem.OnChangeOwnedGold += SavePlayerData;
@@ -242,7 +241,6 @@ public class GameManager : MonoBehaviour
                 Debug.Log($"------------part-dmg: {characterStats.attackData.damage}");
             }
         }
-
 
         Debug.Log($"-------[End]SavePlayerData--------");
     }
