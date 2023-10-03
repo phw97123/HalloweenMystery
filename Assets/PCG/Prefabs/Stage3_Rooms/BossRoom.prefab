@@ -61,8 +61,8 @@ MonoBehaviour:
   - minQuantity: 5
     maxQuantity: 8
     itemData: {fileID: 11400000, guid: 4d3c72ecfab2b2241a2184ca34cc2766, type: 2}
-  - minQuantity: 3
-    maxQuantity: 4
+  - minQuantity: 1
+    maxQuantity: 2
     itemData: {fileID: 11400000, guid: 56f431e225233314482452d0a333bfae, type: 2}
   - minQuantity: 0
     maxQuantity: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
   - minQuantity: 5
     maxQuantity: 8
     itemData: {fileID: 11400000, guid: 950e93dd8b9434d4d9d3c1c7ba4c1e3d, type: 2}
-  - minQuantity: 5
-    maxQuantity: 9
+  - minQuantity: 1
+    maxQuantity: 3
     itemData: {fileID: 11400000, guid: ee098313da92a69458f48448289f8305, type: 2}
   - minQuantity: 0
     maxQuantity: 0

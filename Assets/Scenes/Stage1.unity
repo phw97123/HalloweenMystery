@@ -15860,7 +15860,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: ed58e9b5cc90cfa4c8029a69a7f0f788, type: 2}
   corridorLength: 25
-  corridorCount: 4
+  corridorCount: 5
   roomPercent: 1
   showRoomGizmo: 0
   showCorridorsGizmo: 0
