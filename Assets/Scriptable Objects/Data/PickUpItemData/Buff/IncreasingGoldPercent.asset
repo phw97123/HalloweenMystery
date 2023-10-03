@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IncreasingGoldPercent
   m_EditorClassIdentifier: 
   Stats:
-  - changeType: 2
+  - changeType: 1
     maxHealth: 0
     speed: 0
     criticalPercentage: 0
