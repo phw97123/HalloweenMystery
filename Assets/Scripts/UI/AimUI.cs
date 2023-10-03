@@ -24,6 +24,7 @@ namespace UI
 
         private void Awake()
         {
+            Cursor.visible = false;
             _camera = Camera.main;
         }
 
