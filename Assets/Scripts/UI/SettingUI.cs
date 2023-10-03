@@ -9,6 +9,7 @@ namespace UI
 {
     public class SettingUI : UIPopup
     {
+        [SerializeField] private PlayerInfoUI playerInfoList;
         [SerializeField] private Button closeButton;
         [SerializeField] private Button soundOnButton;
         [SerializeField] private Button soundOffButton;
@@ -53,6 +54,11 @@ namespace UI
             musicOffButton.onClick.AddListener(MusicOn);
             soundSlider.onValueChanged.AddListener(ChangeSoundVolume);
             musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
+            playerInfoList.UpdateStatsUI(_gameManager.PlayerStats);
+            if (_gameManager.WeaponInfo.HasValue)
+            {
+                playerInfoList.UpdateWeaponInfoUI(_gameManager.WeaponInfo.Value);
+            }
 
 
             _isUIStateChanged = true;
