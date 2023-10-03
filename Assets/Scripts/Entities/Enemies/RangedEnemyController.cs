@@ -8,20 +8,16 @@ public class RangedEnemyController : EnemyController
     [SerializeField] private float attackInterval;
     [SerializeField] private int numProjectiles;
 
-    [SerializeField] private string targetTag = "Player";
     private bool _isCollidingWithTarget;
-
-    [SerializeField] private GameObject spawnParticlePrefab;
-
     private Transform _player;
     private float _timeUntilNextAttack;
     private EnemyObjectPool _objectPoolManager;
     private StatsHandler _statsHandler;
-
     private HealthSystem _collidingTargetHealthSystem;
 
     [SerializeField] private AudioClip shootingClip;
     [SerializeField] private AudioClip appearingClip;
+    [SerializeField] private GameObject spawnParticlePrefab;
     private GameObject spawnParticleInstance;
 
     protected override void Start()
@@ -43,8 +39,15 @@ public class RangedEnemyController : EnemyController
 
     private void InitializePlayer()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag(targetTag);
-        _player = playerObject != null ? playerObject.transform : null;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            _player = playerObject.transform;
+        }
+        else
+        {
+            _player = null;
+        }
     }
 
     private void InitializeAttackParams()
@@ -99,7 +102,9 @@ public class RangedEnemyController : EnemyController
 
                 if (bullet != null)
                 {
+                    Vector3 playerDirection = (_player.position - transform.position).normalized;
                     bullet.transform.position = transform.position;
+                    bullet.GetComponent<EnemyBullet>().SetDirection(playerDirection);
                     bullet.SetActive(true);
 
                     if (shootingClip != null)
@@ -120,7 +125,7 @@ public class RangedEnemyController : EnemyController
     {
         GameObject receiver = collision.gameObject;
 
-        if (!receiver.CompareTag(targetTag))
+        if (!receiver.CompareTag("Player"))
         {
             return;
         }
@@ -134,7 +139,7 @@ public class RangedEnemyController : EnemyController
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag(targetTag))
+        if (!collision.CompareTag("Player"))
         {
             return;
         }
