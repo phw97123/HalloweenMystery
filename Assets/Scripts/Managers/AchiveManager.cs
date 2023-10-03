@@ -2,6 +2,7 @@ using Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -53,6 +54,9 @@ public class AchiveManager : MonoBehaviour
     private Achievement[] achievements;
     private AchievementData[] achievementDataArray;
 
+    public string[] AchievementsString { get; private set; }
+    public Achievement CurAchieve;
+
     private Dictionary<Achievement, RewardData> rewardMappings = new Dictionary<Achievement, RewardData>
     {
         {Achievement.StageClear1, new RewardData { weaponType = WeaponType.Axe} },
@@ -77,6 +81,7 @@ public class AchiveManager : MonoBehaviour
         dataManager = DataManager.Instance;
 
         LoadAchievementData();
+        SetAchievementsString();
     }
 
     private void LoadAchievementData()
@@ -123,6 +128,9 @@ public class AchiveManager : MonoBehaviour
         {
             achievementDataArray[(int)achivement].isAchive = true;
             SaveAchievementData();
+
+            CurAchieve = achivement;
+            UIManager.Singleton.ShowUIPopupByName(nameof(AchieveNotifyUI));
         }
     }
 
@@ -134,5 +142,15 @@ public class AchiveManager : MonoBehaviour
     public AchievementData[] GetAchievementData()
     {
         return achievementDataArray;
+    }
+
+    private void SetAchievementsString()
+    {
+        AchievementsString = new string[Enum.GetValues(typeof(Achievement)).Length];
+        AchievementsString[(int)Achievement.StageClear1] = "스테이지1 클리어";
+        AchievementsString[(int)Achievement.StageClear2] = "스테이지2 클리어";
+        AchievementsString[(int)Achievement.LastBossClear] = "최종보스 처치";
+        AchievementsString[(int)Achievement.NoSkipGoing] = "인트로 영상 시청 완료";
+        AchievementsString[(int)Achievement.MonsterKiller] = "몬스터 20마리 이상 처치";
     }
 }
