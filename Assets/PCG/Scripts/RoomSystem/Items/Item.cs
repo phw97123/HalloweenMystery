@@ -20,8 +20,16 @@ public class Item : MonoBehaviour
         spriteRenderer.transform.localPosition = new Vector2(0.5f * itemData.size.x, 0.5f * itemData.size.y);
         if (itemData.isCollide == true)
         {
-            itemCollider.size = itemData.size;
-            itemCollider.offset = spriteRenderer.transform.localPosition;
+            if (itemData.isPartialCollide == true)
+            {
+                itemCollider.size = new Vector2Int(itemData.size.x, 1);
+                itemCollider.offset = spriteRenderer.transform.localPosition - new Vector3(0, itemData.size.y / 2);
+            }
+            else
+            {
+                itemCollider.size = itemData.size;
+                itemCollider.offset = spriteRenderer.transform.localPosition;
+            }
         }
         else
         {

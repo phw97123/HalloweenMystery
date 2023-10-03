@@ -10,4 +10,5 @@ public class ItemData : ScriptableObject
     public PlacementType placementType;
     public bool addOffset;
     public bool isCollide;
+    public bool isPartialCollide;
 }
