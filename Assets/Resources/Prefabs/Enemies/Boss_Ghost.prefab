@@ -621,7 +621,6 @@ GameObject:
   - component: {fileID: 9095792383401244487}
   - component: {fileID: 1623153518359625189}
   - component: {fileID: 9143305781135311872}
-  - component: {fileID: 3170060236146201782}
   - component: {fileID: 1818790454260306524}
   - component: {fileID: 3326392134189338871}
   - component: {fileID: 9153787695896047032}
@@ -737,18 +736,6 @@ MonoBehaviour:
     itemDropPercentage: 0
     buffDurationIncrease: 0
     attackData: {fileID: 11400000, guid: 62a28e74a03fe4b49ae6e207c6793d7a, type: 2}
---- !u!114 &3170060236146201782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062618266539057270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f3102704696644984fbc636ae665c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1818790454260306524
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     private int monsterKilled = 0;
     public int MonstersKilled => monsterKilled;
 
-    public PlayerData playerData;
+    public PlayerData playerData = new PlayerData();
 
     public void Monsterkilled()
     {
@@ -154,13 +154,6 @@ public class GameManager : MonoBehaviour
         healthSystem.OnHeal += SavePlayerData;
         goldSystem.OnChangeOwnedGold += SavePlayerData;
         statsHandler.OnStatsChanged += SetStats;
-
-
-        Debug.Log($"-------[Start]CreatePlayer--------");
-        Debug.Log($"CurrentStats : {playerData.playerStats}");
-        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
-        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
-        Debug.Log($"-------[End]CreatePlayer--------");
 
         healthSystem.CurrentHealth = playerData.currentHealth;
         goldSystem.ChangeOwnedGold(playerData.OwnedGold);

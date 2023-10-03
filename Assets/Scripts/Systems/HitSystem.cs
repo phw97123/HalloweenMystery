@@ -89,7 +89,7 @@ namespace Systems
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") || collision.gameObject.layer == LayerMask.NameToLayer("MapObject"))
             {
                 if (particleEffectPrefab != null)
                 {
