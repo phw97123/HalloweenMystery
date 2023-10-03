@@ -14,6 +14,7 @@ public class EndingUI : UIPopup
     [SerializeField] private TMP_FontAsset gameOverFont;
 
     [SerializeField] private Image endingImage;
+    [SerializeField] private Image bgPanel;
 
     public enum ButtonType { RedoButton, HomeButton, QuitButton }
     public Button[] ButtonArr;
@@ -73,10 +74,12 @@ public class EndingUI : UIPopup
 
     public void DisplayButton()
     {
+        bgPanel.gameObject.SetActive(true); 
         for (int i = 0; i < ButtonArr.Length; i++)
         {
             if (ButtonCheck[i] == true) SetActiveButton(ButtonArr[i], true);
         }
+
     }
     public void OnClickRedoButton()
     {
