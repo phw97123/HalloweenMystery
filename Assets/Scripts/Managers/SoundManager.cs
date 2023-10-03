@@ -1,3 +1,4 @@
+using Components.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,10 +30,12 @@ public class SoundManager : MonoBehaviour
     }
 
     private AudioClip _soundChangedClip;
-    [SerializeField][Range(0f, 1f)] private float soundEffectVolume;
-    [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance;
-    [SerializeField][Range(0f, 1f)] private float musicVolume;
+    [SerializeField] [Range(0f, 1f)] private float soundEffectVolume;
+    [SerializeField] [Range(0f, 1f)] private float soundEffectPitchVariance;
+    [SerializeField] [Range(0f, 1f)] private float musicVolume;
 
+
+    private DataManager _dataManager;
     private ObjectPool _objectPool;
     private List<Poolable> _prefabs;
 
@@ -43,11 +46,14 @@ public class SoundManager : MonoBehaviour
     private const string STAGE1_SCENE = "Stage1";
     private const string STAGE2_SCENE = "Stage2";
     private const string STAGE3_SCENE = "Stage3";
+
     private const string DEMO_SCENE = "DemoScene";
+
     //private const string ROOM_SCENE = "RoomScene";
     private const string GAMEENDING_SCENE = "EndingScene";
 
     private AudioClip _musicClip;
+
 
     private void Awake()
     {
@@ -61,6 +67,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        _dataManager = DataManager.Instance;
         _musicAudioSource = GetComponent<AudioSource>();
         _musicAudioSource.volume = musicVolume;
         _musicAudioSource.loop = true;
@@ -86,6 +93,10 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        SoundSettingsData soundSettings = _dataManager.LoadSoundSettings();
+        musicVolume = soundSettings.musicVolume;
+        soundEffectVolume = soundSettings.musicVolume;
+
         string sceneName = SceneManager.GetActiveScene().name;
         SetBGMByScene(sceneName);
         _soundChangedClip = ResourceManager.Instance.Load<AudioClip>("WeaponEquip");
@@ -129,9 +140,11 @@ public class SoundManager : MonoBehaviour
 
         ChangeBGM(_musicClip);
     }
+
     private static void ChangeBGM(AudioClip music)
     {
         Instance._musicAudioSource.Stop();
+        Instance._musicAudioSource.volume = Instance.musicVolume;
         Instance._musicAudioSource.clip = music;
         Instance._musicAudioSource.Play();
     }
@@ -148,6 +161,12 @@ public class SoundManager : MonoBehaviour
 
     public void SubscribeSettingsUI(SettingUI settingUI)
     {
+        SoundSettingsData soundSettingsData = new SoundSettingsData(
+            musicVolume: musicVolume,
+            soundVolume: soundEffectVolume,
+            isMusicOn: musicVolume <= 0f,
+            isSoundOn: soundEffectVolume <= 0f);
+        settingUI.Initialize(soundSettingsData);
         settingUI.OnMusicVolumeChanged += ChangeMusicVolume;
         settingUI.OnSoundVolumeChanged += ChangeSoundVolume;
     }
@@ -156,6 +175,12 @@ public class SoundManager : MonoBehaviour
     {
         soundEffectVolume = value;
         PlayClip(_soundChangedClip);
+        SoundSettingsData data = new SoundSettingsData(
+            musicVolume: musicVolume,
+            soundVolume: soundEffectVolume,
+            isMusicOn: musicVolume <= 0f,
+            isSoundOn: soundEffectVolume <= 0f);
+        _dataManager.SaveSoundSettings(data);
     }
 
     private void ChangeMusicVolume(float value)
@@ -164,5 +189,12 @@ public class SoundManager : MonoBehaviour
         musicVolume = value;
         _musicAudioSource.volume = musicVolume;
         Instance._musicAudioSource.Play();
+
+        SoundSettingsData data = new SoundSettingsData(
+            musicVolume: musicVolume,
+            soundVolume: soundEffectVolume,
+            isMusicOn: musicVolume <= 0f,
+            isSoundOn: soundEffectVolume <= 0f);
+        _dataManager.SaveSoundSettings(data);
     }
 }

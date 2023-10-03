@@ -1,3 +1,4 @@
+using Components.Data;
 using Managers;
 using System;
 using Unity.VisualScripting;
@@ -24,6 +25,7 @@ namespace UI
         private float _musicVolume = 1;
         private bool _isSoundOn = true;
         private bool _isMusicOn = true;
+        private bool _isReady;
 
         public event Action<float> OnSoundVolumeChanged;
         public event Action<float> OnMusicVolumeChanged;
@@ -37,16 +39,13 @@ namespace UI
         private void Awake()
         {
             _soundManager = SoundManager.Instance;
-
             _uiManager = UIManager.Singleton;
             _gameManager = GameManager.Instance;
-
         }
 
         private void Start()
         {
             _soundManager.SubscribeSettingsUI(this);
-
             closeButton.onClick.AddListener(() => { gameObject.SetActive(false); });
             soundOnButton.onClick.AddListener(SoundOff);
             soundOffButton.onClick.AddListener(SoundOn);
@@ -55,52 +54,34 @@ namespace UI
             soundSlider.onValueChanged.AddListener(ChangeSoundVolume);
             musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
 
-            _soundVolume = PlayerPrefs.GetFloat(SoundVolumeKey);
-            _musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey);
-            _isSoundOn = PlayerPrefs.GetInt(SoundOnKey) == 1;
-            _isMusicOn = PlayerPrefs.GetInt(MusicOnKey) == 1;
 
-            _isUIStateChanged = true; 
+            _isUIStateChanged = true;
 
-            quitButton.onClick.AddListener(() => {
-                SavePlayerPrefs();
-                ShowQuitDialog();
-            });
-        }
-
-        private void SavePlayerPrefs()
-        {
-            PlayerPrefs.SetFloat(SoundVolumeKey, _soundVolume);
-            PlayerPrefs.SetFloat(MusicVolumeKey, _musicVolume);
-            PlayerPrefs.SetInt(SoundOnKey, _isSoundOn ? 1 : 0);
-            PlayerPrefs.SetInt(MusicOnKey, _isMusicOn ? 1 : 0);
-            PlayerPrefs.Save();
+            quitButton.onClick.AddListener(ShowQuitDialog);
         }
 
         private void Update()
         {
-            if (!_isUIStateChanged) { return; }
+            if (!_isUIStateChanged || !_isReady) { return; }
 
             _isUIStateChanged = false;
             soundOnButton.gameObject.SetActive(_isSoundOn);
             soundOffButton.gameObject.SetActive(!_isSoundOn);
-            if (_isSoundOn)
-            {
-            }
-                soundSlider.value = _soundVolume;
+            soundSlider.value = _soundVolume;
 
 
             musicOnButton.gameObject.SetActive(_isMusicOn);
             musicOffButton.gameObject.SetActive(!_isMusicOn);
-            if (_isMusicOn)
-            {
-            }
-                musicSlider.value = _musicVolume;
+            musicSlider.value = _musicVolume;
         }
 
-        public void Initialize()
+        public void Initialize(SoundSettingsData data)
         {
-            
+            _soundVolume = data.soundVolume;
+            _musicVolume = data.soundVolume;
+            _isSoundOn = data.isSoundOn;
+            _isMusicOn = data.isMusicOn;
+            _isReady = true;
         }
 
         private void OnEnable()
@@ -127,7 +108,6 @@ namespace UI
 
         private void QuitGame()
         {
-          
             _gameManager.QuitGame();
         }
 
