@@ -36,6 +36,7 @@ public class RoomContentManager : MonoBehaviour
     [SerializeField] private MinimapCamera minimapCamera;
 
     public GameObject portal;
+    private bool isCheckCoroutineRun = false;
 
     public UnityEvent OnStart;
 
@@ -108,28 +109,39 @@ public class RoomContentManager : MonoBehaviour
                 if (prefab.layer == 7)
                 {
                     prefab.transform.SetParent(roomEnemiesParent, false);
-                    prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
+                    //prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
+                    
                 }
             }
             if (roomEnemiesParent.childCount >= 2) corridorWallParent.gameObject.SetActive(true);
         }
+
+        if (isCheckCoroutineRun == false)
+        {
+            StartCoroutine(Check());
+        }
     }
 
-    private void CheckInBattle()
+
+    IEnumerator Check()
     {
-        Invoke("Check", 1.0f);
-        Invoke("Check", 1.0f);
-        Invoke("Check", 1.0f);
-    }
-    
-    private void Check()
-    {
-        if (roomEnemiesParent.childCount <= 1)
+        isCheckCoroutineRun = true;
+        while (true)
         {
-            corridorWallParent.gameObject.SetActive(false);
-            if(portal)
-                portal.SetActive(true);
+            if (roomEnemiesParent.childCount == 0)
+            {
+                corridorWallParent.gameObject.SetActive(false);
+                if (portal)
+                    portal.SetActive(true);
+                isCheckCoroutineRun = false;
+                break;
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
         }
+        
     }
 
     public void CreatePlayerInRoom(Vector2Int position)
