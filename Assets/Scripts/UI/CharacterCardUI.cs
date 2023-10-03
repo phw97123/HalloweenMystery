@@ -18,8 +18,8 @@ namespace UI
         [SerializeField] private Text goldText;
         [SerializeField] private Text dropText;
         [SerializeField] private GameObject imageContainer;
+        [SerializeField] private GameObject texts;
         [SerializeField] private Image lockImage;
-
 
         private bool _isLocked = false;
         private bool _isSelected = false;
@@ -49,9 +49,15 @@ namespace UI
             buffText.text = data.stats.buffDurationIncrease.ToString("N0");
             goldText.text = (data.stats.goldPercentage * 100 % 101).ToString("N0");
             dropText.text = (data.stats.itemDropPercentage * 100 % 101).ToString("N0");
+
             lockImage.gameObject.SetActive(!data.canPlay);
+            texts.gameObject.SetActive(data.canPlay);
+            nameText.gameObject.SetActive(data.canPlay); 
+
             _isLocked = !data.canPlay;
-            Instantiate(data.imagePrefab, imageContainer.transform);
+
+            if(data.canPlay)
+                Instantiate(data.imagePrefab, imageContainer.transform);
         }
 
         public void SubscribeListCharacterItemSelectEvent(CharacterDataSO _, int index)
