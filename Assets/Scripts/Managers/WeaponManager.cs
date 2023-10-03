@@ -139,7 +139,7 @@ namespace Managers
 
             CurrentEquippedWeapon = new WeaponInfo
             {
-                Type = newAttack.WeaponType, AttackData = weaponStats.attackData,
+                type = newAttack.WeaponType, attackData = weaponStats.attackData,
             };
 
 

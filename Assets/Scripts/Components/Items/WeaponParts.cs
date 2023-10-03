@@ -62,6 +62,7 @@ public class WeaponParts : MonoBehaviour
             _statsHandler.AddStatModifier(weaponPartsStats);
 
             isEquiped = true;
+            GameManager.Instance.BuyParts(weaponPartsStats);
             _notifyCanvas.SetActive(false);
             _goldSystem.ChangeOwnedGold(-price);
 
