@@ -21,7 +21,6 @@ public class RoomContentGenerator : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera cinemachineCamera;
 
-    public UnityEvent RegenerateDungeon;
 
     public void GenerateRoomContent(DungeonData dungeonData)
     {
