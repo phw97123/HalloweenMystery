@@ -20,20 +20,27 @@ namespace UI
         private UIManager _uiManager;
         private SoundManager _soundManager;
         private bool _isUIStateChanged = false;
-        private float _soundVolume = 1f;
-        private float _musicVolume = 1f;
+        private float _soundVolume = 1;
+        private float _musicVolume = 1;
         private bool _isSoundOn = true;
         private bool _isMusicOn = true;
 
         public event Action<float> OnSoundVolumeChanged;
         public event Action<float> OnMusicVolumeChanged;
         public event Action OnDisabled;
+
+        private const string SoundVolumeKey = "SoundVolume";
+        private const string MusicVolumeKey = "MusicVolume";
+        private const string SoundOnKey = "SoundOn";
+        private const string MusicOnKey = "MusicOn";
+
         private void Awake()
         {
             _soundManager = SoundManager.Instance;
 
             _uiManager = UIManager.Singleton;
             _gameManager = GameManager.Instance;
+
         }
 
         private void Start()
@@ -47,7 +54,27 @@ namespace UI
             musicOffButton.onClick.AddListener(MusicOn);
             soundSlider.onValueChanged.AddListener(ChangeSoundVolume);
             musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
-            quitButton.onClick.AddListener(ShowQuitDialog);
+
+            _soundVolume = PlayerPrefs.GetFloat(SoundVolumeKey);
+            _musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey);
+            _isSoundOn = PlayerPrefs.GetInt(SoundOnKey) == 1;
+            _isMusicOn = PlayerPrefs.GetInt(MusicOnKey) == 1;
+
+            _isUIStateChanged = true; 
+
+            quitButton.onClick.AddListener(() => {
+                SavePlayerPrefs();
+                ShowQuitDialog();
+            });
+        }
+
+        private void SavePlayerPrefs()
+        {
+            PlayerPrefs.SetFloat(SoundVolumeKey, _soundVolume);
+            PlayerPrefs.SetFloat(MusicVolumeKey, _musicVolume);
+            PlayerPrefs.SetInt(SoundOnKey, _isSoundOn ? 1 : 0);
+            PlayerPrefs.SetInt(MusicOnKey, _isMusicOn ? 1 : 0);
+            PlayerPrefs.Save();
         }
 
         private void Update()
@@ -59,16 +86,16 @@ namespace UI
             soundOffButton.gameObject.SetActive(!_isSoundOn);
             if (_isSoundOn)
             {
-                soundSlider.value = _soundVolume;
             }
+                soundSlider.value = _soundVolume;
 
 
             musicOnButton.gameObject.SetActive(_isMusicOn);
             musicOffButton.gameObject.SetActive(!_isMusicOn);
             if (_isMusicOn)
             {
-                musicSlider.value = _musicVolume;
             }
+                musicSlider.value = _musicVolume;
         }
 
         private void OnEnable()
@@ -95,6 +122,7 @@ namespace UI
 
         private void QuitGame()
         {
+          
             _gameManager.QuitGame();
         }
 
