@@ -41,11 +41,7 @@ public class MeleeEnemyController : EnemyController
 
     private void OnDamage()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (playerObject != null)
-        {
-            SetTarget(playerObject.transform);
-        }
+        followRange = 100f;
     }
 
     protected override void FixedUpdate()

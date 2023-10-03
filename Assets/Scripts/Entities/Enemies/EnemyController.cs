@@ -15,8 +15,7 @@ public class EnemyController : EntityController
 
     protected virtual void Start()
     {
-        Target = null;
-
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
         Stats = GetComponent<StatsHandler>();
     }
 
@@ -51,10 +50,5 @@ public class EnemyController : EntityController
         {
             return Vector2.zero;
         }
-    }
-
-    public void SetTarget(Transform target)
-    {
-        Target = target;
     }
 }
