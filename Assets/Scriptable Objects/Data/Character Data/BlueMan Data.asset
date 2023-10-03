@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e308781ae44be2ad009ff5501dbfc9, type: 3}
   m_Name: BlueMan Data
   m_EditorClassIdentifier: 
-  characterName: "\uAE40\uB3D9\uC2DD"
+  characterName: KDS
   type: 0
   stats:
     changeType: 0
