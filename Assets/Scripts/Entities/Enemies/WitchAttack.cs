@@ -5,6 +5,8 @@ public class WitchAttack : MonoBehaviour
 {
     [SerializeField] private GameObject Bullet;
 
+    public Transform circleShotPosition;
+
     private int _circleShotsFired = 0;
     private const int _maxCircleShots = 10;
 
@@ -35,7 +37,6 @@ public class WitchAttack : MonoBehaviour
 
     private ShotState currentState = ShotState.CircleShot;
 
-
     private void Start()
     {
         _currentTurnSpeed = initialTurnSpeed;
@@ -50,7 +51,7 @@ public class WitchAttack : MonoBehaviour
 
                 if (_timeSinceLastCircleShot >= circleShotInterval && _circleShotsFired < _maxCircleShots)
                 {
-                    ShotCircle();
+                    ShotCircle(circleShotPosition.position);
                     _timeSinceLastCircleShot = 0f;
                 }
 
@@ -74,7 +75,7 @@ public class WitchAttack : MonoBehaviour
                     _timeSinceLastSpinShot = 0f;
                     _circleShotsFired = 0;
 
-                    _currentTurnSpeed = Mathf.Min(_currentTurnSpeed + 2.0f, maxTurnSpeed);    
+                    _currentTurnSpeed = Mathf.Min(_currentTurnSpeed + 2.0f, maxTurnSpeed);
                 }
                 else
                 {
@@ -101,7 +102,7 @@ public class WitchAttack : MonoBehaviour
 
             case ShotState.Rest:
                 _restTimer += Time.deltaTime;
-                
+
                 if (_restTimer >= restDuration)
                 {
                     currentState = ShotState.SpinShot;
@@ -111,13 +112,13 @@ public class WitchAttack : MonoBehaviour
         }
     }
 
-    private void ShotCircle()
+    private void ShotCircle(Vector3 position)
     {
         for (int i = 0; i < 360; i += 13)
         {
             GameObject temp = Instantiate(Bullet);
             Destroy(temp, 2f);
-            temp.transform.position = Vector2.zero;
+            temp.transform.position = position;
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
         }
 

@@ -104,7 +104,13 @@ public class RangedEnemyController : EnemyController
                 {
                     Vector3 playerDirection = (_player.position - transform.position).normalized;
                     bullet.transform.position = transform.position;
-                    bullet.GetComponent<EnemyBullet>().SetDirection(playerDirection);
+
+                    EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
+                    if (enemyBullet != null)
+                    {
+                        enemyBullet.SetDirection(playerDirection);
+                    }
+
                     bullet.SetActive(true);
 
                     if (shootingClip != null)
@@ -120,6 +126,7 @@ public class RangedEnemyController : EnemyController
             _timeUntilNextAttack -= Time.deltaTime;
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
