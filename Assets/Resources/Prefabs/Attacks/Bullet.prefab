@@ -278,6 +278,7 @@ MonoBehaviour:
   levelCollision:
     serializedVersion: 2
     m_Bits: 256
+  particleEffectPrefab: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
 --- !u!1 &4798852984882764712
 GameObject:
   m_ObjectHideFlags: 0

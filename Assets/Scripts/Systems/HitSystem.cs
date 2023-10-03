@@ -17,6 +17,8 @@ namespace Systems
 
         private int _maxTargetCount = 1;
 
+        public GameObject particleEffectPrefab;
+
         private void Awake()
         {
             _handler = GetComponent<AttackStatusHandler>();
@@ -84,5 +86,19 @@ namespace Systems
                 }
             }
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+            {
+                if (particleEffectPrefab != null)
+                {
+                    Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
+                }
+
+                Destroy(gameObject);
+            }
+        }
+
     }
 }

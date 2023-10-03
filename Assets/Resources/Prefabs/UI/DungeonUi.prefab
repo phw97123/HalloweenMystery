@@ -262,14 +262,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7146226, g: 0.86450607, b: 0.9528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bbf1eb80433cb4386bd9d2d60aa64977, type: 3}
+  m_Sprite: {fileID: -315171869, guid: 4a6aecff9ba1eaa4284f9dab9abe7764, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -360,8 +360,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af3f7b19209a16f4396f4a37c691c742, type: 2}
-  m_sharedMaterial: {fileID: 5332430948083551536, guid: af3f7b19209a16f4396f4a37c691c742, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d449e828624cdb540adeae5caa41b9ce, type: 2}
+  m_sharedMaterial: {fileID: 1580506782554457875, guid: d449e828624cdb540adeae5caa41b9ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.6039216}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -693,8 +693,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af3f7b19209a16f4396f4a37c691c742, type: 2}
-  m_sharedMaterial: {fileID: 5332430948083551536, guid: af3f7b19209a16f4396f4a37c691c742, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d449e828624cdb540adeae5caa41b9ce, type: 2}
+  m_sharedMaterial: {fileID: 1580506782554457875, guid: d449e828624cdb540adeae5caa41b9ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1018,14 +1018,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9811321, g: 0.6767942, b: 0.63403344, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bbf1eb80433cb4386bd9d2d60aa64977, type: 3}
+  m_Sprite: {fileID: -1389518348, guid: 4a6aecff9ba1eaa4284f9dab9abe7764, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

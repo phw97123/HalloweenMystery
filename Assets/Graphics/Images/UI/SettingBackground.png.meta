@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd928f8c67f684e498e7df4cb36308f4
+guid: 8f3a8daef491eba41be0c34015fcf6b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,28 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Cliff4_26
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 41
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a73ecc4008959eb498d98992b4411edf
-      internalID: 515084140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -166,52 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Cliff4_0: -648443794
-      Cliff4_1: -426221108
-      Cliff4_10: 607357917
-      Cliff4_11: 1054150471
-      Cliff4_12: -389031250
-      Cliff4_13: -2006098772
-      Cliff4_14: 265243230
-      Cliff4_15: -1063011729
-      Cliff4_16: 111369912
-      Cliff4_17: -1876600480
-      Cliff4_18: -1820488598
-      Cliff4_19: -82474289
-      Cliff4_2: 1786338667
-      Cliff4_20: -2038516105
-      Cliff4_21: -1895784262
-      Cliff4_22: -598367974
-      Cliff4_23: -1523392804
-      Cliff4_24: -1097036444
-      Cliff4_25: 1878763557
-      Cliff4_26: 515084140
-      Cliff4_27: -808507508
-      Cliff4_28: -741485021
-      Cliff4_29: -1556571783
-      Cliff4_3: -635283681
-      Cliff4_30: -1965440879
-      Cliff4_31: -1700863181
-      Cliff4_32: 1485742949
-      Cliff4_33: -1330465728
-      Cliff4_34: 1802301593
-      Cliff4_35: 540177577
-      Cliff4_36: 1775333039
-      Cliff4_37: -1409823239
-      Cliff4_38: 74917696
-      Cliff4_39: 506301486
-      Cliff4_4: 298327446
-      Cliff4_40: -1761120483
-      Cliff4_41: 106227232
-      Cliff4_42: 995770011
-      Cliff4_43: -247876477
-      Cliff4_44: -1145820429
-      Cliff4_5: -1298194328
-      Cliff4_6: 2024341052
-      Cliff4_7: 795244749
-      Cliff4_8: 898839954
-      Cliff4_9: -210791166
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
