@@ -34,6 +34,7 @@ public class GoldSystem : MonoBehaviour //OwnedGold에서 골드 사용, OwnedGo
 
         OwnedGold += change;
         OnChangeOwnedGold?.Invoke();
+        Debug.Log("Called - GoldSystem.OnChangeOwnedGold");
         return true;
     }
 

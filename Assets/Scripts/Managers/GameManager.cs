@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour
     private int monsterKilled = 0;
     public int MonstersKilled => monsterKilled;
 
-    public PlayerData playerData; 
+    public PlayerData playerData;
 
     public void Monsterkilled()
     {
-        monsterKilled++; 
+        monsterKilled++;
     }
 
     public static GameManager Instance
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         _weaponManager = WeaponManager.Singleton;
         DontDestroyOnLoad(this);
 
-        playerData = new PlayerData(); 
+        playerData = new PlayerData();
     }
 
     private void Start()
@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
     private void SetStats(CharacterStats stat)
     {
         PlayerStats = stat;
+        SavePlayerData();
     }
 
     public void CreatePlayer()
@@ -144,9 +145,19 @@ public class GameManager : MonoBehaviour
         }
 
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
+        HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
+        GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
+        healthSystem.CurrentHealth = playerData.currentHealth;
+        goldSystem.ChangeOwnedGold(playerData.OwnedGold); //todo dungeon ui 생성 순서 확인 
+        
+        healthSystem.OnDamage += SavePlayerData;
+        healthSystem.OnHeal += SavePlayerData;
+        goldSystem.OnChangeOwnedGold += SavePlayerData;
+        //todo 
         SetStats(statsHandler.CurrentStats);
         statsHandler.OnStatsChanged += SetStats;
     }
+
 
     public void ShowDungeonUI()
     {
@@ -187,9 +198,9 @@ public class GameManager : MonoBehaviour
 
         achiveManager.UnlockAchieve(Achievement.LastBossClear);
 
-        HealthSystem healthSystem = Player.GetComponent<HealthSystem>(); 
+        HealthSystem healthSystem = Player.GetComponent<HealthSystem>();
 
-        if(healthSystem.IsNoDamage)
+        if (healthSystem.IsNoDamage)
         {
             achiveManager.UnlockAchieve(Achievement.NoDamageClear);
         }
@@ -211,8 +222,15 @@ public class GameManager : MonoBehaviour
 
             playerData.playerStats = Player.gameObject.GetComponent<StatsHandler>().CurrentStats;
             playerData.currentHealth = Player.GetComponent<HealthSystem>().CurrentHealth;
-            playerData.weaponInfo = WeaponInfo.GetValueOrDefault(); 
+            playerData.weaponInfo = WeaponInfo.GetValueOrDefault();
             playerData.OwnedGold = Player.GetComponent<GoldSystem>().OwnedGold;
         }
+
+        Debug.Log($"-------[Start]SavePlayerData--------");
+        Debug.Log($"CurrentStats : {playerData.playerStats}");
+        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
+        Debug.Log($"CurrentWeapon : {playerData.OwnedGold}");
+        Debug.Log($"CurrentGold : {playerData.weaponInfo.Type}");
+        Debug.Log($"-------[End]SavePlayerData--------");
     }
 }

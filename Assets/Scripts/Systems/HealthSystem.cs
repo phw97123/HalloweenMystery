@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
 
     private float _timeSinceLastChange = float.MaxValue;
 
-    public float CurrentHealth { get; private set; }
+    public float CurrentHealth { get; set; }
     public float MaxHealth => _statsHandler.CurrentStats.maxHealth;
     public int ShieldCount = 0;
 
