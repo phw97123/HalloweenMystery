@@ -42,6 +42,8 @@ namespace UI
             _healthSystem.OnChangeShieldCount += UpdateShieldUi;
             _goldSystem = _gameManager.Player.GetComponent<GoldSystem>();
             _goldSystem.OnChangeOwnedGold += UpdateGoldUI;
+            UpdateHealthUi();
+            UpdateGoldUI();
         }
 
         private void UpdateGoldUI()

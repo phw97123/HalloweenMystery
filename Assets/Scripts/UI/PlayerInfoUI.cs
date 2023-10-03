@@ -49,11 +49,11 @@ namespace UI
 
         public void UpdateWeaponInfoUI(WeaponInfo weaponInfo)
         {
-            atkText.text = $"{weaponInfo.AttackData.damage:N0}";
-            rangeText.text = $"{weaponInfo.AttackData.range:N0}";
-            knockBackPowerText.text = $"{weaponInfo.AttackData.knockBackPower:N0}";
-            UpdateMeleeAttackDataUI(weaponInfo.AttackData);
-            UpdateRangeAttackDataUI(weaponInfo.AttackData);
+            atkText.text = $"{weaponInfo.attackData.damage:N0}";
+            rangeText.text = $"{weaponInfo.attackData.range:N0}";
+            knockBackPowerText.text = $"{weaponInfo.attackData.knockBackPower:N0}";
+            UpdateMeleeAttackDataUI(weaponInfo.attackData);
+            UpdateRangeAttackDataUI(weaponInfo.attackData);
         }
 
         private void UpdateMeleeAttackDataUI(AttackDataSO atkData)

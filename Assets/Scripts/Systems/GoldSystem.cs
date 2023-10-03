@@ -14,7 +14,8 @@ public class GoldSystem : MonoBehaviour //OwnedGold에서 골드 사용, OwnedGo
 
     private void Start()
     {
-        OwnedGold = 0;
+        OwnedGold = 10000;
+        // OwnedGold = 0;
     }
 
     public bool Deposit(int change) // OwnedGold에서 StoredGold으로 골드 보내기
@@ -34,6 +35,7 @@ public class GoldSystem : MonoBehaviour //OwnedGold에서 골드 사용, OwnedGo
 
         OwnedGold += change;
         OnChangeOwnedGold?.Invoke();
+        Debug.Log("Called - GoldSystem.OnChangeOwnedGold");
         return true;
     }
 
