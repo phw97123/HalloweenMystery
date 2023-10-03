@@ -537,7 +537,7 @@ Transform:
   - {fileID: 8434282659198081557}
   - {fileID: 7856927572884667040}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5089884242549555349
 MonoBehaviour:
@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7463787145062572606, guid: 647fc6399ba65964eac2aa900d6e9693, type: 3}
+  circleShotPosition: {fileID: 449072151574491136}
   circleShotInterval: 2
   spinShotInterval: 20
   restDuration: 5

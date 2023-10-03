@@ -199,14 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bf50ed826c8ee4eb38be460d683216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoppingDistance: 1
+  stoppingDistance: 2
   retreatDistance: 10
   attackInterval: 1
   numProjectiles: 1
-  targetTag: Player
-  spawnParticlePrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   shootingClip: {fileID: 8300000, guid: 26c23de9d2c3b9e46b9abb53ae0f6f0d, type: 3}
   appearingClip: {fileID: 8300000, guid: c11cb585cd4b72942a189d449c937634, type: 3}
+  spawnParticlePrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
 --- !u!114 &5671245761455161734
 MonoBehaviour:
   m_ObjectHideFlags: 0
