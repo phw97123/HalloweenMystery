@@ -46,6 +46,7 @@ namespace UI
 
         private void Start()
         {
+            Cursor.visible = true;
             _soundManager.SubscribeSettingsUI(this);
             closeButton.onClick.AddListener(() => { gameObject.SetActive(false); });
             soundOnButton.onClick.AddListener(SoundOff);
@@ -98,6 +99,7 @@ namespace UI
         private void OnDisable()
         {
             Time.timeScale = 1f;
+            Cursor.visible = false;
             OnDisabled?.Invoke();
         }
 

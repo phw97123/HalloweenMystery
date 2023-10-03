@@ -10,7 +10,7 @@ public class SettingButtonUI : UIPopup
 {
     private Button _button;
     private UIManager _uiManager;
-
+    
     private void Awake()
     {
         _button = GetComponentInChildren<Button>();
