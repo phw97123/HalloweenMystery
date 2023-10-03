@@ -1,5 +1,6 @@
 using Components.Stats;
 using Components;
+using Components.Action;
 using Entities;
 using Managers;
 using System;
@@ -45,7 +46,7 @@ public class RoomContentManager : MonoBehaviour
     {
         AchievementCheck();
         OnStart?.Invoke();
-        
+
 
         if (corridorWall != null)
         {
@@ -63,7 +64,7 @@ public class RoomContentManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {
-            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear1); 
+            AchiveManager.Instance.UnlockAchieve(Achievement.StageClear1);
         }
         else if (SceneManager.GetActiveScene().buildIndex == 6)
         {
@@ -96,7 +97,7 @@ public class RoomContentManager : MonoBehaviour
                     new ItemPlacementHelper(dungoenData.roomsDictionary[key],
                         dungoenData.GetRoomFloorWithoutCorridors(key)));
 
-                
+
                 dungoenData.roomsDictionary.Remove(key);
                 break;
             }
@@ -110,9 +111,9 @@ public class RoomContentManager : MonoBehaviour
                 {
                     prefab.transform.SetParent(roomEnemiesParent, false);
                     //prefab.GetComponent<HealthSystem>().OnDeath += CheckInBattle;
-                    
                 }
             }
+
             if (roomEnemiesParent.childCount >= 2) corridorWallParent.gameObject.SetActive(true);
         }
 
@@ -141,12 +142,10 @@ public class RoomContentManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
             }
         }
-        
     }
 
     public void CreatePlayerInRoom(Vector2Int position)
     {
-        
         if (player != null)
         {
             player.transform.position = new Vector3Int(position.x, position.y, 0);
@@ -159,10 +158,12 @@ public class RoomContentManager : MonoBehaviour
             if (GameManager.Instance.WeaponInfo != null && GameManager.Instance.Player != null)
             {
                 GameObject weapon = ResourceManager.Instance.LoadPrefab(
-                    GameManager.Instance.WeaponInfo?.Type.ToString() ?? "Sword");
+                    GameManager.Instance.WeaponInfo?.type.ToString() ?? "Sword");
                 WeaponManager.Singleton.EquipWeapon(Instantiate(weapon), player);
+                GameManager.Instance.AddPartData();
             }
         }
+
         _controller = player.GetComponent<EntityController>();
         _controller.OnMoveEvent += SpawnPrefab;
         _controller.OnMoveEvent += MoveMinimapCamera;
@@ -170,6 +171,7 @@ public class RoomContentManager : MonoBehaviour
 
     private void MoveMinimapCamera(Vector2 vector)
     {
-        minimapCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, minimapCamera.transform.position.z);
+        minimapCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y,
+            minimapCamera.transform.position.z);
     }
 }

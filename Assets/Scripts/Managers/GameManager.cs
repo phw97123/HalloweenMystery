@@ -79,13 +79,13 @@ public class GameManager : MonoBehaviour
         _uiManager = UIManager.Singleton;
         _weaponManager = WeaponManager.Singleton;
         DontDestroyOnLoad(this);
-
-        playerData = new PlayerData();
     }
 
     private void Start()
     {
         _weaponManager.OnWeaponEquipped += CallEquippedEvent;
+        playerData = new PlayerData();
+        playerData.weaponInfo.PartsDataList = new List<CharacterStats>();
     }
 
     private void CallEquippedEvent(WeaponInfo? weaponInfo)
@@ -148,16 +148,6 @@ public class GameManager : MonoBehaviour
         StatsHandler statsHandler = Player.GetComponent<StatsHandler>();
         HealthSystem healthSystem = Player.GetComponentInChildren<HealthSystem>();
         GoldSystem goldSystem = Player.GetComponentInChildren<GoldSystem>();
-        BaseAttack baseAttack = Player.GetComponentInChildren<BaseAttack>();
-        if (baseAttack != null)
-        {
-            StatsHandler weaponHandler = baseAttack.GetComponent<StatsHandler>();
-            
-            foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
-            {
-                weaponHandler.AddStatModifier(stats);
-            }
-        }
 
 
         healthSystem.OnDamage += SavePlayerData;
@@ -170,7 +160,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"CurrentStats : {playerData.playerStats}");
         Debug.Log($"CurrentHealth : {playerData.currentHealth}");
         Debug.Log($"CurrentGold : {playerData.OwnedGold}");
-        Debug.Log($"CurrentWeapon Atk: {playerData.weaponInfo.AttackData.damage}");
         Debug.Log($"-------[End]CreatePlayer--------");
 
         healthSystem.CurrentHealth = playerData.currentHealth;
@@ -243,7 +232,6 @@ public class GameManager : MonoBehaviour
 
             playerData.playerStats = Player.gameObject.GetComponent<StatsHandler>().CurrentStats;
             playerData.currentHealth = Player.GetComponent<HealthSystem>().CurrentHealth;
-            playerData.weaponInfo = WeaponInfo.GetValueOrDefault();
             playerData.OwnedGold = Player.GetComponent<GoldSystem>().OwnedGold;
         }
 
@@ -254,10 +242,14 @@ public class GameManager : MonoBehaviour
         Debug.Log($"CurrentWeapon : {playerData.weaponInfo.ToString()}");
 
         Debug.Log("------------parts");
-        foreach (CharacterStats characterStats in playerData.weaponInfo.PartsDataList)
+        if (playerData.weaponInfo.PartsDataList != null)
         {
-            Debug.Log($"------------part: {characterStats.attackData.damage}");
+            foreach (CharacterStats characterStats in playerData.weaponInfo.PartsDataList)
+            {
+                Debug.Log($"------------part-dmg: {characterStats.attackData.damage}");
+            }
         }
+
 
         Debug.Log($"-------[End]SavePlayerData--------");
     }
@@ -265,5 +257,19 @@ public class GameManager : MonoBehaviour
     public void BuyParts(CharacterStats weaponPartsStats)
     {
         playerData.weaponInfo.PartsDataList.Add(weaponPartsStats);
+    }
+
+    public void AddPartData()
+    {
+        BaseAttack baseAttack = Player.GetComponentInChildren<BaseAttack>();
+        if (baseAttack != null)
+        {
+            StatsHandler weaponHandler = baseAttack.GetComponent<StatsHandler>();
+
+            foreach (CharacterStats stats in playerData.weaponInfo.PartsDataList)
+            {
+                weaponHandler.AddStatModifier(stats);
+            }
+        }
     }
 }
