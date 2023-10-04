@@ -93,6 +93,7 @@ namespace UI
 
         private void OnEnable()
         {
+            Cursor.visible = true;
             Time.timeScale = 0f;
         }
 

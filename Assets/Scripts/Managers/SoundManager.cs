@@ -2,6 +2,7 @@ using Components.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -116,25 +117,25 @@ public class SoundManager : MonoBehaviour
         switch (sceneName)
         {
             case START_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/TitleBGM");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "TitleBGM"));
                 break;
             case INTRO_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/IntroBGM");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "IntroBGM"));
                 break;
             case STAGE1_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/Stage1");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "Stage1"));
                 break;
             case STAGE2_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/Stage2");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "Stage2"));
                 break;
             case STAGE3_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/Stage3");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "Stage3"));
                 break;
             case DEMO_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/Stage1");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "Stage1"));
                 break;
             case GAMEENDING_SCENE:
-                _musicClip = Resources.Load<AudioClip>("Sound/GameOver");
+                _musicClip = Resources.Load<AudioClip>(Path.Combine("Sound", "GameOver"));
                 break;
         }
 
