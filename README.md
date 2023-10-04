@@ -2,11 +2,14 @@
 > 미스터리 판타지 할로윈 호러 2D 액션 탑다운 어드벤처 전략 RPG 로그라이크
 
 # 개요 
-> 할로윈에 사라진 친구들을 찾아 떠나는 어드벤쳐 게임
+> 할로윈에 사라진 친구들을 찾아 떠나는 어드벤쳐 게임<br>
+
 <p>
   <img src="https://user-images.githubusercontent.com/115692722/272451159-fe70fd6c-43e3-4477-a0f1-cf31f1980809.gif" width="49%" height="250" />
   <img src="https://user-images.githubusercontent.com/115692722/272449284-0c1ac259-4973-49da-8917-da2ef34c0c6a.gif" width="49%" height="250" />  
 </p>
+
+<a href="https://noun06.itch.io/halloweenmystery">게임 플레이</a>
 
 # ⏰ 개발 기간 
 - 2023.09.25 ~ 2023.10.04
@@ -40,6 +43,7 @@
 
 
 - 전투
+
   <p>
     <img width="32%" height = "250" src = "https://user-images.githubusercontent.com/115692722/272449284-0c1ac259-4973-49da-8917-da2ef34c0c6a.gif">
     <img width="32%" height = "250" src = "https://user-images.githubusercontent.com/115692722/272451159-fe70fd6c-43e3-4477-a0f1-cf31f1980809.gif">
@@ -84,22 +88,19 @@
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/Entities/Attacks)
 
 - Enemy AI
-  담당 : 김나운<br>
   
+  담당 : 김나운<br>
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/Entities/Enemies)
   - 추적
   - 순간이동
   - 원거리 공격
 
 - MapGeneration
-
   담당 : 이경현<br>
-  - 벽생성
-  - 타일 생성
-  - 몬스터 생성
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
   
 - Sound
+
   담당 : 박희원<br>
   
   [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/SoundManager.cs)
@@ -108,3 +109,9 @@
 
   담당 : 박희원<br>
   [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/DataManager.cs)
+
+
+
+
+
+  
