@@ -9,7 +9,7 @@
   <img src="https://user-images.githubusercontent.com/115692722/272449284-0c1ac259-4973-49da-8917-da2ef34c0c6a.gif" width="49%" height="250" />  
 </p>
 
-<a href="https://noun06.itch.io/halloweenmystery">게임 플레이</a>
+<a href="https://noun06.itch.io/halloweenmystery" target="_blank">게임 플레이</a>
 
 # ⏰ 개발 기간 
 - 2023.09.25 ~ 2023.10.04
