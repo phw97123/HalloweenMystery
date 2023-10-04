@@ -1,15 +1,8 @@
-using Components.Stats;
-using Components;
-using Components.Action;
-using Entities;
+
 using Managers;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Components.Weapon;
-using Utils;
 using UnityEngine.Events;
 using Entites;
 using UnityEngine.SceneManagement;
