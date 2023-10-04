@@ -20,7 +20,7 @@
 # 설계
 - 컴포넌트를 기반으로 설계하여 각 게임 오브젝트들에 필요한 컴포넌트를 부착하는 방식으로 설계했습니다.
 
-- 전체적인 설계도
+  <p></p>
 <img width="32%" height = "250"  src="https://github.com/phw97123/HalloweenMystery/assets/115692722/1a608e57-b9eb-470a-9547-85a1a66613cc">
 
 - 엔터티 설계도
@@ -36,7 +36,6 @@
   <img width="32%" height = "250" src = "https://user-images.githubusercontent.com/115692722/272461620-f93b1989-699c-4973-a043-3e7992177aee.gif">
   
   담당 : 박희원<br>
-  
   [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Entities/Timeline/TimelineController.cs)
 
 
@@ -48,9 +47,15 @@
 
   담당 : 김대열, 김나운<br>
   
-  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
+  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/Entities/Attacks)
   
 - PlayerRoom
+
+  담당 : 유채연<br>
+  
+  [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/RoomManager.cs)
+
+- Item And Enhance Weapon
 
   담당 : 유채연<br>
   
@@ -60,27 +65,46 @@
 
   담당 : 김대열, 김나운<br>
   
-  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
+  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/UI)
+
+- Player State Management
+
+    담당 : 박희원<br>
+    [클래스](https://github.com/phw97123/HalloweenMystery/blob/928db51d34bfd134c2283768178bb9fbfa0a429f/Assets/Scripts/Managers/GameManager.cs#L210C1-L244C2)
+
+- Achievement And Weapon Unlock
+
+    담당 : 박희원<br>
+    [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/AchiveManager.cs)
 
 - Player Combat
 
   담당 : 김대열, 김나운<br>
   
-  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
+  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/Entities/Attacks)
 
-- Enemy AI, Design
-
+- Enemy AI
   담당 : 김나운<br>
   
-  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
+  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/Scripts/Entities/Enemies)
+  - 추적
+  - 순간이동
+  - 원거리 공격
 
 - MapGeneration
 
   담당 : 이경현<br>
-  
+  - 벽생성
+  - 타일 생성
+  - 몬스터 생성
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
   
 - Sound
   담당 : 박희원<br>
   
-  [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
+  [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/SoundManager.cs)
+
+- Data Management
+
+  담당 : 박희원<br>
+  [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Managers/DataManager.cs)
