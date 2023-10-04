@@ -729,13 +729,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     changeType: 0
-    maxHealth: 50
+    maxHealth: 150
     speed: 5
     criticalPercentage: 0
     goldPercentage: 0
     itemDropPercentage: 0
     buffDurationIncrease: 0
-    attackData: {fileID: 11400000, guid: 62a28e74a03fe4b49ae6e207c6793d7a, type: 2}
+    attackData: {fileID: 11400000, guid: 5d808d302a68f7848b45d5ca9e7cd47e, type: 2}
 --- !u!114 &1818790454260306524
 MonoBehaviour:
   m_ObjectHideFlags: 0
