@@ -46,16 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPlacer: {fileID: 4341242197028722173, guid: 49d1de73f44f58940a43bf538b290285, type: 3}
   enemyPlacementData:
-  - minQuantity: 1
-    maxQuantity: 4
+  - minQuantity: 8
+    maxQuantity: 12
     enemyPrefab: {fileID: 3651637054455585558, guid: 696c97140dbeaf844859cbd8e786be62, type: 3}
     enemySize: {x: 1, y: 1}
-  - minQuantity: 1
-    maxQuantity: 4
+  - minQuantity: 3
+    maxQuantity: 5
     enemyPrefab: {fileID: 8593532721986536252, guid: 54fa4a694be90104d8a66c5575966505, type: 3}
     enemySize: {x: 1, y: 1}
-  - minQuantity: 2
-    maxQuantity: 3
+  - minQuantity: 3
+    maxQuantity: 5
     enemyPrefab: {fileID: 3168323879367061025, guid: e1e90b2fd9938bd49a5a83fea8d22689, type: 3}
     enemySize: {x: 1, y: 1}
   itemData:
