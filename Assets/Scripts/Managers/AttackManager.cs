@@ -28,7 +28,6 @@ namespace Managers
 
         private ObjectPool _pool;
         private List<Poolable> _prefabs;
-        [SerializeField] private ParticleSystem defaultParticleSystem;
 
         private void Awake()
         {
@@ -49,10 +48,6 @@ namespace Managers
             
             //todo resourcesManager and only required prefabs 
             //todo refactor
-            GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Attacks");
-            ParticleSystem ps = Resources.Load<ParticleSystem>("Prefabs/VFX/Explosion");
-
-            defaultParticleSystem = Instantiate(ps);
             _pool.Initialize(_prefabs);
         }
 

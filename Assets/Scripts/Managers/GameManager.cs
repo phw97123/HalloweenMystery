@@ -221,23 +221,6 @@ public class GameManager : MonoBehaviour
             playerData.currentHealth = Player.GetComponent<HealthSystem>().CurrentHealth;
             playerData.OwnedGold = Player.GetComponent<GoldSystem>().OwnedGold;
         }
-
-        Debug.Log($"-------[Start]SavePlayerData--------");
-        Debug.Log($"CurrentStats : {playerData.playerStats}");
-        Debug.Log($"CurrentHealth : {playerData.currentHealth}");
-        Debug.Log($"CurrentGold : {playerData.OwnedGold}");
-        Debug.Log($"CurrentWeapon : {playerData.weaponInfo.ToString()}");
-
-        Debug.Log("------------parts");
-        if (playerData.weaponInfo.PartsDataList != null)
-        {
-            foreach (CharacterStats characterStats in playerData.weaponInfo.PartsDataList)
-            {
-                Debug.Log($"------------part-dmg: {characterStats.attackData.damage}");
-            }
-        }
-
-        Debug.Log($"-------[End]SavePlayerData--------");
     }
 
     public void BuyParts(CharacterStats weaponPartsStats)

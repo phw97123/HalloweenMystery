@@ -14,7 +14,7 @@ public class CharacterAnimationController : CharacterAnimations
     protected override void Awake()
     {
         base.Awake();
-        _healthSystem = GetComponent<HealthSystem>(); 
+        _healthSystem = GetComponent<HealthSystem>();
     }
 
     private void Start()
@@ -25,10 +25,8 @@ public class CharacterAnimationController : CharacterAnimations
         {
             _healthSystem.OnDamage += Hit;
             _healthSystem.OnInvincibilityEnd += InvincibilityEnd;
-            _healthSystem.OnDeath += Death; 
+            _healthSystem.OnDeath += Death;
         }
-        else
-            Debug.Log("_healthSystem not found"); 
     }
 
     private void Death()

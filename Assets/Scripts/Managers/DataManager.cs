@@ -91,10 +91,15 @@ public class DataManager : MonoBehaviour
 
     public SoundSettingsData LoadSoundSettings()
     {
-        float soundVol = PlayerPrefs.GetFloat(PreferenceKeys.SoundVolumeKey);
-        float musicVol = PlayerPrefs.GetFloat(PreferenceKeys.MusicVolumeKey);
-        bool isSoundOn = PlayerPrefs.GetInt(PreferenceKeys.SoundOnKey) == 1;
-        bool isMusicOn = PlayerPrefs.GetInt(PreferenceKeys.MusicOnKey) == 1;
+        if (!PlayerPrefs.HasKey(PreferenceKeys.SoundVolumeKey))
+        {
+            return new SoundSettingsData(1f, 1f, true, true);
+        }
+
+        float soundVol = PlayerPrefs.GetFloat(PreferenceKeys.SoundVolumeKey, 1f);
+        float musicVol = PlayerPrefs.GetFloat(PreferenceKeys.MusicVolumeKey, 1f);
+        bool isSoundOn = PlayerPrefs.GetInt(PreferenceKeys.SoundOnKey, 1) == 1;
+        bool isMusicOn = PlayerPrefs.GetInt(PreferenceKeys.MusicOnKey, 1) == 1;
         return new SoundSettingsData(soundVolume: soundVol, musicVolume: musicVol, isMusicOn: isSoundOn,
             isSoundOn: isMusicOn);
     }

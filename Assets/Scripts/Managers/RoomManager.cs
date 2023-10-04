@@ -34,11 +34,6 @@ public class RoomManager : MonoBehaviour
             if (rewardData.weaponType == null) { continue; }
 
             int index = (int)rewardData.weaponType;
-            if (spawnPostions.Length <= index)
-            {
-                Debug.Assert(false, "Need more spawnPosition");
-            }
-
             WeaponManager.Singleton.CreateInteractableWeapon((WeaponType)rewardData.weaponType,
                 spawnPostions[index].position);
         }

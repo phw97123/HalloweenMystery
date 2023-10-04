@@ -7,6 +7,7 @@ using Entities;
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 
 namespace Managers
@@ -110,7 +111,8 @@ namespace Managers
         {
             if (CurrentEquippedWeapon != null)
             {
-                if (GameManager.Instance.WeaponInfo.HasValue)
+                if (GameManager.Instance.WeaponInfo.HasValue &&
+                    SceneManager.GetActiveScene().name == Scenes.RoomScene.ToString())
                 {
                     WeaponInfo weaponInfo = GameManager.Instance.WeaponInfo.Value;
                     CreateInteractableWeapon(weaponInfo.type, _positions[(int)weaponInfo.type]);

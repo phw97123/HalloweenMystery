@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class ResourceManager : MonoBehaviour
 
     public enum PrefabFolder { Attacks, Character, DropItems, Enemies, UI, VFX, WeaponParts, Weapons, Sound }
 
-    private Dictionary<string, string> _prefabsFolder = new Dictionary<string, string>();
+    private Dictionary<string, Object> _prefabsFolder = new Dictionary<string, Object>();
     private const string FolderPath = "Assets/Resources/Prefabs";
     private const string ResFolderPath = "Assets/Resources";
 
@@ -38,40 +39,20 @@ public class ResourceManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void GetPrefabNameRecursive(string currentDirectory)
-    {
-        string[] directories = Directory.GetDirectories(currentDirectory);
-        string[] files = Directory.GetFiles(currentDirectory);
-        ;
-
-        foreach (string directory in directories)
-        {
-            GetPrefabNameRecursive(directory);
-        }
-
-        foreach (string file in files)
-        {
-            if (Path.GetExtension(file) == ".meta") { continue; }
-
-            _prefabsFolder[Path.GetFileNameWithoutExtension(file)] =
-                currentDirectory.Replace(Path.Combine("Assets", "Resources") + Path.DirectorySeparatorChar, "");
-        }
-    }
-
     private void GetPrefabName()
     {
-        string[] directories = Directory.GetDirectories(Path.Combine("Assets", "Resources"));
-        foreach (string directory in directories)
+        foreach (UnityEngine.Object obj in Resources.LoadAll<Object>(""))
         {
-            GetPrefabNameRecursive(directory);
+            Debug.Log($"resourcesObj :{obj}");
+            _prefabsFolder[obj.name] = obj;
         }
     }
 
 
     public T Load<T>(string resource) where T : UnityEngine.Object
     {
-        string path = Path.Combine(_prefabsFolder[resource], resource);
-        return Resources.Load<T>(path);
+        Object go = _prefabsFolder[resource];
+        return go as T;
     }
 
     public GameObject LoadPrefab(string prefabName)
