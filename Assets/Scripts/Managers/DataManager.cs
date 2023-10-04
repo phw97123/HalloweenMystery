@@ -54,7 +54,7 @@ public class DataManager : MonoBehaviour
 
     private string GetSavePath<T>()
     {
-        return Application.dataPath + "/data_" + typeof(T).Name + ".json";
+        return Application.persistentDataPath + Path.DirectorySeparatorChar + "data_" + typeof(T).Name + ".json";
     }
 
     public void SaveData<T>(T data)
