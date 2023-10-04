@@ -36,6 +36,7 @@
   <img width="32%" height = "250" src = "https://user-images.githubusercontent.com/115692722/272461620-f93b1989-699c-4973-a043-3e7992177aee.gif">
   
   담당 : 박희원<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/blob/main/Assets/Scripts/Entities/Timeline/TimelineController.cs)
 
 
@@ -46,33 +47,40 @@
   </p>
 
   담당 : 김대열, 김나운<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
   
 - PlayerRoom
 
-  담당 : 유채연
+  담당 : 유채연<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
   
 - InGame UI
 
   담당 : 김대열, 김나운<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
 
 - Player Combat
 
   담당 : 김대열, 김나운<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
 
 - Enemy AI, Design
 
   담당 : 김나운<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
 
 - MapGeneration
 
   담당 : 이경현<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
   
 - Sound
   담당 : 박희원<br>
+  
   [클래스](https://github.com/phw97123/HalloweenMystery/tree/main/Assets/PCG)
